@@ -1,0 +1,274 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F6F6F6;
+}
+
+/* start Rating images */
+.star-rating img{
+  width: 14px
+}
+
+/* Catalog Image box */
+.box{
+  border: 1px solid rgb(202, 201, 201);
+}
+
+/* Navbar CSS */
+.my-navbar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+}
+
+/* Images */
+.cover-image{
+  object-fit: fill;
+}
+
+/* Background */
+.dark-bg{
+  background-color: #f6f6f6;
+}
+
+.white-bg{
+  background-color: white;
+}
+
+.greenish-bg{
+  background-color: #f7fbff;
+}
+
+/* All Cards */
+.card-block{
+  padding-bottom:50px
+}
+
+.card-style{
+  border-top:2px solid #5ea4f3;
+  background-color:#fff;
+  max-width:500px;
+  margin:auto;
+  padding:40px;
+  box-shadow:0px 2px 10px rgba(0,0,0,.075);
+  border-radius: 2%;
+}
+
+/* For Categories Page */
+.zoom-on-hover1:hover .image{
+  transform:scale(1.3);opacity:.7
+}
+
+.item1{
+  overflow:hidden;
+  margin-bottom:0;
+  background:#000;
+  opacity:1
+}
+
+.item1 a img{
+  transition:.8s ease
+}
+
+.item1{
+  padding-bottom:10px;
+  margin-bottom:25px;
+  border-bottom:1px solid #eee
+}
+
+.item1{
+  overflow:hidden;
+  margin-bottom:0;
+  background:#000;
+  opacity:1
+}
+
+.item1 .image{
+  transition:.8s ease
+}
+
+.item1 .info{
+  opacity:0
+}
+
+.item1 a:hover .info{
+  opacity:1
+}
+
+.item1{
+  font-weight:300
+}
+
+.item1 .info .info-heading{
+  font-size:1em;
+  font-weight:bold
+}
+
+.info .info-body{
+  font-size:.8em;
+  margin-top:10px;
+  font-weight:300
+}
+
+.info{
+  display:grid;
+  position:absolute;
+  bottom:0;
+  left:0;
+  color:#fff;
+  padding:10px;
+  font-size:17px;
+  line-height:18px;
+  width:100%;
+  padding-top:15px;
+  padding-bottom:15px;
+  opacity:1;
+  color:#fff;
+  transition:.8s ease;
+  text-align:center;
+  text-shadow:1px 1px 1px rgba(0,0,0,.2);
+}
+
+.info .info-heading{
+  font-size:1em;
+  font-weight:bold;
+}
+
+
+/* Exclusive Offers */
+.scale-on-hover1:hover{
+  transform:scale(1.08);
+  box-shadow:0px 10px 10px rgba(0,0,0,.15)
+}
+
+
+/* Carousel CSS */
+.carousel-item {
+  height: auto;
+  background: white;
+  color: white;
+  object-fit: cover;
+}
+
+.carousel-img {
+  height: 70vh;
+  width: 100%;
+  background-position: center;
+  background-size: auto;
+  /* object-fit: contain; */
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+a {
+  color: #ffb727;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffc85a;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+/*--------------------------------------------------------------
+  # Sections General
+  --------------------------------------------------------------*/
+/* section {
+  padding: 60px 0;
+}
+
+.section-bg {
+  background-color: white;
+}
+
+.section-title {
+  text-align: center;
+  padding: 30px 0;
+  position: relative;
+}
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  color: #3b434a;
+  position: relative;
+  z-index: 2;
+}
+.section-title span {
+  position: absolute;
+  top: 30px;
+  color: #eef0f2;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  font-weight: 700;
+  font-size: 52px;
+  text-transform: uppercase;
+  line-height: 0;
+}
+.section-title p {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 575px) {
+  .section-title h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  .section-title span {
+    font-size: 38px;
+  }
+} */
+
+
+/* Contact Me */
+
+.contact-btn {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  display: inline-block;
+  color: #687683;
+  line-height: 1;
+  margin: 0 8px;
+  transition: 0.3s;
+  padding: 14px;
+  border-radius: 50px;
+  border: 1px solid #dde1e4;
+}
+
+.contact-btn:hover {
+  color: #fff;
+  border-color: #4ebde9;
+  background: #4ebde9;
+}
+
+
+/* Single Product */
+* {
+  box-sizing: border-box;
+}
+
+/* Hover Effect on Update Image Cards */
+.update-image:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.1);
+}
