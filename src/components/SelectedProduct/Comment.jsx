@@ -3,8 +3,8 @@ import Star_Rating from '../Common_Components/Star_Rating';
 
 const Comment = () => {
     return (
-        <div className="reviews">
-            <div className="review-item">
+        <div className="reviews box mt-4">
+            <div className="p-4 review-item">
                 <Star_Rating></Star_Rating>
 
                 <h4>Incredible product</h4>

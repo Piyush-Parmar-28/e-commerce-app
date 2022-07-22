@@ -3,11 +3,12 @@ import React from 'react'
 import PageTitle from "../Common_Components/PageTitle"
 import Catalog_Image from '../ProductsPage/Catalog_Image';
 import Comment from './Comment';
+import Star_Rating from '../Common_Components/Star_Rating';
 
 import IconButton from '@mui/material/IconButton';
 import OpacityIcon from '@mui/icons-material/Opacity';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 const ProductInfo = () => {
     return (
@@ -39,29 +40,42 @@ const ProductInfo = () => {
                                     </div>
                                 </div>
 
-                                {/* <div className="col-md-6">
-                                    <div className="info">
+                                <div className="col-md-6">
+                                    <div className='d-flex justify-content-center '>
                                         <h3>Lorem Ipsum</h3>
-                                        <div className="rating"><img src="assets/img/star.svg" /><img src="assets/img/star.svg" /><img src="assets/img/star.svg" /><img src="assets/img/star-half-empty.svg" /><img src="assets/img/star-empty.svg" /></div>
-                                        <div className="price">
-                                            <h3>$300.00</h3>
-                                        </div>
-                                        
+                                    </div>
+
+                                    <div className='d-flex justify-content-between mt-2'>
+                                        <Star_Rating></Star_Rating>
+                                        <div><h5>$300.00</h5></div>
+                                    </div>
+
+                                    <hr></hr>
+
+                                    <div className="m-2 p-2">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec augue nunc, pretium at augue at, convallis pellentesque ipsum. Vestibulum diam risus, sagittis at fringilla at, pulvinar vel risus. Vestibulum dignissim eu nulla eu imperdiet. Morbi mollis tellus a nunc vestibulum consequat. Quisque tristique elit et nibh dapibus sodales. Nam sollicitudin a urna sed iaculis.</p>
+                                    </div>
+
+                                    <hr></hr>
+
+                                    <div className='d-flex justify-content-around '>
                                         <button className="btn btn-primary d-flex justify-content-between" type="button">
+                                            <AttachMoneyIcon></AttachMoneyIcon>
+                                            Buy Now
+                                        </button>
+
+                                        <button className="btn btn-danger d-flex justify-content-between" type="button">
                                             <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
                                             Add to Cart
                                         </button>
-                                        
-                                        <div className="summary">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec augue nunc, pretium at augue at, convallis pellentesque ipsum. Vestibulum diam risus, sagittis at fringilla at, pulvinar vel risus. Vestibulum dignissim eu nulla eu imperdiet. Morbi mollis tellus a nunc vestibulum consequat. Quisque tristique elit et nibh dapibus sodales. Nam sollicitudin a urna sed iaculis.</p>
-                                        </div>
                                     </div>
-                                </div> */}
-                                
+
+                                </div>
+
                             </div>
                         </div>
 
-                        <div className="product-info">
+                        {/* <div className="product-info">
                             <div>
                                 <ul className="nav nav-tabs" role="tablist" id="myTab">
                                     <li className="nav-item" role="presentation">
@@ -79,7 +93,6 @@ const ProductInfo = () => {
 
                                 <div className="tab-content" id="myTabContent">
 
-                                    {/* Description */}
                                     <div className="tab-pane fade show active description" role="tabpanel" id="description">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                         <div className="row">
@@ -102,7 +115,6 @@ const ProductInfo = () => {
                                         </div>
                                     </div>
 
-                                    {/* Specifications */}
                                     <div className="tab-pane fade specifications" role="tabpanel" id="specifications">
                                         <div className="table-responsive">
                                             <table className="table table-bordered">
@@ -128,7 +140,6 @@ const ProductInfo = () => {
                                         </div>
                                     </div>
 
-                                    {/* Reviews */}
                                     <div className="tab-pane fade" role="tabpanel" id="reviews">
                                         <Comment></Comment>
                                         <Comment></Comment>
@@ -137,10 +148,15 @@ const ProductInfo = () => {
 
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
+
+                        <h3 className="d-flex justify-content-center" >Reviews</h3>
+                        <Comment></Comment>
+                        <Comment></Comment>
+                        <Comment></Comment>
 
                         {/* Related Products */}
-                        <div className="clean-related-items">
+                        <div className="clean-related-items mt-5">
                             <h3 className="d-flex justify-content-center">Related Products</h3>
 
                             <div className="items">
