@@ -5,6 +5,19 @@ body {
   background-color: #F6F6F6;
 }
 
+/* Background */
+.dark-bg{
+  background-color: #f6f6f6;
+}
+
+.white-bg{
+  background-color: white;
+}
+
+.greenish-bg{
+  background-color: #f7fbff;
+}
+
 /* start Rating images */
 .star-rating img{
   width: 14px
@@ -28,18 +41,7 @@ body {
   object-fit: fill;
 }
 
-/* Background */
-.dark-bg{
-  background-color: #f6f6f6;
-}
 
-.white-bg{
-  background-color: white;
-}
-
-.greenish-bg{
-  background-color: #f7fbff;
-}
 
 /* All Cards */
 .card-block{

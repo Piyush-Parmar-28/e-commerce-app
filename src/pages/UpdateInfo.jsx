@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from '../components/Common_Components/Navbar'
-import Update_UserDetails from "../components/ProfilePage/Update_UserDetails"
 import Footer from '../components/Common_Components/Footer'
 import PageTitle from '../components/Common_Components/PageTitle'
 import UpdateImage from '../components/ProfilePage/UpdateImage'
@@ -8,7 +7,7 @@ import UpdateImage from '../components/ProfilePage/UpdateImage'
 const UpdateInfo = () => {
 
     return (
-        <div>
+        <div className='dark-bg'>
             <Navbar></Navbar>
 
             <section className="clean-block clean-form dark">
@@ -22,6 +21,7 @@ const UpdateInfo = () => {
                         imgSrc= { Math.floor(Math.random() * 1000000) }
                     ></UpdateImage>
 
+                    <div className='pt-5'></div>
                 </div>
             </section>
 

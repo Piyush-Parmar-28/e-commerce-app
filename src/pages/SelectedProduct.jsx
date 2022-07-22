@@ -6,7 +6,7 @@ import Footer from '../components/Common_Components/Footer'
 
 const SelectedProduct = () => {
     return (
-        <div>
+        <div className='white-bg'>
             <Navbar></Navbar>
             <News></News>
             <ProductInfo></ProductInfo>

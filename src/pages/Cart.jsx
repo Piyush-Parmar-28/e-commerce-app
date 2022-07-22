@@ -20,7 +20,6 @@ const Cart = () => {
                         />
 
                         <div className="white-bg row g-0">
-
                             <div>
                                 <Cart_Item></Cart_Item>
                                 <Cart_Item></Cart_Item>
@@ -29,7 +28,9 @@ const Cart = () => {
                         </div>
 
                         {/* Shopping Summary */}
-                        <Shopping_Summary />
+                        <div className='pb-5'>
+                            <Shopping_Summary />
+                        </div>
 
                     </div>
                 </section>

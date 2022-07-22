@@ -8,7 +8,7 @@ import Catalog_Image from './Catalog_Image'
 const Products = (props) => {
     return (
         <main className="page catalog-page">
-            <section className="clean-block clean-catalog dark pt-0">
+            <section className="clean-block clean-catalog pt-0 ">
                 <div className="container px-0">
 
                     <PageTitle
@@ -18,7 +18,7 @@ const Products = (props) => {
 
                     <SortProducts></SortProducts>
 
-                    <div className="content">
+                    <div className="content white-bg">
                         <div className="row">
 
                             {/* Filter Products */}
@@ -30,7 +30,7 @@ const Products = (props) => {
                                 <div className="p-4">
 
                                     {/* Catalog Images */}
-                                    <div className="row g-1">
+                                    <div className="row g-3">
                                         <Catalog_Image />
                                         <Catalog_Image />
                                         <Catalog_Image />

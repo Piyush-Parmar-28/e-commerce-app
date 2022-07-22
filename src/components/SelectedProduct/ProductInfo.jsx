@@ -19,10 +19,12 @@ const ProductInfo = () => {
                         desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo."
                     ></PageTitle>
 
-                    <div className="block-content">
+                    <div className="block-content white-bg p-5">
 
                         <div className="product-info">
                             <div className="row">
+
+                                {/* Image Gallery */}
                                 <div className="col-md-6">
                                     <div className="gallery">
                                         <div id="product-preview" className="vanilla-zoom">
@@ -38,6 +40,7 @@ const ProductInfo = () => {
                                     </div>
                                 </div>
 
+                                {/* Description */}
                                 <div className="col-md-6">
                                     <div className='d-flex justify-content-center '>
                                         <h3>Lorem Ipsum</h3>
@@ -148,6 +151,7 @@ const ProductInfo = () => {
                             </div>
                         </div> */}
 
+                        {/* Reviews (Comments) */}
                         <h3 className="d-flex justify-content-center" >Reviews</h3>
                         <Comment></Comment>
                         <Comment></Comment>
@@ -165,7 +169,11 @@ const ProductInfo = () => {
                                 </div>
                             </div>
                         </div>
+
                     </div>
+
+                    {/* Extra Div for padding at bottom */}
+                    <div className='pt-5'></div>
                 </div>
             </section>
         </main>

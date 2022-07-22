@@ -5,13 +5,15 @@ import Footer from '../components/Common_Components/Footer'
 import News from '../components/Common_Components/News'
 const ProductsPage = () => {
     return (
-        <div>
+        <div className='dark-bg'>
             <Navbar></Navbar>
             <News></News>
 
             <Products
                 heading= "Dresses"
             ></Products>
+
+            <div className='pt-5'></div>
             
             <Footer></Footer>
         </div>

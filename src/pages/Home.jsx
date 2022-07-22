@@ -12,7 +12,7 @@ import Footer from '../components/Common_Components/Footer'
 
 const Home = () => {
     return (
-        <div>
+        <div className= "dark-bg">
             <Navbar></Navbar>
             <Slider></Slider>
             <Categories></Categories>

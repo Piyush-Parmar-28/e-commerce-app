@@ -6,7 +6,7 @@ import UserDetails from '../components/ProfilePage/UserDetails'
 
 const ProfilePage = () => {
     return (
-        <div>
+        <div className='dark-bg'>
             <Navbar></Navbar>
             <section className="clean-block clean-form dark">
                 <div className="container-fluid px-5">
@@ -15,7 +15,9 @@ const ProfilePage = () => {
                         desc=""
                     ></PageTitle>
 
-                    <UserDetails />
+                    <div className='pb-5'>
+                        <UserDetails />
+                    </div>
 
                 </div>
             </section>
