@@ -25,18 +25,16 @@ const ProductInfo = () => {
                             <div className="row">
 
                                 {/* Image Gallery */}
-                                <div className="col-md-6">
-                                    <div className="gallery">
-                                        <div id="product-preview" className="vanilla-zoom">
-                                            <div className="zoomed-image"></div>
+                                <div className="col-md-6 dark-bg ">
+                                    <div className="zoom">
+                                        <div className="zoomed-image"></div>
 
-                                            <div className="sidebar d-flex justify-content-center">
-                                                <img className="img-fluid d-block small-preview" src="img/tech/image1.jpg" />
-                                                <img className="img-fluid d-block small-preview" src="img/tech/image2.jpg" />
-                                                <img className="img-fluid d-block small-preview" src="img/tech/image3.png" />
-                                            </div>
-
+                                        <div className="sidebar d-flex justify-content-center">
+                                            <img className="img-fluid d-block small-preview" src="img/tech/image1.jpg" />
+                                            <img className="img-fluid d-block small-preview" src="img/tech/image2.jpg" />
+                                            <img className="img-fluid d-block small-preview" src="img/tech/image3.png" />
                                         </div>
+
                                     </div>
                                 </div>
 
@@ -152,7 +150,7 @@ const ProductInfo = () => {
                         </div> */}
 
                         {/* Reviews (Comments) */}
-                        <h3 className="d-flex justify-content-center" >Reviews</h3>
+                        <h3 className="d-flex justify-content-center mt-5" >Reviews</h3>
                         <Comment></Comment>
                         <Comment></Comment>
                         <Comment></Comment>

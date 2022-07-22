@@ -36,7 +36,9 @@ const Offers = () => {
                                                 </a>
 
                                                 <div className="card-body dark-bg">
-                                                    <h6><a href="#">{contents.item}</a></h6>
+                                                    <h6 className='d-flex justify-content-center'>
+                                                        <a href="#" className= "simpleText">{contents.item}</a>
+                                                    </h6>
                                                 </div>
 
                                             </div>
