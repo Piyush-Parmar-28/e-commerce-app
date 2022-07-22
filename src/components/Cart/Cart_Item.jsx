@@ -6,7 +6,7 @@ const Cart_Item = () => {
             <div className="row justify-content-center align-items-center">
 
                 <div className="col-md-3">
-                    <div className="product-image"><img className="img-fluid d-block mx-auto image" src="assets/img/tech/image2.jpg" /></div>
+                    <div className="product-image"><img className="img-fluid d-block mx-auto image" src="img/tech/image2.jpg" /></div>
                 </div>
 
 

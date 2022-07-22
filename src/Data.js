@@ -42,7 +42,7 @@ var sliderData = [
 var productsData = [
     {
         id: 1,
-        src: "assets/img/nature/image1.jpg",
+        src: "img/nature/image1.jpg",
         altText: "img1",
         label: "First label",
         desc: "Some representative placeholder content for the first slide."
@@ -50,7 +50,7 @@ var productsData = [
 
     {
         id: 2,
-        src: "assets/img/nature/image2.jpg",
+        src: "img/nature/image2.jpg",
         altText: "img2",
         label: "First label",
         desc: "Some representative placeholder content for the first slide."
@@ -58,7 +58,7 @@ var productsData = [
 
     {
         id: 3,
-        src: "assets/img/nature/image3.jpg",
+        src: "img/nature/image3.jpg",
         altText: "img3",
         label: "First label",
         desc: "Some representative placeholder content for the first slide."
@@ -66,7 +66,7 @@ var productsData = [
 
     {
         id: 4,
-        src: "assets/img/nature/image4.jpg",
+        src: "img/nature/image4.jpg",
         altText: "img4",
         label: "First label",
         desc: "Some representative placeholder content for the first slide."
@@ -74,7 +74,7 @@ var productsData = [
 
     {
         id: 5,
-        src: "assets/img/nature/image5.jpg",
+        src: "img/nature/image5.jpg",
         altText: "img5",
         label: "First label",
         desc: "Some representative placeholder content for the first slide."
@@ -82,7 +82,7 @@ var productsData = [
 
     {
         id: 6,
-        src: "assets/img/nature/image6.jpg",
+        src: "img/nature/image6.jpg",
         altText: "img6",
         label: "First label",
         desc: "Some representative placeholder content for the first slide."

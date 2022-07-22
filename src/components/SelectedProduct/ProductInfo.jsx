@@ -5,8 +5,6 @@ import Catalog_Image from '../ProductsPage/Catalog_Image';
 import Comment from './Comment';
 import Star_Rating from '../Common_Components/Star_Rating';
 
-import IconButton from '@mui/material/IconButton';
-import OpacityIcon from '@mui/icons-material/Opacity';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
@@ -31,9 +29,9 @@ const ProductInfo = () => {
                                             <div className="zoomed-image"></div>
 
                                             <div className="sidebar d-flex justify-content-center">
-                                                <img className="img-fluid d-block small-preview" src="assets/img/tech/image1.jpg" />
-                                                <img className="img-fluid d-block small-preview" src="assets/img/tech/image2.jpg" />
-                                                <img className="img-fluid d-block small-preview" src="assets/img/tech/image3.png" />
+                                                <img className="img-fluid d-block small-preview" src="img/tech/image1.jpg" />
+                                                <img className="img-fluid d-block small-preview" src="img/tech/image2.jpg" />
+                                                <img className="img-fluid d-block small-preview" src="img/tech/image3.png" />
                                             </div>
 
                                         </div>
@@ -97,7 +95,7 @@ const ProductInfo = () => {
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                         <div className="row">
                                             <div className="col-md-5">
-                                                <figure className="figure"><img className="img-fluid figure-img" src="assets/img/tech/image3.png" /></figure>
+                                                <figure className="figure"><img className="img-fluid figure-img" src="img/tech/image3.png" /></figure>
                                             </div>
                                             <div className="col-md-7">
                                                 <h4>Lorem Ipsum</h4>
@@ -110,7 +108,7 @@ const ProductInfo = () => {
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                             </div>
                                             <div className="col-md-5">
-                                                <figure className="figure"><img className="img-fluid figure-img" src="assets/img/tech/image3.png" /></figure>
+                                                <figure className="figure"><img className="img-fluid figure-img" src="img/tech/image3.png" /></figure>
                                             </div>
                                         </div>
                                     </div>

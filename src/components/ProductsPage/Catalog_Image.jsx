@@ -9,7 +9,7 @@ const Catalog_Image = () => {
             <div className="box p-3">
                 <div className="mb-4">
                     <a href="#">
-                        <img className="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg" />
+                        <img className="img-fluid d-block mx-auto" src="img/tech/image2.jpg" />
                     </a>
                 </div>
 
