@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -8,11 +8,13 @@ import LoginSignUp from "./pages/LoginSignUp";
 import Cart from "./pages/Cart"
 import ProfilePage from "./pages/ProfilePage";
 import UpdateInfo from "./pages/UpdateInfo";
+import Footer from "./components/Common_Components/Footer";
 import AddProducts from "./pages/AddProducts";
 import Get from "./pages/Get"
 
 function App() {
     return (
+        <Fragment>
         <BrowserRouter>
             <Routes>
                 <Route exact path="/" element={<LoginSignUp />} />
@@ -26,6 +28,8 @@ function App() {
                 <Route exact path="update" element={<UpdateInfo />} />
             </Routes>
         </BrowserRouter>
+        <Footer/>
+        </Fragment>
     )
 }
 

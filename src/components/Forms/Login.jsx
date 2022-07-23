@@ -1,10 +1,11 @@
+import { height, maxHeight } from '@mui/system'
 import React from 'react'
 import PageTitle from "../Common_Components/PageTitle"
 
 const Login = (props) => {
     return (
-        <main>
-            <section className="card-block dark-bg">
+        <main >
+            <section className="card-block dark-bg" style={{height:'100vh',paddingTop:'5%'}} >
                 <div className="container">
 
                     <PageTitle
