@@ -5,10 +5,13 @@ const bodyParser = require("body-parser")
 var ObjectId = require('mongodb').ObjectId;
 var cors = require('cors');
 const port = process.env.PORT || 8000
+const multer = require('multer');
+const upload = multer()
 
 // Using Mongoose Models ---------------------------------------------------------------------------------
 const UserObj = require('./models/user')
 const ProductObj = require('./models/product')
+const ImageObj = require('./models/images')
 
 // CREATING SERVER ----------------------------------------------------------------------------------
 var app = express()
@@ -229,16 +232,26 @@ app.post("/saveImage", (req, res) => {
 })
 
 //  7. Add Products Route
-app.post('/addProducts',(req,res)=>{
+app.post('/addProduct',upload.single('image'),(req,res)=>{
+    const id = new ObjectId()
+
     const products = new ProductObj({
-        product: req.body.product,
-        category: req.body.category,
-        price: req.body.price,
-        ratings: req.body.ratings,
-        offers: req.body.offers,
-        image: req.body.image,
-        desc: req.body.desc,
+        Product: req.body.product,
+        Category: req.body.category,
+        Price: req.body.price,
+        Ratings: req.body.ratings,
+        Offers: req.body.offers,
+        ImageID: id,
+        Desc: req.body.desc,
     })
+
+    const imageData = new ImageObj({
+        id,
+        Image: req.file.buffer
+    })
+
+    imageData.save()
+
     products.save().then(()=>{
         res.send('product Added!')
     }).catch((e)=>{
@@ -246,7 +259,19 @@ app.post('/addProducts',(req,res)=>{
     })
 })
 
-//  8. Get Products Route
+//  8. Get Image Route
+app.get('/add/:id/image',async(req,res)=>{
+
+    const id = req.params.id
+    console.log(id)
+    const product = await ImageObj.findOne({id})
+    console.log('getting Image')
+    res.set('Content-Type','image/jpg')
+    console.log(product);
+    res.send(product.Image)
+})
+
+//  9. Get Products Route
 app.get('/get',async(req,res)=>{
     res.set({
         'Access-Control-Allow-Origin': '*'

@@ -17,7 +17,7 @@ const productSchema = new mongoose.Schema({
     Offers: {
         type: String
     },
-    Image: {
+    ImageID: {
         type: String
     },
     Desc: {
@@ -27,7 +27,7 @@ const productSchema = new mongoose.Schema({
 })
 
 productSchema.statics.getAllproducts = async ()=>{
-    const products = await Product.find()
+    const products = await ProductObj.find()
     return products
 }
 
