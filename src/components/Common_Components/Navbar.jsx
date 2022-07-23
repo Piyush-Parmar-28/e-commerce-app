@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom'
+
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -9,7 +11,6 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import Badge from '@mui/material/Badge';
 import Tooltip from '@mui/material/Tooltip';
 import Fade from '@mui/material/Fade';
-import Button from '@mui/material/Button';
 
 function ElevationScroll(props) {
     const { children, window } = props;
@@ -54,29 +55,36 @@ export default function Navbar(props) {
 
                             <div className="d-flex">
 
-                                <a type="button" className="btn btn-outline-primary btn-sm me-2" href='/cart'>
+                                {/* Do not use 'href' to redirect page in react as it will refresh page every time we redirect the page. */}
+                                {/* Use 'Link' instead as it will not refresh our page on redirect. */}
+                                <Link to="/cart">
+                                    <button type="button" className="btn btn-outline-primary btn-sm me-2">
 
-                                    <Tooltip
-                                        TransitionComponent={Fade}
-                                        TransitionProps={{ timeout: 600 }}
-                                        title="Cart"
-                                    >
-                                        <Badge badgeContent={7} color="secondary">
-                                            <ShoppingCartOutlinedIcon />
-                                        </Badge>
-                                    </Tooltip>
-                                </a>
 
-                                <a type="button" className="btn btn-outline-danger btn-sm" href="/profile" >
-                                    <Tooltip
-                                        TransitionComponent={Fade}
-                                        TransitionProps={{ timeout: 600 }}
-                                        title="My Profile"
-                                    >
-                                        <AccountCircleOutlinedIcon />
-                                    </Tooltip>
-                                </a>
+                                        <Tooltip
+                                            TransitionComponent={Fade}
+                                            TransitionProps={{ timeout: 600 }}
+                                            title="Cart"
+                                        >
+                                            <Badge badgeContent={7} color="secondary">
+                                                <ShoppingCartOutlinedIcon />
+                                            </Badge>
+                                        </Tooltip>
+                                    </button>
+                                </Link>
 
+
+                                <Link to= "/profile">
+                                    <button type="button" className="btn btn-outline-danger btn-sm">
+                                        <Tooltip
+                                            TransitionComponent={Fade}
+                                            TransitionProps={{ timeout: 600 }}
+                                            title="My Profile"
+                                        >
+                                            <AccountCircleOutlinedIcon />
+                                        </Tooltip>
+                                    </button>
+                                </Link>
 
                             </div>
 

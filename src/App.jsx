@@ -28,6 +28,7 @@ function App() {
                     <Route exact path="update" element={<UpdateInfo />} />
                 </Routes>
             </BrowserRouter>
+            
             <Footer />
         </Fragment>
     )

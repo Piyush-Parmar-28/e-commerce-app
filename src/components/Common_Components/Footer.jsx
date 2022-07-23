@@ -8,7 +8,7 @@ const Footer = () => {
     }
 
     return (
-        <div className="pb-3 pt-4 bg-dark">
+        <div className="pb-3 pt-4 bg-dark w-100">
 
             <p className="text-center text-white border-bottom mx-5 pb-3" style={style1}>This Website is a copyright property <i className="far fa-copyright"></i> of Piyush Parmar & Abhishek Chorotiya.</p>
 
