@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({
 }))
 
 // CONNECTING SERVER TO MONGODB DATABASE ----------------------------------------------------------------
-mongoose.connect("mongodb://localhost:27017/ECommerce")
+mongoose.connect("mongodb://127.0.0.1:27017/ECommerce")
 var db = mongoose.connection
 
 db.on('error', console.log.bind(console, "Connection Error"))

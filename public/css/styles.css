@@ -7,10 +7,9 @@ body {
   flex-direction: column; */
 }
 
-/* main{
-  display: flex;
-  flex-direction: column;
-} */
+main{
+  height: 100%;
+}
 
 /* SimpleText Style for anchor tags */
 .simpleText{
@@ -96,7 +95,10 @@ body {
 
 /* All Cards */
 .card-block{
-  padding-bottom:50px
+  padding-bottom:50px;
+  padding-top: 30px;
+  height: 100%;
+
 }
 
 .card-style{

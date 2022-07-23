@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -9,9 +9,11 @@ import Cart from "./pages/Cart"
 import ProfilePage from "./pages/ProfilePage";
 import UpdateInfo from "./pages/UpdateInfo";
 import AddProducts from "./components/Forms/AddProducts";
+import Footer from "./components/Common_Components/Footer";
 
 function App() {
     return (
+        <Fragment>
         <BrowserRouter>
             <Routes>
                 <Route exact path="/" element={<LoginSignUp />} />
@@ -24,6 +26,8 @@ function App() {
                 <Route exact path="update" element={<UpdateInfo />} />
             </Routes>
         </BrowserRouter>
+        <Footer/>
+        </Fragment>
     )
 }
 
