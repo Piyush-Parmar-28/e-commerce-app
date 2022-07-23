@@ -21,7 +21,7 @@ function ElevationScroll(props) {
 }
 
 
-export default function LoginNavbar(props) {
+export default function Navbar2(props) {
     return (
         <React.Fragment>
             <CssBaseline />

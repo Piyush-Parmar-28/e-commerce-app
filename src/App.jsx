@@ -15,20 +15,20 @@ import Get from "./pages/Get"
 function App() {
     return (
         <Fragment>
-        <BrowserRouter>
-            <Routes>
-                <Route exact path="/" element={<LoginSignUp />} />
-                <Route exact path="add" element={<AddProducts />} />
-                <Route exact path="get" element={<Get />} />
-                <Route exact path="home" element={<Home />} />
-                <Route exact path="products" element={<ProductsPage />} />
-                <Route exact path="selected" element={<SelectedProduct />} />
-                <Route exact path="cart" element={<Cart />} />
-                <Route exact path="profile" element={<ProfilePage />} />
-                <Route exact path="update" element={<UpdateInfo />} />
-            </Routes>
-        </BrowserRouter>
-        <Footer/>
+            <BrowserRouter>
+                <Routes>
+                    <Route exact path="/" element={<LoginSignUp />} />
+                    <Route exact path="add" element={<AddProducts />} />
+                    <Route exact path="get" element={<Get />} />
+                    <Route exact path="home" element={<Home />} />
+                    <Route exact path="products" element={<ProductsPage />} />
+                    <Route exact path="selected" element={<SelectedProduct />} />
+                    <Route exact path="cart" element={<Cart />} />
+                    <Route exact path="profile" element={<ProfilePage />} />
+                    <Route exact path="update" element={<UpdateInfo />} />
+                </Routes>
+            </BrowserRouter>
+            <Footer />
         </Fragment>
     )
 }

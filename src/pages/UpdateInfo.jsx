@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from '../components/Common_Components/Navbar'
-import Footer from '../components/Common_Components/Footer'
 import PageTitle from '../components/Common_Components/PageTitle'
 import UpdateImage from '../components/ProfilePage/UpdateImage'
 
@@ -24,8 +23,6 @@ const UpdateInfo = () => {
                     <div className='pt-5'></div>
                 </div>
             </section>
-
-            <Footer></Footer>
 
         </div>
     )

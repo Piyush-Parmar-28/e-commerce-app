@@ -7,8 +7,6 @@ import Categories from '../components/HomePage/Categories'
 import ContactMe from '../components/HomePage/ContactMe'
 import FlashDeals from '../components/HomePage/FlashDeals'
 import TopPicks from '../components/HomePage/TopPicks'
-import Footer from '../components/Common_Components/Footer'
-
 
 const Home = () => {
     return (
