@@ -4,7 +4,8 @@ const imageSchema = new mongoose.Schema({
     id:{
         type: String
     },
-    image: {
+    
+    Image: {
         type: Buffer
     }
 
@@ -15,8 +16,6 @@ imageSchema.statics.getImage = async (id)=>{
     return products
 }
 
+const ImageObj = mongoose.model('Image', imageSchema)
 
-
-const Image = mongoose.model('Image', imageSchema)
-
-module.exports = Image
+module.exports = ImageObj

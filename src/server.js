@@ -11,7 +11,7 @@ const upload = multer()
 // Using Mongoose Models ---------------------------------------------------------------------------------
 const UserObj = require('./models/user')
 const ProductObj = require('./models/product')
-const Image = require('./userModels/images')
+const ImageObj = require('./models/images')
 
 // CREATING SERVER ----------------------------------------------------------------------------------
 var app = express()
@@ -232,41 +232,44 @@ app.post("/saveImage", (req, res) => {
 })
 
 //  7. Add Products Route
-app.post('/addProducts',(req,res)=>{
-    const products = new ProductObj({
-        product: req.body.product,
-        category: req.body.category,
-        price: req.body.price,
-        ratings: req.body.ratings,
-        offers: req.body.offers,
-        image: req.body.image,
-        desc: req.body.desc,
-    })
-    products.save().then(()=>{
-        res.send('product Added!')
-    }).catch((e)=>{
-        res.send(e)
-    })
-})
+// app.post('/addProduct',(req,res)=>{
+//     const products = new ProductObj({
+//         product: req.body.product,
+//         category: req.body.category,
+//         price: req.body.price,
+//         ratings: req.body.ratings,
+//         offers: req.body.offers,
+//         image: req.body.image,
+//         desc: req.body.desc,
+//     })
+//     products.save().then(()=>{
+//         res.send('product Added!')
+//     }).catch((e)=>{
+//         res.send(e)
+//     })
+// })
 
 //  8. Add Products Route
-app.post('/addProducts',upload.single('image'),(req,res)=>{
+app.post('/addProduct',upload.single('image'),(req,res)=>{
     const id = new ObjectId()
 
-    const products = new Product({
-        product: req.body.product,
-        category: req.body.category,
-        price: req.body.price,
-        ratings: req.body.ratings,
-        offers: req.body.offers,
-        image: id,
-        desc: req.body.desc,
+    const products = new ProductObj({
+        Product: req.body.product,
+        Category: req.body.category,
+        Price: req.body.price,
+        Ratings: req.body.ratings,
+        Offers: req.body.offers,
+        ImageID: id,
+        Desc: req.body.desc,
     })
-    const imageData = new Image({
+
+    const imageData = new ImageObj({
         id,
-        image: req.file.buffer
+        Image: req.file.buffer
     })
+
     imageData.save()
+
     products.save().then(()=>{
         res.send('product Added!')
     }).catch((e)=>{
