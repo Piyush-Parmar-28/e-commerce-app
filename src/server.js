@@ -5,10 +5,13 @@ const bodyParser = require("body-parser")
 var ObjectId = require('mongodb').ObjectId;
 var cors = require('cors');
 const port = process.env.PORT || 8000
+const multer = require('multer');
+const upload = multer()
 
 // Using Mongoose Models ---------------------------------------------------------------------------------
 const UserObj = require('./models/user')
 const ProductObj = require('./models/product')
+const Image = require('./userModels/images')
 
 // CREATING SERVER ----------------------------------------------------------------------------------
 var app = express()
@@ -246,7 +249,44 @@ app.post('/addProducts',(req,res)=>{
     })
 })
 
-//  8. Get Products Route
+//  8. Add Products Route
+app.post('/addProducts',upload.single('image'),(req,res)=>{
+    const id = new ObjectId()
+
+    const products = new Product({
+        product: req.body.product,
+        category: req.body.category,
+        price: req.body.price,
+        ratings: req.body.ratings,
+        offers: req.body.offers,
+        image: id,
+        desc: req.body.desc,
+    })
+    const imageData = new Image({
+        id,
+        image: req.file.buffer
+    })
+    imageData.save()
+    products.save().then(()=>{
+        res.send('product Added!')
+    }).catch((e)=>{
+        res.send(e)
+    })
+})
+
+//  9. Get Image Route
+app.get('/add/:id/image',async(req,res)=>{
+
+    const id = req.params.id
+    console.log(id)
+    const product = await Image.findOne({id})
+    console.log('getting Image')
+    res.set('Content-Type','image/jpg')
+    res.send(product.image)
+
+})
+
+//  10. Get Products Route
 app.get('/get',async(req,res)=>{
     res.set({
         'Access-Control-Allow-Origin': '*'

@@ -8,14 +8,14 @@ import LoginSignUp from "./pages/LoginSignUp";
 import Cart from "./pages/Cart"
 import ProfilePage from "./pages/ProfilePage";
 import UpdateInfo from "./pages/UpdateInfo";
-import AddProducts from "./components/Forms/AddProducts";
+import AddProducts from "./pages/AddProducts";
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
                 <Route exact path="/" element={<LoginSignUp />} />
-                <Route exact path="/add" element={<AddProducts />} />
+                <Route exact path="add" element={<AddProducts />} />
                 <Route exact path="home" element={<Home />} />
                 <Route exact path="products" element={<ProductsPage />} />
                 <Route exact path="selected" element={<SelectedProduct />} />

@@ -12,7 +12,7 @@ const AddProducts = (props) => {
                         desc="Insert Product Details..."
                     ></PageTitle>
 
-                    {/* In forms, name filed is very Important, because it is used in 'req.body.' while connecting to database */}
+                    {/* In forms, name field is very Important, because it is used in 'req.body.' while connecting to database */}
                     <form method="post" className="card-style" action="/signUp">
 
                         <div className="row">
@@ -54,7 +54,8 @@ const AddProducts = (props) => {
 
                         <div className="mb-3">
                             <label className="form-label"><b>Image</b></label>
-                            <input className="form-control item" type="text" name="image" placeholder='Add Image URL' />
+                            
+                            <input class="form-control item" type="file" name="image" placeholder='select image' accept="image/png, image/jpeg"/>
                         </div>
 
                         <div className="mb-3">
