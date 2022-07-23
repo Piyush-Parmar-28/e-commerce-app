@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
-import Navbar from '../components/Common_Components/Navbar'
 import ProductsForm from "../components/Forms/ProductsForm"
 import Footer from '../components/Common_Components/Footer'
 
 const AddProducts = () => {
     return (
-        <div>
-            <Navbar></Navbar>
+
+        // Fragment just wraps our code
+        //  It is used to remove unnecessary divs
+        <Fragment>
             <ProductsForm></ProductsForm>
             <Footer></Footer>
-        </div>
+        </Fragment>
     )
 }
 

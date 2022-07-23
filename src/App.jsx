@@ -9,6 +9,7 @@ import Cart from "./pages/Cart"
 import ProfilePage from "./pages/ProfilePage";
 import UpdateInfo from "./pages/UpdateInfo";
 import AddProducts from "./pages/AddProducts";
+import Get from "./pages/Get"
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
             <Routes>
                 <Route exact path="/" element={<LoginSignUp />} />
                 <Route exact path="add" element={<AddProducts />} />
+                <Route exact path="get" element={<Get />} />
                 <Route exact path="home" element={<Home />} />
                 <Route exact path="products" element={<ProductsPage />} />
                 <Route exact path="selected" element={<SelectedProduct />} />

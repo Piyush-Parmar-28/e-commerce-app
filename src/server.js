@@ -232,24 +232,6 @@ app.post("/saveImage", (req, res) => {
 })
 
 //  7. Add Products Route
-// app.post('/addProduct',(req,res)=>{
-//     const products = new ProductObj({
-//         product: req.body.product,
-//         category: req.body.category,
-//         price: req.body.price,
-//         ratings: req.body.ratings,
-//         offers: req.body.offers,
-//         image: req.body.image,
-//         desc: req.body.desc,
-//     })
-//     products.save().then(()=>{
-//         res.send('product Added!')
-//     }).catch((e)=>{
-//         res.send(e)
-//     })
-// })
-
-//  8. Add Products Route
 app.post('/addProduct',upload.single('image'),(req,res)=>{
     const id = new ObjectId()
 
@@ -277,19 +259,19 @@ app.post('/addProduct',upload.single('image'),(req,res)=>{
     })
 })
 
-//  9. Get Image Route
+//  8. Get Image Route
 app.get('/add/:id/image',async(req,res)=>{
 
     const id = req.params.id
     console.log(id)
-    const product = await Image.findOne({id})
+    const product = await ImageObj.findOne({id})
     console.log('getting Image')
     res.set('Content-Type','image/jpg')
-    res.send(product.image)
-
+    console.log(product);
+    res.send(product.Image)
 })
 
-//  10. Get Products Route
+//  9. Get Products Route
 app.get('/get',async(req,res)=>{
     res.set({
         'Access-Control-Allow-Origin': '*'

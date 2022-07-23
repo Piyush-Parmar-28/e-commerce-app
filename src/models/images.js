@@ -12,7 +12,7 @@ const imageSchema = new mongoose.Schema({
 })
 
 imageSchema.statics.getImage = async (id)=>{
-    const products = await Image.findOne({id})
+    const products = await ImageObj.findOne({id})
     return products
 }
 
