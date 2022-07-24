@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+
+import ProfileImage from './ProfileImage';
 import axios from 'axios';
 
 const UserDetails = () => {
@@ -21,14 +23,18 @@ const UserDetails = () => {
                 userDetails.map((contents) => {
                     return (
                         <div key={contents._id}>
+                            
+                            {/* Getting Profile Image based on Avatar or Uploaded Image */}
+                            {
+                                contents.ImageURL != "" ? 
+                                    <ProfileImage
+                                        imgSrc= {contents.ImageURL}
+                                    ></ProfileImage> : 
 
-                            {contents.ImageURL != "" ? <div className="d-flex justify-content-center pb-4">
-                                <img src={contents.ImageURL} className="rounded-circle" style={{ height: "220px", width: "220px", }} />
-                            </div> : <div className="d-flex justify-content-center pb-4">
-                                <img src={"data:image/gif;base64,"+contents.ImageData} className="rounded-circle" style={{ height: "220px", width: "220px", }} />
-                            </div>}
-
-
+                                    <ProfileImage
+                                        imgSrc= {"data:image/gif;base64,"+contents.ImageData}
+                                    ></ProfileImage>
+                            }
 
                             <form action="/profile" method="post" className="card-style">
                                 <div className="mb-2 d-flex">
