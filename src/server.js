@@ -101,7 +101,8 @@ app.post("/signUp", (req, res) => {
         City : req.body.City,
         Country : req.body.Country,
         Address : req.body.Address,
-        ImageURL: "https://api.multiavatar.com/" + Math.floor(Math.random() * 1000000) + ".svg"
+        ImageURL: "https://api.multiavatar.com/" + Math.floor(Math.random() * 1000000) + ".svg",
+        ImageData: 0
     })
 
     user.save().then(()=>{
@@ -148,7 +149,7 @@ app.get('/getProfile', async (req, res) => {
 })
 
 //  5. Update User Details Route
-app.post("/updateDetails", async (req, res) => {
+app.post("/updateDetails", upload.single("image"), async (req, res) => {
     res.set({
         "Access-Control-Allow-Origin": "*"
     })
@@ -164,6 +165,8 @@ app.post("/updateDetails", async (req, res) => {
     var country = req.body.country
     var address = req.body.address
 
+    console.log("req.file: "+ req.file);
+    var image= req.file.buffer
 
     console.log("\n\nIn Update Details Route.");
     console.log("fName: " + fName);
@@ -207,6 +210,15 @@ app.post("/updateDetails", async (req, res) => {
     if (address != "") {
         db.collection("users").updateOne({ _id: ObjectId(data) }, { $set: { Address: address} })
     }
+
+    if (image != 0) {
+
+        // If we have uploaded an image, then set avatar to be null
+        db.collection("users").updateOne({ _id: ObjectId(data) }, { $set: { ImageURL: ""} })
+
+        // Save the uploaded image in ImageData
+        db.collection("users").updateOne({ _id: ObjectId(data) }, { $set: { ImageData: image} })
+    }
   
     res.redirect("/profile")
 
@@ -226,7 +238,11 @@ app.post("/saveImage", (req, res) => {
 
     // console.log(myImageURL);
 
+    // Updating the Avatar
     db.collection("users").updateOne({ _id: ObjectId(data) }, { $set: { ImageURL: myImageURL } })
+
+    //  If there is a previously uploaded profile image, then remove it.
+    db.collection("users").updateOne({ _id: ObjectId(data) }, { $set: { ImageData: 0 } })
 
     res.redirect("/profile")
 })

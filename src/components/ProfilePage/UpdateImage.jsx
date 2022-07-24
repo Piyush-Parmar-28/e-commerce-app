@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import PageTitle from "../Common_Components/PageTitle"
 import ImageCard from './ImageCard';
@@ -33,7 +33,6 @@ const UpdateImage = (props) => {
                         title="Change Avatar"
                     ></PageTitle>
 
-
                     <div className="row row-cols-3 row-cols-lg-6 g-5 g-lg-4">
 
                         {
@@ -64,15 +63,16 @@ const UpdateImage = (props) => {
 
                 <div className="d-flex justify-content-evenly flex-wrap mt-2">
 
-                    <div className="mt-5 col-5">
-                        <h2 className="text-info d-flex justify-content-center">Profile Photo</h2>
-                        <p className=" d-flex justify-content-center">Selected Profile Photo...</p>
+                    {/* Selected Avatar */}
+                    <div className="mt-5 col-12 col-lg-6">
+                        <h2 className="text-info d-flex justify-content-center">Select Avatar</h2>
+                        <p className=" d-flex justify-content-center">Select Avatar as Profile Photo...</p>
 
                         <form action="/saveImage" method='post' className="card-style">
                             <div className="d-flex justify-content-center mb-4">
                                 <img className="mb-1" style={{ height: "150px", width: "150px" }} src={selectedImage.image}></img>
                             </div>
-                            <input className="form-control item d-none" type="text" id="email" name="mySelectedImage" defaultValue={selectedImage.image} required />
+                            <input className="form-control item d-none" type="text" name="mySelectedImage" defaultValue={selectedImage.image} />
 
                             <div className="d-flex justify-content-between mt-4">
                                 <Link to='/update'>

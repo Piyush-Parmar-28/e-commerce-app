@@ -29,6 +29,9 @@ const userSchema = new mongoose.Schema({
     ImageURL: {
         type: String
     },
+    ImageData:{
+        type: Buffer
+    },
     tokens: [{
         token: {
             type: String,
