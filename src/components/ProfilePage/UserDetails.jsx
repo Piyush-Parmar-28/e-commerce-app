@@ -6,26 +6,29 @@ const UserDetails = () => {
     //  (Refer point 1 from Image-Route.js)
     //  2. Hum API de saara data yaha get kar rahe hai.
     const url = '/getProfile';
-    const [imageSrc, setImageSrc] = useState([]);
+    const [userDetails, setUserDetails] = useState([]);
 
     useEffect(() => {
         axios.get(url).then(res => {
-            setImageSrc(res.data);
+            setUserDetails(res.data);
         })
-    }, [])
 
-    // console.log(imageSrc);
+    }, [])
 
     return (
         <div className="container">
             {
-                imageSrc.map((contents) => {
-                    // console.log(contents);
+                userDetails.map((contents) => {
                     return (
                         <div key={contents._id}>
-                            <div className="d-flex justify-content-center pb-4">
+
+                            {contents.ImageURL != "" ? <div className="d-flex justify-content-center pb-4">
                                 <img src={contents.ImageURL} className="rounded-circle" style={{ height: "220px", width: "220px", }} />
-                            </div>
+                            </div> : <div className="d-flex justify-content-center pb-4">
+                                <img src={"data:image/gif;base64,"+contents.ImageData} className="rounded-circle" style={{ height: "220px", width: "220px", }} />
+                            </div>}
+
+
 
                             <form action="/profile" method="post" className="card-style">
                                 <div className="mb-2 d-flex">
