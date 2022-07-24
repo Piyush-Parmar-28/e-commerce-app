@@ -36,7 +36,7 @@ const UserDetails = () => {
                                     ></ProfileImage>
                             }
 
-                            <form action="/profile" method="post" className="card-style">
+                            <form action="/profile" className="card-style">
                                 <div className="mb-2 d-flex">
                                     <div>
                                         <b>Name:</b>
@@ -72,11 +72,11 @@ const UserDetails = () => {
                                     {/* Do not use href to redirect page, as it will refresh the page each time we redirect the page. */}
                                     {/* Use Link instead, as it will not redirect our page. */}
                                     <Link to="/update">
-                                        <button className="btn btn-warning" type="submit" href='/update'>Update Details</button>
+                                        <button className="btn btn-warning">Update Details</button>
                                     </Link>
 
                                     <Link to="/">
-                                        <button className="btn btn-danger" type="submit">LogOut</button>
+                                        <button className="btn btn-danger">LogOut</button>
                                     </Link>
 
                                 </div>

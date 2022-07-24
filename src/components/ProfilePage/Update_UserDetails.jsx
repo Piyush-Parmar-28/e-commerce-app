@@ -10,7 +10,7 @@ const User_Details = () => {
             <h2 className="text-info d-flex justify-content-center">Update Details</h2>
             <p className=" d-flex justify-content-center">Edit Details to be Updated...</p>
 
-            <form action="/updateDetails" className="card-style" enctype="multipart/form-data" method="post">
+            <form action="/updateDetails" className="card-style" encType="multipart/form-data" method="post">
 
                 <div className="row">
                     <div className="col mb-3">

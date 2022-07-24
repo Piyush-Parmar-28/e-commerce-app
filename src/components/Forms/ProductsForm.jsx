@@ -13,7 +13,7 @@ const AddProducts = (props) => {
                     ></PageTitle>
 
                     {/* In forms, 'name' field is very Important, because it is used in 'req.body.' while connecting to database */}
-                    <form method="post" className="card-style" enctype="multipart/form-data" action="/addProduct">
+                    <form method="post" className="card-style" encType="multipart/form-data" action="/addProduct">
 
                         <div className="row">
                             <div className="mb-3"><label className="form-label" ><strong>Product Name</strong></label><input className="form-control" type="text" placeholder="Jacket" name="product" /></div>
