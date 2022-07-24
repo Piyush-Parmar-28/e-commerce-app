@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import { profileAvatar } from '../../Data';
 import PageTitle from "../Common_Components/PageTitle"
-import ImageCard from './ImageCard';
+import AvatarCard from './AvatarCard';
 import Update_UserDetails from "./Update_UserDetails"
-import { profileImage } from '../../Data';
-
 import RefreshIcon from '@mui/icons-material/Refresh';
 
 const UpdateImage = (props) => {
@@ -28,7 +27,10 @@ const UpdateImage = (props) => {
     return (
         <main className="page login-page">
             <section className="clean-block clean-form dark m-0">
+
+                {/* Container for Avatar Card */}
                 <div className="container">
+
                     <PageTitle
                         title="Change Avatar"
                     ></PageTitle>
@@ -36,7 +38,7 @@ const UpdateImage = (props) => {
                     <div className="row row-cols-3 row-cols-lg-6 g-5 g-lg-4">
 
                         {
-                            profileImage.map((contents) => {
+                            profileAvatar.map((contents) => {
 
                                 if (contents.src === selectedImage.image) {
                                     selectedImageBorder = selectedImage.myStyle
@@ -46,7 +48,7 @@ const UpdateImage = (props) => {
                                 }
 
                                 return (
-                                    <ImageCard
+                                    <AvatarCard
                                         key={contents.id}
                                         ImgSrc={contents.src}
                                         ImgAltText={contents.altText}
@@ -69,9 +71,11 @@ const UpdateImage = (props) => {
                         <p className=" d-flex justify-content-center">Select Avatar as Profile Photo...</p>
 
                         <form action="/saveImage" method='post' className="card-style">
+
                             <div className="d-flex justify-content-center mb-4">
                                 <img className="mb-1" style={{ height: "150px", width: "150px" }} src={selectedImage.image}></img>
                             </div>
+
                             <input className="form-control item d-none" type="text" name="mySelectedImage" defaultValue={selectedImage.image} />
 
                             <div className="d-flex justify-content-between mt-4">
@@ -85,7 +89,9 @@ const UpdateImage = (props) => {
 
                     </div>
 
+                    {/* Update Details Form */}
                     <Update_UserDetails />
+                    
                 </div>
 
             </section>

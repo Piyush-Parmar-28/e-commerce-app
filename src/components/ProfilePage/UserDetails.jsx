@@ -36,6 +36,7 @@ const UserDetails = () => {
                                     ></ProfileImage>
                             }
 
+                            {/* User Details */}
                             <form action="/profile" className="card-style">
                                 <div className="mb-2 d-flex">
                                     <div>
@@ -81,12 +82,12 @@ const UserDetails = () => {
 
                                 </div>
                             </form>
+
                         </div>
                     )
 
                 })
             }
-
 
         </div>
     )

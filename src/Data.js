@@ -89,7 +89,7 @@ var productsData = [
     },
 ]
 
-var profileImage = [
+var profileAvatar = [
     {
         id: 1,
         src: "https://api.multiavatar.com/" + Math.floor(Math.random() * 1000000) + ".svg",
@@ -132,4 +132,4 @@ var profileImage = [
     },
 ]
 
-export { sliderData, productsData, profileImage }
+export { sliderData, productsData, profileAvatar }

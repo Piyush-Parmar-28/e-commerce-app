@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const ImageCard = (props) => {
+const AvatarCard = (props) => {
 
     return (
         <div className="col" >
@@ -16,4 +16,4 @@ const ImageCard = (props) => {
     )
 }
 
-export default ImageCard
+export default AvatarCard
