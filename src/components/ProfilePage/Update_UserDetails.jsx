@@ -7,8 +7,8 @@ const User_Details = () => {
     return (
         <div className="mt-5 col-5">
 
-            <h2 className="text-info d-flex justify-content-center">User Details</h2>
-            <p className=" d-flex justify-content-center">Update User Details...</p>
+            <h2 className="text-info d-flex justify-content-center">Update Details</h2>
+            <p className=" d-flex justify-content-center">Edit Details to be Updated...</p>
 
             <form action="/updateDetails" className="card-style" method="post">
 

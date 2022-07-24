@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import {Link} from 'react-router-dom'
+
 import PageTitle from "../Common_Components/PageTitle"
 import ImageCard from './ImageCard';
 import Update_UserDetails from "./Update_UserDetails"
@@ -73,9 +75,9 @@ const UpdateImage = (props) => {
                             <input className="form-control item d-none" type="text" id="email" name="mySelectedImage" defaultValue={selectedImage.image} required />
 
                             <div className="d-flex justify-content-between mt-4">
-                                <a href='/update'>
+                                <Link to='/update'>
                                     <button className="btn btn-primary" type="submit">Refresh <RefreshIcon /></button>
-                                </a>
+                                </Link>
 
                                 <button className="btn btn-primary" type="submit">Set Profile</button>
                             </div>

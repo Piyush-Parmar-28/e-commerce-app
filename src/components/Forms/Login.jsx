@@ -3,6 +3,11 @@ import React from 'react'
 import PageTitle from "../Common_Components/PageTitle"
 
 const Login = (props) => {
+
+    // preventReload= (event)=>{
+    //     event.preventDefault();
+    // }
+
     return (
         <main >
             <section className="card-block dark-bg" style={{height:'100vh',paddingTop:'5%'}} >
@@ -13,7 +18,8 @@ const Login = (props) => {
                         desc="Log In to continue..."
                     ></PageTitle>
 
-                    <form id='myForm' className="card-style" action="/login" method="post">
+                    {/* onSubmit={preventReload} */}
+                    <form className="card-style" action="/login" method="post">
                         <div className="mb-3">
                             <label className="form-label" ><b>Email</b></label>
                             <input className="form-control item" type="email" id="email" name="Email" required />

@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom'
+
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -30,7 +32,9 @@ export default function Navbar2(props) {
                     <Toolbar>
 
                         <div className="container-fluid d-flex justify-content-center" >
-                            <a className="navbar-brand text-black" href="#">Sliver Shop</a>
+                            <Link to="/">
+                                <h5 className="text-black">Sliver Shop</h5>
+                            </Link>
                         </div>
 
                     </Toolbar>

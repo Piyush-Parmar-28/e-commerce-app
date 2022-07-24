@@ -40,7 +40,9 @@ export default function Navbar(props) {
                         <div className="container-fluid d-flex justify-content-between" >
 
                             <div>
-                                <a className="navbar-brand text-black" href="/home">Sliver Store</a>
+                                <Link to= "/home">
+                                    <h5 className="text-black">Sliver Store</h5>
+                                </Link>
                             </div>
 
                             <div>
