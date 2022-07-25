@@ -32,7 +32,7 @@ const UserDetails = () => {
                                     ></ProfileImage> : 
 
                                     <ProfileImage
-                                        imgSrc= {"data:image/gif;base64,"+contents.ImageData}
+                                        imgSrc= {"data:image/jpg;image/png;base64,"+contents.ImageData}
                                     ></ProfileImage>
                             }
 
