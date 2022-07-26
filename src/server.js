@@ -295,7 +295,14 @@ app.get('/get',async(req,res)=>{
     const products = await ProductObj.getAllproducts();
     console.log(products);
     res.json(products)
+})
 
+//  10. Get Particular Product
+app.get("/selected/:data", async(req, res) =>{
+    var myData= req.params.data;
+    console.log("myData is: "+ myData);
+
+    res.send("hello")
 })
 
 // ROUTES ENDS HERE ----------------------------------------------------------------------------------------

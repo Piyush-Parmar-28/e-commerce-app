@@ -17,19 +17,19 @@ const Products = (props) => {
     }, [])
 
     function filterElectronics(){
-        setProducts(allProducts.filter(data=>data.Category=='electronics'))
+        setProducts(allProducts.filter(data=>data.Category==='electronics'))
     }
     function filterFurniture(){
-        setProducts(allProducts.filter(data=>data.Category=='furniture'))
+        setProducts(allProducts.filter(data=>data.Category==='furniture'))
     }
     function filterFashion(){
-        setProducts(allProducts.filter(data=>data.Category=='fashion'))
+        setProducts(allProducts.filter(data=>data.Category==='fashion'))
     }
     function filterKitchen(){
-        setProducts(allProducts.filter(data=>data.Category=='kitchen'))
+        setProducts(allProducts.filter(data=>data.Category==='kitchen'))
     }
     function filterHomeDecor(){
-        setProducts(allProducts.filter(data=>data.Category=='homeDecor'))
+        setProducts(allProducts.filter(data=>data.Category==='homeDecor'))
     }
     function getAll(){
         setProducts(allProducts)
@@ -67,6 +67,7 @@ const Products = (props) => {
                                                 return (
                                                     <Catalog_Image
                                                         key= {contents._id}
+                                                        productID= {contents._id}
                                                         myImageID= {contents.ImageID}
                                                         starValue= {contents.Ratings}
                                                         productName= {contents.Product}

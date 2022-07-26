@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import PageTitle from "../Common_Components/PageTitle"
+import Image from '../../pages/Image'
 import Catalog_Image from '../ProductsPage/Catalog_Image';
 import Comment from './Comment';
 import Star_Rating from '../Common_Components/Star_Rating';
@@ -9,6 +10,26 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 const ProductInfo = () => {
+
+    console.log("url is: " + window.location.search);
+    const [product, setProduct]= useState([])
+
+    useEffect(() => {
+        var myUrl= window.location.search;
+        var arr= myUrl.split("=")
+        // console.log("array is: "+ arr[1]);
+
+        fetch(`/selected/${arr[1]}`).then(data => data.json()).then(myData => {
+            setProduct(myData)
+        })
+
+    }, [])
+
+
+    // useEffect( ()=>{
+        
+    // }, [] )
+
     return (
         <main className="page product-page">
             <section className="clean-block clean-product dark-bg pt-0">
@@ -26,7 +47,9 @@ const ProductInfo = () => {
 
                                 {/* Image Gallery */}
                                 <div className="col-md-6 dark-bg ">
-                                 
+                                    {/* <Image>
+                                       
+                                    </Image> */}
                                 </div>
 
                                 {/* Description */}
@@ -151,11 +174,11 @@ const ProductInfo = () => {
                             <h3 className="d-flex justify-content-center">Related Products</h3>
 
                             <div className="items">
-                                <div className="row justify-content-center">
+                                {/* <div className="row justify-content-center">
                                     <Catalog_Image></Catalog_Image>
                                     <Catalog_Image></Catalog_Image>
                                     <Catalog_Image></Catalog_Image>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
 
