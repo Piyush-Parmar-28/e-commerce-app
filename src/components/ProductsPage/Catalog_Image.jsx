@@ -2,14 +2,8 @@ import React, { useState } from 'react'
 
 import Image from '../../pages/Image'
 import Rating from '@mui/material/Rating';
-import { useEffect } from 'react';
 
 const Catalog_Image = (props) => {
-
-    // const [key, updateKey]= useState("")
-    // useEffect( ()=>{
-    //     updateKey(props.key)
-    // }, [])
 
     return (
 
@@ -22,18 +16,25 @@ const Catalog_Image = (props) => {
                     </a>
                 </div>
 
-                <h5 className="d-flex justify-content-center mb-3">{props.productName}</h5>
+                <h5 className="d-flex justify-content-center mb-3"><b>{props.productName}</b></h5>
 
                 <div className="d-flex justify-content-between">
-                    <Rating name="read-only" precision={0.5} value={props.starValue} readOnly />
+                    <Rating name="read-only" size= "small" precision={0.5} value={props.starValue} readOnly />
+
                     <div>
-                        <h5><b>$ {props.itemPrice}</b></h5>
+                        <h6>$ {props.itemPrice}</h6>
                     </div>
                 </div>
 
                 <form action='/selected' method='get'>
-                    <input name='selectedProduct' type="text" value={props.productID} ></input>
-                    <button type='submit'>Go to Home</button>
+                    <input className='d-none' name='selectedProduct' type="text" value={props.productID} ></input>
+
+                    <div className='d-flex justify-content-between'>
+                        <button type="submit" class="btn btn-primary btn-sm">Details</button>
+                        <button type="submit" class="btn btn-danger btn-sm">Cart</button>
+                    </div>
+                    
+
                 </form>
 
             </div>
