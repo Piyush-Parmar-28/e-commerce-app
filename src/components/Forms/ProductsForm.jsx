@@ -67,6 +67,36 @@ const AddProducts = (props) => {
                             <div className="col">
                                 <div className="mb-3">
                                     <label className="form-label">
+                                        <b>Tags</b>
+                                    </label>
+                                    <input
+                                        className="form-control item"
+                                        type="text"
+                                        placeholder="Laptop, Computer, ..."
+                                        name="tag"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="col">
+                                <div className="mb-3">
+                                    <label className="form-label">
+                                        <b>Brand</b>
+                                    </label>
+                                    <input
+                                        className="form-control item"
+                                        type="text"
+                                        placeholder="Dell"
+                                        name="brand"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row">
+                            <div className="col">
+                                <div className="mb-3">
+                                    <label className="form-label">
                                         <b>Ratings</b>
                                     </label>
                                     <input
