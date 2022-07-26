@@ -25,7 +25,7 @@ const Catalog_Image = (props) => {
                 <h5 className="d-flex justify-content-center mb-3">{props.productName}</h5>
 
                 <div className="d-flex justify-content-between">
-                    <Rating name="read-only" value={props.starValue} readOnly />
+                    <Rating name="read-only" precision={0.5} value={props.starValue} readOnly />
                     <div>
                         <h5><b>$ {props.itemPrice}</b></h5>
                     </div>
