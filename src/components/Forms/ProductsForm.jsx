@@ -55,7 +55,7 @@ const AddProducts = (props) => {
                         <div className="mb-3">
                             <label className="form-label"><b>Image</b></label>
                             
-                            <input class="form-control item" type="file" name="image" placeholder='select image' accept="image/png, image/jpeg"/>
+                            <input className="form-control item" type="file" name="image" placeholder='select image' accept="image/png, image/jpeg"/>
                         </div>
 
                         <div className="mb-3">

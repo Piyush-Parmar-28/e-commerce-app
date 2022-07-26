@@ -45,7 +45,9 @@ const Products = (props) => {
 
                                                 return (
                                                     <Catalog_Image
+                                                        key= {contents._id}
                                                         myImageID= {contents.ImageID}
+                                                        starValue= {contents.Ratings}
                                                         productName= {contents.Product}
                                                         itemPrice= {contents.Price}
                                                     />
@@ -53,16 +55,6 @@ const Products = (props) => {
 
                                             })
                                         }
-
-                                        {/* <Catalog_Image />
-                                        <Catalog_Image />
-                                        <Catalog_Image />
-                                        <Catalog_Image />
-                                        <Catalog_Image />
-                                        <Catalog_Image />
-                                        <Catalog_Image />
-                                        <Catalog_Image />
-                                        <Catalog_Image /> */}
                                     </div>
 
                                     {/* Pagination */}

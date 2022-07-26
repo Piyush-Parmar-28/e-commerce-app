@@ -17,7 +17,6 @@ const Image = (props) => {
 
     return (
         <div className="d-flex justify-content-center">
-            {/* className="img-fluid d-block mx-auto" */}
             <img className="mx-auto" style={{width: "100px", height: "100px"}} src={img} alt="image not loaded" />
         </div>
     );

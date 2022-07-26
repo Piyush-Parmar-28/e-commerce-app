@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Image from '../../pages/Image'
-import Star_Rating from '../Common_Components/Star_Rating'
+import Rating from '@mui/material/Rating';
 
 const Catalog_Image = (props) => {
     return (
@@ -18,7 +18,8 @@ const Catalog_Image = (props) => {
                 <h5 className="d-flex justify-content-center mb-3">{props.productName}</h5>
 
                 <div className="d-flex justify-content-between">
-                    <Star_Rating />
+                    <Rating name="read-only" value={props.starValue} readOnly />
+
 
                     <div>
                         <h5><b>$ {props.itemPrice}</b></h5>
