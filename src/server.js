@@ -300,9 +300,13 @@ app.get('/get',async(req,res)=>{
 //  10. Get Particular Product
 app.get("/selected/:data", async(req, res) =>{
     var myData= req.params.data;
-    console.log("myData is: "+ myData);
+    // console.log("myData is: "+ myData);
 
-    res.send("hello")
+    const product= await ProductObj.findOne( {_id: ObjectId(myData) } )
+    const productArray= [product]
+    
+    // console.log("hello: "+ productArray)
+    res.send(productArray)
 })
 
 // ROUTES ENDS HERE ----------------------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 
 import PageTitle from "../Common_Components/PageTitle"
 import Image from '../../pages/Image'
@@ -11,13 +11,13 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 const ProductInfo = () => {
 
-    console.log("url is: " + window.location.search);
-    const [product, setProduct]= useState([])
+    //  window.location.search is used here to get the query (productID here) from the URL
+    // console.log("url is: " + window.location.search);
+    const [product, setProduct] = useState([])
 
     useEffect(() => {
-        var myUrl= window.location.search;
-        var arr= myUrl.split("=")
-        // console.log("array is: "+ arr[1]);
+        var myUrl = window.location.search;
+        var arr = myUrl.split("=")
 
         fetch(`/selected/${arr[1]}`).then(data => data.json()).then(myData => {
             setProduct(myData)
@@ -25,10 +25,6 @@ const ProductInfo = () => {
 
     }, [])
 
-
-    // useEffect( ()=>{
-        
-    // }, [] )
 
     return (
         <main className="page product-page">
@@ -45,45 +41,62 @@ const ProductInfo = () => {
                         <div className="product-info">
                             <div className="row">
 
-                                {/* Image Gallery */}
-                                <div className="col-md-6 dark-bg ">
-                                    {/* <Image>
-                                       
-                                    </Image> */}
-                                </div>
+                                {
+                                    product.map((contents) => {
+                                        return (
+                                            <Fragment key={contents._id}>
+                                                {/* Image Gallery */}
+                                                <div className="col-md-6 dark-bg">
 
-                                {/* Description */}
-                                <div className="col-md-6">
-                                    <div className='d-flex justify-content-center '>
-                                        <h3>Lorem Ipsum</h3>
-                                    </div>
+                                                    <div className='d-flex justify-content-center align-items-center mt-auto'>
+                                                        <Image
+                                                            photoID={contents.ImageID}
+                                                        ></Image>
+                                                    </div>
 
-                                    <div className='d-flex justify-content-between mt-2'>
-                                        <Star_Rating></Star_Rating>
-                                        <div><h5>$300.00</h5></div>
-                                    </div>
+                                                </div>
 
-                                    <hr></hr>
+                                                {/* Description */}
+                                                <div className="col-md-6">
+                                                    <div className='d-flex justify-content-center '>
+                                                        <h3>{contents.Product}</h3>
+                                                    </div>
 
-                                    <div className="m-2 p-2">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec augue nunc, pretium at augue at, convallis pellentesque ipsum. Vestibulum diam risus, sagittis at fringilla at, pulvinar vel risus. Vestibulum dignissim eu nulla eu imperdiet. Morbi mollis tellus a nunc vestibulum consequat. Quisque tristique elit et nibh dapibus sodales. Nam sollicitudin a urna sed iaculis.</p>
-                                    </div>
+                                                    <div className='d-flex justify-content-between mt-2'>
+                                                        <Star_Rating></Star_Rating>
+                                                        <div><h5>$ {contents.Price}</h5></div>
+                                                    </div>
 
-                                    <hr></hr>
+                                                    <hr></hr>
 
-                                    <div className='d-flex justify-content-around '>
-                                        <button className="btn btn-primary d-flex justify-content-between" type="button">
-                                            <AttachMoneyIcon></AttachMoneyIcon>
-                                            Buy Now
-                                        </button>
+                                                    <div className="m-2 p-2">
+                                                        <p>{contents.Desc}</p>
+                                                    </div>
 
-                                        <button className="btn btn-danger d-flex justify-content-between" type="button">
-                                            <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
-                                            Add to Cart
-                                        </button>
-                                    </div>
+                                                    <hr></hr>
 
-                                </div>
+                                                    <div className='d-flex justify-content-around '>
+                                                        <button className="btn btn-primary d-flex justify-content-between" type="button">
+                                                            <AttachMoneyIcon></AttachMoneyIcon>
+                                                            Buy Now
+                                                        </button>
+
+                                                        <button className="btn btn-danger d-flex justify-content-between" type="button">
+                                                            <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
+                                                            Add to Cart
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+
+                                            </Fragment>
+                                        )
+                                    })
+                                }
+
+
+
+
 
                             </div>
                         </div>

@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 
 const Image = (props) => {
+    
     const imageUrl = `/add/${props.photoID}/image`;
     const [img, setImg] = useState();
+
+    useEffect(() => {
+        fetchImage();
+    }, []);
 
     const fetchImage = async () => {
         const res = await fetch(imageUrl);
@@ -10,10 +15,6 @@ const Image = (props) => {
         const imageObjectURL = URL.createObjectURL(imageBlob);
         setImg(imageObjectURL);
     };
-
-    useEffect(() => {
-        fetchImage();
-    }, []);
 
     return (
         <div className="d-flex justify-content-center">
