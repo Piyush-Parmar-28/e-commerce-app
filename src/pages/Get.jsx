@@ -21,7 +21,7 @@ const Get = () => {
                 photo={data.ImageID}
             ></Image>
 
-            {console.log(data.ImageID)}
+            {/* {console.log(data.ImageID)} */}
 
         </div>
     )

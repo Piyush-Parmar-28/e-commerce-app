@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
+import Image from '../../pages/Image'
 import PageTitle from '../Common_Components/PageTitle'
 import SortProducts from './SortProducts'
 import Filter_Products from './Filter_Products'
 import Catalog_Image from './Catalog_Image'
 
 const Products = (props) => {
+
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        fetch("/get").then(data => data.json()).then(myData => setProducts(myData))
+    }, [])
+
     return (
         <main className="page catalog-page">
             <section className="clean-block clean-catalog pt-0 ">
@@ -31,6 +39,22 @@ const Products = (props) => {
 
                                     {/* Catalog Images */}
                                     <div className="row g-3">
+
+                                        {
+                                            products.map((contents) => {
+
+                                                return (
+                                                    <Catalog_Image
+                                                        myImageID= {contents.ImageID}
+                                                        productName= {contents.Product}
+                                                        itemPrice= {contents.Price}
+                                                    />
+                                                )
+
+                                            })
+                                        }
+
+                                        {/* <Catalog_Image />
                                         <Catalog_Image />
                                         <Catalog_Image />
                                         <Catalog_Image />
@@ -38,8 +62,7 @@ const Products = (props) => {
                                         <Catalog_Image />
                                         <Catalog_Image />
                                         <Catalog_Image />
-                                        <Catalog_Image />
-                                        <Catalog_Image />
+                                        <Catalog_Image /> */}
                                     </div>
 
                                     {/* Pagination */}
@@ -67,8 +90,9 @@ const Products = (props) => {
                                             </a>
                                         </li>
                                     </ul> */}
-                                    
+
                                 </div>
+                                
                             </div>
                         </div>
                     </div>

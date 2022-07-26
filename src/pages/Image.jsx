@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const Image = (props) => {
-    const imageUrl = `/add/${props.photo}/image`;
+    const imageUrl = `/add/${props.photoID}/image`;
     const [img, setImg] = useState();
 
     const fetchImage = async () => {
@@ -16,9 +16,10 @@ const Image = (props) => {
     }, []);
 
     return (
-        <>
-            <img height="300px" src={img} alt="Image Not Loaded" />
-        </>
+        <div className="d-flex justify-content-center">
+            {/* className="img-fluid d-block mx-auto" */}
+            <img className="mx-auto" style={{width: "100px", height: "100px"}} src={img} alt="image not loaded" />
+        </div>
     );
 };
 export default Image

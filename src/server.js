@@ -283,7 +283,7 @@ app.get('/add/:id/image',async(req,res)=>{
     const product = await ImageObj.findOne({id})
     console.log('getting Image')
     res.set('Content-Type','image/jpg')
-    console.log(product);
+    // console.log(product);
     res.send(product.Image)
 })
 
