@@ -7,24 +7,6 @@ const SortProducts = () => {
 
 
                 <div className= "d-flex">
-                    <a className="navbar-brand">Filter:</a>
-
-                    <select className="form-select me-2" aria-label="Default select example">
-                        <option defaultValue={"noColor"}>Color</option>
-                        <option value={1}>Red</option>
-                        <option value={2}>Blue</option>
-                        <option value={3}>Green</option>
-                        <option value={4}>Yellow</option>
-                    </select>
-
-                    <select className="form-select" aria-label="Default select example">
-                        <option defaultValue={"noSize"}>Size</option>
-                        <option value={1}>XS</option>
-                        <option value={2}>S</option>
-                        <option value={3}>M</option>
-                        <option value={4}>L</option>
-                        <option value={5}>XL</option>
-                    </select>
 
                 </div>
 
