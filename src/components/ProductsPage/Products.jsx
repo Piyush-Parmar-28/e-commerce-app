@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 
-import Image from '../../pages/Image'
 import PageTitle from '../Common_Components/PageTitle'
 import SortProducts from './SortProducts'
 import Filter_Products from './Filter_Products'

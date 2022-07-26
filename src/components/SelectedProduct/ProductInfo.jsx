@@ -26,16 +26,7 @@ const ProductInfo = () => {
 
                                 {/* Image Gallery */}
                                 <div className="col-md-6 dark-bg ">
-                                    <div className="zoom">
-                                        <div className="zoomed-image"></div>
-
-                                        <div className="sidebar d-flex justify-content-center">
-                                            <img className="img-fluid d-block small-preview" src="img/tech/image1.jpg" />
-                                            <img className="img-fluid d-block small-preview" src="img/tech/image2.jpg" />
-                                            <img className="img-fluid d-block small-preview" src="img/tech/image3.png" />
-                                        </div>
-
-                                    </div>
+                                 
                                 </div>
 
                                 {/* Description */}
