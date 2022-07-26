@@ -1,18 +1,39 @@
 import React, { useEffect, useState } from 'react'
 
-import Image from '../../pages/Image'
 import PageTitle from '../Common_Components/PageTitle'
 import SortProducts from './SortProducts'
 import Filter_Products from './Filter_Products'
 import Catalog_Image from './Catalog_Image'
 
 const Products = (props) => {
-
+    const [allProducts, setAllProducts] = useState([])
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        fetch("/get").then(data => data.json()).then(myData => setProducts(myData))
+        fetch("/get").then(data => data.json()).then(myData => {
+            setProducts(myData)
+            setAllProducts(myData)
+        })
     }, [])
+
+    function filterElectronics(){
+        setProducts(allProducts.filter(data=>data.Category=='electronics'))
+    }
+    function filterFurniture(){
+        setProducts(allProducts.filter(data=>data.Category=='furniture'))
+    }
+    function filterFashion(){
+        setProducts(allProducts.filter(data=>data.Category=='fashion'))
+    }
+    function filterKitchen(){
+        setProducts(allProducts.filter(data=>data.Category=='kitchen'))
+    }
+    function filterHomeDecor(){
+        setProducts(allProducts.filter(data=>data.Category=='homeDecor'))
+    }
+    function getAll(){
+        setProducts(allProducts)
+    }
 
     return (
         <main className="page catalog-page">
@@ -30,7 +51,7 @@ const Products = (props) => {
                         <div className="row">
 
                             {/* Filter Products */}
-                            <Filter_Products></Filter_Products>
+                            <Filter_Products onElectronics={filterElectronics} onAll={getAll} onKitchen={filterKitchen} onFurniture={filterFurniture} onFashion={filterFashion} onHomeDecor={filterHomeDecor}></Filter_Products>
 
                             {/* Products Section */}
                             <div className="col-8 col-md-9">
