@@ -33,9 +33,13 @@ const ContactMe = () => {
                                         <div className="d-flex justify-content-center">
 
                                             <a className="contact-btn" href="#"><i className="bi bi-instagram p"></i></a>
+                                            
                                             <a className="contact-btn" href="https://github.com/Piyush-Parmar-28?tab=repositories" target="_blank"><i className="bi bi-github 2"></i></a>
+                                            
                                             <a className="contact-btn" href="https://www.linkedin.com/in/piyush-parmar-76b97820b/" target="_blank"><i className="bi bi-linkedin"></i></a>
+                                            
                                             <a className="contact-btn" href="https://www.linkedin.com/in/piyush-parmar-76b97820b/" target="_blank"><i className="bi bi-twitter"></i></a>
+                                            
                                             <a className="contact-btn" href="https://www.linkedin.com/in/piyush-parmar-76b97820b/" target="_blank"><i className="bi bi-whatsapp"></i></a>
 
                                         </div>

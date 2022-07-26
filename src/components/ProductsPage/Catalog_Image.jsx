@@ -31,7 +31,7 @@ const Catalog_Image = (props) => {
 
                     <div className='d-flex justify-content-between'>
                         <button type="submit" class="btn btn-primary btn-sm">Details</button>
-                        <button type="submit" class="btn btn-danger btn-sm">Cart</button>
+                        <button class="btn btn-danger btn-sm">Cart</button>
                     </div>
                     
 

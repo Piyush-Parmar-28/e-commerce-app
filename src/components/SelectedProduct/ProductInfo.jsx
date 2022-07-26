@@ -4,8 +4,7 @@ import PageTitle from "../Common_Components/PageTitle"
 import Image from '../../pages/Image'
 import Catalog_Image from '../ProductsPage/Catalog_Image';
 import Comment from './Comment';
-import Star_Rating from '../Common_Components/Star_Rating';
-
+import Rating from '@mui/material/Rating';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
@@ -63,7 +62,8 @@ const ProductInfo = () => {
                                                     </div>
 
                                                     <div className='d-flex justify-content-between mt-2'>
-                                                        <Star_Rating></Star_Rating>
+                                                        <Rating name="read-only" size= "small" precision={0.5} value={4} readOnly />
+
                                                         <div><h5>$ {contents.Price}</h5></div>
                                                     </div>
 

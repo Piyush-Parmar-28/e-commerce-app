@@ -1,11 +1,11 @@
 import React from 'react'
-import Star_Rating from '../Common_Components/Star_Rating';
+import Rating from '@mui/material/Rating';
 
 const Comment = () => {
     return (
         <div className="reviews box mt-4">
             <div className="p-4 review-item">
-                <Star_Rating></Star_Rating>
+            <Rating name="read-only" size= "small" precision={0.5} value={4} readOnly />
 
                 <h4>Incredible product</h4>
 
