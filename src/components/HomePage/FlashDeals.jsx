@@ -117,7 +117,6 @@ const FlashDeals = () => {
                                             title={contents.item}
                                             Imgsrc={contents.image}
                                         ></FlashCard>
-
                                     )
                                 })
                             }
@@ -137,7 +136,6 @@ const FlashDeals = () => {
                         <ArrowForwardIosSharpIcon />
                     </Fab>
                 </div>
-
 
             </div>
         </div>

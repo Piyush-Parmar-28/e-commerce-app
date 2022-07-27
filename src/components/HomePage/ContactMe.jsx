@@ -1,13 +1,13 @@
 import React from 'react'
+
 import PageTitle from '../Common_Components/PageTitle'
-import SnackBarMessageBtn from "../Common_Components/SnackBarMessageBtn"
 import ShareIcon from '@mui/icons-material/Share'
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined'
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined'
 
 const ContactMe = () => {
     return (
-        <main id="main">
+        <main>
             <section id="contact" className="contact pt-0">
                 <div className="container">
 
@@ -21,6 +21,8 @@ const ContactMe = () => {
                         <div className="col-lg-6">
 
                             <div className="row">
+
+                                {/* Social Profiles */}
                                 <div className="col-md-12">
                                     <div className="card-style">
 
@@ -47,7 +49,9 @@ const ContactMe = () => {
                                     </div>
                                 </div>
 
+                                {/* Call & Email */}
                                 <div className="col-md-12">
+
                                     <div className="card-style mt-4 mb-4 d-flex justify-content-between">
                                         <div>
                                             <div className="d-flex justify-content-center">
@@ -74,10 +78,11 @@ const ContactMe = () => {
 
                         </div>
 
+                        {/* Message Box */}
                         <div className="col-lg-6">
 
                             <form action="https://formsubmit.co/9136b2c305e27e56dc48df97e6f3158b" method="post" role="form"
-                                className="card-style form-background">
+                                className="card-style">
 
                                 <input type="hidden" name="_captcha" value="false" />
                                 <input type="hidden" name="_template" value="table" />
@@ -85,24 +90,24 @@ const ContactMe = () => {
 
                                 <div className="row">
 
-                                    <div className="col-md-6 form-group">
+                                    <div className="col-md-6">
                                         <input type="text" className="form-control"
                                             id="name" placeholder="Your Name" required />
                                     </div>
 
-                                    <div className="col-md-6 form-group mt-3 mt-md-0">
+                                    <div className="col-md-6 mt-3 mt-md-0">
                                         <input type="email" className="form-control" name="email"
                                             id="email" placeholder="Your Email" required />
                                     </div>
 
                                 </div>
 
-                                <div className="form-group mt-3">
-                                    <input type="text" className="form-control" name="subject"
+                                <div className="mt-3">
+                                    <input type="text" className="form-control mt-3" name="subject"
                                         id="subject" placeholder="Subject" required />
                                 </div>
 
-                                <div className="form-group mt-3">
+                                <div className="mt-3">
                                     <textarea className="form-control" name="message" id="message" rows="6" placeholder="Message" required>
                                     </textarea>
                                 </div>

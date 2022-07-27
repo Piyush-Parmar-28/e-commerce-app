@@ -50,7 +50,7 @@ main{
 }
 
 /* Images */
-.cover-image{
+.fill-image{
   object-fit: fill;
 }
 
@@ -113,7 +113,7 @@ main{
 }
 
 /* For Categories Page */
-.zoom-on-hover1:hover .image{
+.zoom-on-hover:hover .image{
   transform:scale(1.3);opacity:.7
 }
 
