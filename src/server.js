@@ -303,10 +303,20 @@ app.get("/selected/:data", async(req, res) =>{
     // console.log("myData is: "+ myData);
 
     const product= await ProductObj.findOne( {_id: ObjectId(myData) } )
-    const productArray= [product]
+    var productCategory= product.Category;
+
+    var relatedProducts;
+    db.collection("products").find( {Category: productCategory} ).toArray( (req, result) =>{
+        relatedProducts= result;
+        console.log("result is: "+ result);
+        res.send(result)
+    } )
+
+    var productArray= [product]
+    productArray= productArray.concat(relatedProducts)
     
-    // console.log("hello: "+ productArray)
-    res.send(productArray)
+    console.log("hello: "+ relatedProducts)
+    // res.send(productArray)
 })
 
 // ROUTES ENDS HERE ----------------------------------------------------------------------------------------
