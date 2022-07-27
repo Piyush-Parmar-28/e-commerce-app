@@ -11,8 +11,12 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import Badge from '@mui/material/Badge';
 import Tooltip from '@mui/material/Tooltip';
 import Fade from '@mui/material/Fade';
+import { useEffect } from 'react';
 
 function ElevationScroll(props) {
+
+
+
     const { children, window } = props;
     // Note that you normally won't need to set the window ref as useScrollTrigger
     // will default to window.
@@ -23,6 +27,8 @@ function ElevationScroll(props) {
         target: window ? window() : undefined,
     });
 
+
+
     return React.cloneElement(children, {
         elevation: trigger ? 4 : 0,
     });
@@ -30,6 +36,15 @@ function ElevationScroll(props) {
 
 
 export default function Navbar(props) {
+    const [totalItems,setTotalItems] = React.useState('')
+
+    React.useEffect(() => {
+        fetch("/cart").then(data => data.json()).then(myData => {
+            setTotalItems(myData.length)
+        })
+        console.log(totalItems)
+    }, [])
+    
     return (
         <React.Fragment>
             <CssBaseline />
@@ -68,7 +83,7 @@ export default function Navbar(props) {
                                             TransitionProps={{ timeout: 600 }}
                                             title="Cart"
                                         >
-                                            <Badge badgeContent={7} color="secondary">
+                                            <Badge badgeContent={totalItems} color="secondary">
                                                 <ShoppingCartOutlinedIcon />
                                             </Badge>
                                         </Tooltip>

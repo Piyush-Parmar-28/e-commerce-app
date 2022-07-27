@@ -7,6 +7,9 @@ var cors = require('cors');
 const port = process.env.PORT || 8000
 const multer = require('multer');
 const upload = multer()
+const cookieParser = require("cookie-parser");
+// Middleware Auth ----------------------------------
+const auth = require('./Middleware/auth')
 
 // Using Mongoose Models ---------------------------------------------------------------------------------
 const UserObj = require('./models/user')
@@ -15,6 +18,8 @@ const ImageObj = require('./models/images')
 
 // CREATING SERVER ----------------------------------------------------------------------------------
 var app = express()
+app.use(cookieParser());
+
 
 //  USING MODULES -----------------------------------------------------------------------------------
 app.use(express.static("public"))
@@ -42,49 +47,15 @@ app.get("/", (req, res) =>{
 })
 
 //  2. Login Route
-app.post("/login", async function (req, res) {
-
-    res.set({
-        'Access-Control-Allow-Origin': '*'
-    });
-
-    // console.log(req.body);
-
-    var email = req.body.Email
-    var password = req.body.Password
-
-    console.log("Entered data: ");
-    console.log(email);
-    console.log(password);
-
-    db.collection("users").find({ Email: email, Password: password }).toArray((err, result) => {
-        if (err) {
-            throw err;
-        }
-
-        if (result.length == 0) {
-            console.log("Invalid Credentials!");
-            return res.redirect('/')
-        }
-
-        else {
-            console.log("\n\n(Login Route) User login Successful");
-            const userID = result[0]._id;
-
-            if (typeof localStorage === "undefined" || localStorage === null) {
-                var LocalStorage = require('node-localstorage').LocalStorage;
-                localStorage = new LocalStorage('./scratch');
-            }
-
-            localStorage.setItem('userToken', userID);
-
-            var data = localStorage.getItem('userToken')
-            console.log("(Login Route) The token id of the user is: " + data);
-
-            res.redirect("/home")
-        }
-    })
-
+app.post("/login", async (req, res)=> {
+try {
+    const user = await UserObj.findByCredentials(req.body.Email,req.body.Password)
+    const token = await user.generateAuthToken()
+    res.cookie("jwt", token);
+    res.redirect('/home')
+} catch (error) {
+    res.send('Invalid Credentials')
+}
 })
 
 //  3. SignUp Route
@@ -116,7 +87,7 @@ app.post("/signUp", (req, res) => {
 })
 
 //  4. Get Profile Route
-app.get('/getProfile', async (req, res) => {
+app.get('/getProfile',auth, async (req, res) => {
 
     // Access-Control-Allow-Origin will allow response to be send b/w different ports, since our server is running on different port (8000) & our frontend is running on different port (3000).
     res.set({
@@ -149,7 +120,7 @@ app.get('/getProfile', async (req, res) => {
 })
 
 //  5. Update User Details Route
-app.post("/updateDetails", upload.single("image"), async (req, res) => {
+app.post("/updateDetails",auth, upload.single("image"), async (req, res) => {
     res.set({
         "Access-Control-Allow-Origin": "*"
     })
@@ -225,7 +196,7 @@ app.post("/updateDetails", upload.single("image"), async (req, res) => {
 })
 
 //  6. Save Image Route
-app.post("/saveImage", (req, res) => {
+app.post("/saveImage",auth, (req, res) => {
     var myImageURL = req.body.mySelectedImage
 
     if (typeof localStorage === "undefined" || localStorage === null) {
@@ -293,7 +264,7 @@ app.get('/get',async(req,res)=>{
         'Access-Control-Allow-Origin': '*'
     });
     const products = await ProductObj.getAllproducts();
-    console.log(products);
+    console.log('getting products');
     res.json(products)
 })
 
@@ -311,6 +282,24 @@ app.get("/selected/:data", async(req, res) =>{
     } )
 
 })
+
+app.post('/AddToCart',auth,(req,res)=>{
+    const productID = req.body.cartProduct
+    console.log(productID)
+    req.user.Cart = req.user.Cart.concat({productID})
+    req.user.save()
+    res.redirect('/products')
+
+})
+
+app.get('/cart',auth,(req,res)=>{
+    console.log('getting cart  -' + req.user.Cart.length)
+    res.json(req.user.Cart)
+})
+
+
+
+
 
 // ROUTES ENDS HERE ----------------------------------------------------------------------------------------
 
