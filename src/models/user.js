@@ -1,3 +1,4 @@
+const jwt = require('jsonwebtoken')
 const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema({
@@ -23,6 +24,14 @@ const userSchema = new mongoose.Schema({
     Country: {
         type: String
     },
+    Cart: [
+        {
+           productID:{
+            type: String,
+            required: true
+           } 
+        }
+    ] ,
     Address: {
         type: String
     },
@@ -40,6 +49,30 @@ const userSchema = new mongoose.Schema({
     }]
 
 })
+
+userSchema.methods.generateAuthToken = async function () {
+    const user = this
+    const token = jwt.sign({ _id: user._id.toString() }, 'silver')
+    
+    user.tokens = user.tokens.concat({ token })
+    await user.save()
+    return token
+}
+
+userSchema.statics.findByCredentials = async (username, password) => {
+    const user = await UserObj.findOne({ username })
+
+    if (!user) {
+        throw new Error('Invalid Credentials!')
+    }
+
+    if (password == user.Password) {
+        return user
+    } else {
+        throw new Error('Incorrect Password!')
+    }
+}
+
 
 //  Creating a collection named 'User' (Mongoose will automatically append 's' to the collection name & hence make it 'Users')
 //  Creating object of 'User' collection named 'UserObj'  

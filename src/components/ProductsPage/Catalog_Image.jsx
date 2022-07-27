@@ -26,16 +26,22 @@ const Catalog_Image = (props) => {
                     </div>
                 </div>
 
-                <form action='/selected' method='get'>
-                    <input className='d-none' name='selectedProduct' type="text" defaultValue={props.productID} ></input>
 
                     <div className='d-flex justify-content-between'>
+                <form action='/selected' method='get'>
+
+                    <input className='d-none' name='selectedProduct' type="text" defaultValue={props.productID} ></input>
                         <button type="submit" className="btn btn-primary btn-sm">Details</button>
+                </form>
+                <form action='/AddToCart' method='post'>
+
+                    <input className='d-none' name='cartProduct' type="text" defaultValue={props.productID} ></input>
                         <button className="btn btn-danger btn-sm">Cart</button>
+                </form>
+
                     </div>
                     
 
-                </form>
 
             </div>
 
