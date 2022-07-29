@@ -1,6 +1,11 @@
 import React from "react";
 import PageTitle from "../Common_Components/PageTitle";
 
+const min= 1
+function setQuantity(event) {
+    event.target.value= Math.max(min, event.target.value)
+}
+
 const AddProducts = (props) => {
     return (
         <main>
@@ -67,13 +72,15 @@ const AddProducts = (props) => {
                             <div className="col">
                                 <div className="mb-3">
                                     <label className="form-label">
-                                        <b>Tags</b>
+                                        <b>Stock</b>
                                     </label>
                                     <input
                                         className="form-control item"
-                                        type="text"
-                                        placeholder="Laptop, Computer, ..."
-                                        name="tag"
+                                        type="number"
+                                        min={1}
+                                        placeholder="Available Quantity"
+                                        name="stock"
+                                        onChange={setQuantity}
                                     />
                                 </div>
                             </div>
@@ -126,6 +133,20 @@ const AddProducts = (props) => {
                                         max={100}
                                     />
                                 </div>
+                            </div>
+                        </div>
+
+                        <div className="col">
+                            <div className="mb-3">
+                                <label className="form-label">
+                                    <b>Tags</b>
+                                </label>
+                                <input
+                                    className="form-control item"
+                                    type="text"
+                                    placeholder="Laptop, Computer, ..."
+                                    name="tag"
+                                />
                             </div>
                         </div>
 
