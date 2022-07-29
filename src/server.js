@@ -312,7 +312,9 @@ app.get("/getProduct/:data", async(req, res) =>{
     res.send(productArray)
 })
 
-app.post('/logout',auth,(req,res)=>{
+app.post('/logout',auth,async(req,res)=>{
+    req.user.tokens = req.user.tokens.filter((token)=>token.token!=req.cookies.jwt)
+    await req.user.save()
     res.clearCookie('jwt')
     res.redirect('/')
 })
