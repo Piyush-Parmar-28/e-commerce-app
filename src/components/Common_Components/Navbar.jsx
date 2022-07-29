@@ -11,7 +11,8 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import Badge from '@mui/material/Badge';
 import Tooltip from '@mui/material/Tooltip';
 import Fade from '@mui/material/Fade';
-import { useEffect } from 'react';
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
+import LoginIcon from '@mui/icons-material/Login';
 
 function ElevationScroll(props) {
 
@@ -92,13 +93,37 @@ export default function Navbar(props) {
 
 
                                 <Link to= "/profile">
-                                    <button type="button" className="btn btn-outline-danger btn-sm">
+                                    <button type="button" className="btn btn-outline-warning btn-sm me-2">
                                         <Tooltip
                                             TransitionComponent={Fade}
                                             TransitionProps={{ timeout: 600 }}
                                             title="My Profile"
                                         >
                                             <AccountCircleOutlinedIcon />
+                                        </Tooltip>
+                                    </button>
+                                </Link>
+
+                                <Link to= "/">
+                                    <button type="button" className="btn btn-outline-success btn-sm me-2">
+                                        <Tooltip
+                                            TransitionComponent={Fade}
+                                            TransitionProps={{ timeout: 600 }}
+                                            title="Login"
+                                        >
+                                            <LoginIcon />
+                                        </Tooltip>
+                                    </button>
+                                </Link>
+
+                                <Link to= "/">
+                                    <button type="button" className="btn btn-outline-danger btn-sm">
+                                        <Tooltip
+                                            TransitionComponent={Fade}
+                                            TransitionProps={{ timeout: 600 }}
+                                            title="Log Out"
+                                        >
+                                            <PowerSettingsNewIcon />
                                         </Tooltip>
                                     </button>
                                 </Link>
