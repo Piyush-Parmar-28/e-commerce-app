@@ -25,7 +25,7 @@ const Cart_Item = (props) => {
 
     return (
 
-        <div className="product m-5">
+        <div className="m-5">
             <div className="row justify-content-center align-items-center">
 
                 {
@@ -62,8 +62,6 @@ const Cart_Item = (props) => {
                                         <input type="number" id="number" className="form-control" defaultValue={1} min={1} onChange= {updateCount}/>
                                     </div>
                                 </div>
-
-                                
 
                                 {/* Price */}
                                 <div className="col-6 col-md-2">
