@@ -12,15 +12,10 @@ const Cart = () => {
             setIDs(myData)
         })
     }, [])
-    // console.log("IDS ARE: "+ JSON.stringify(IDs))
-
-
 
     return (
-
         // Fragment just wraps our code.
         //  It is used to prevent unnecessary divs.
-
         <Fragment>
             <Navbar></Navbar>
 
@@ -35,9 +30,7 @@ const Cart = () => {
 
                         <div className="white-bg row g-0">
                             <div>
-
                                 {
-
                                     IDs.map(contents => {
                                         return (
                                             <Cart_Item
