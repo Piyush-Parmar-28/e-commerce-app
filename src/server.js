@@ -280,25 +280,35 @@ app.get("/selected/:data", async(req, res) =>{
         // console.log("result is: "+ result);
         res.send(result)
     } )
-
 })
 
+//  11. Add To Cart
 app.post('/AddToCart',auth,(req,res)=>{
     const productID = req.body.cartProduct
     console.log(productID)
     req.user.Cart = req.user.Cart.concat({productID})
     req.user.save()
     res.redirect('/products')
-
 })
 
+//  12. Get Cart Data
 app.get('/cart',auth,(req,res)=>{
-    console.log('getting cart  -' + req.user.Cart.length)
-    res.json(req.user.Cart)
+    // console.log('getting cart of length: ' + req.user.Cart.length)
+    // console.log("Cart Data is: "+ req.user.Cart);
+    res.send(req.user.Cart)
 })
 
+//  13. Get Particular Product in cart
+app.get("/getProduct/:data", async(req, res) =>{
+    var myData= req.params.data;
+    console.log("myData is: "+ myData);
 
+    const product= await ProductObj.findOne( {_id: ObjectId(myData) } )
+    var productArray= [product];
+    console.log("productArray is: "+ productArray);
 
+    res.send(productArray)
+})
 
 
 // ROUTES ENDS HERE ----------------------------------------------------------------------------------------

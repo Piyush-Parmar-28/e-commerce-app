@@ -1,10 +1,21 @@
-import React , {Fragment} from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import Navbar from '../components/Common_Components/Navbar'
 import PageTitle from '../components/Common_Components/PageTitle';
 import Cart_Item from '../components/Cart/Cart_Item';
 import Shopping_Summary from '../components/Cart/Shopping_Summary';
 
 const Cart = () => {
+
+    var [IDs, setIDs] = useState([])
+    useEffect(() => {
+        fetch("/cart").then(data => data.json()).then(myData => {
+            setIDs(myData)
+        })
+    }, [])
+    // console.log("IDS ARE: "+ JSON.stringify(IDs))
+
+
+
     return (
 
         // Fragment just wraps our code.
@@ -24,9 +35,19 @@ const Cart = () => {
 
                         <div className="white-bg row g-0">
                             <div>
-                                <Cart_Item></Cart_Item>
-                                <Cart_Item></Cart_Item>
-                                <Cart_Item></Cart_Item>
+
+                                {
+
+                                    IDs.map(contents => {
+                                        return (
+                                            <Cart_Item
+                                                key= {contents._id}
+                                                itemID= {contents.productID}
+                                            ></Cart_Item>
+                                        )
+                                    })
+                                }
+
                             </div>
                         </div>
 

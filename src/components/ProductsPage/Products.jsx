@@ -51,7 +51,14 @@ const Products = (props) => {
                         <div className="row">
 
                             {/* Filter Products */}
-                            <Filter_Products onElectronics={filterElectronics} onAll={getAll} onKitchen={filterKitchen} onFurniture={filterFurniture} onFashion={filterFashion} onHomeDecor={filterHomeDecor}></Filter_Products>
+                            <Filter_Products 
+                                onElectronics={filterElectronics} 
+                                onAll={getAll} 
+                                onKitchen={filterKitchen} 
+                                onFurniture={filterFurniture} 
+                                onFashion={filterFashion} 
+                                onHomeDecor={filterHomeDecor}
+                            ></Filter_Products>
 
                             {/* Products Section */}
                             <div className="col-8 col-md-9">
