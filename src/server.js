@@ -10,6 +10,7 @@ const upload = multer()
 const cookieParser = require("cookie-parser");
 // Middleware Auth ----------------------------------
 const auth = require('./Middleware/auth')
+const loginCheck = require('./Middleware/loginCheck');
 
 // Using Mongoose Models ---------------------------------------------------------------------------------
 const UserObj = require('./models/user')
@@ -45,6 +46,7 @@ db.once("open", () => {
 app.get("/", (req, res) =>{
     res.json({"message" : "Backend Here"})
 })
+
 
 //  2. Login Route
 app.post("/login", async (req, res)=> {
@@ -308,6 +310,21 @@ app.get("/getProduct/:data", async(req, res) =>{
     console.log("productArray is: "+ productArray);
 
     res.send(productArray)
+})
+
+app.post('/logout',auth,(req,res)=>{
+    res.clearCookie('jwt')
+    res.redirect('/')
+})
+
+app.get('/status',loginCheck,(req,res)=>{
+
+    if(!req.status){
+        res.send(false)
+    }else{
+        res.send(true)
+    }
+
 })
 
 

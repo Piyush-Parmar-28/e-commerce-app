@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React,{useState,useEffect} from 'react';
 import { Link } from 'react-router-dom'
 
 import AppBar from '@mui/material/AppBar';
@@ -13,6 +13,8 @@ import Tooltip from '@mui/material/Tooltip';
 import Fade from '@mui/material/Fade';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import LoginIcon from '@mui/icons-material/Login';
+import axios from 'axios';
+import { set } from 'mongoose';
 
 function ElevationScroll(props) {
 
@@ -38,6 +40,15 @@ function ElevationScroll(props) {
 
 export default function Navbar(props) {
     const [totalItems,setTotalItems] = React.useState('')
+
+    const[status,setStatus] = useState(false);
+
+    useEffect(()=>{
+            axios.get('/status').then(data=>{
+            console.log(data.data)
+            setStatus(data.data)
+        })
+    },[])
 
     React.useEffect(() => {
         fetch("/cart").then(data => data.json()).then(myData => {
@@ -104,7 +115,7 @@ export default function Navbar(props) {
                                     </button>
                                 </Link>
 
-                                <Link to= "/">
+                                {!status && <Link to= "/">
                                     <button type="button" className="btn btn-outline-success btn-sm me-2">
                                         <Tooltip
                                             TransitionComponent={Fade}
@@ -114,10 +125,12 @@ export default function Navbar(props) {
                                             <LoginIcon />
                                         </Tooltip>
                                     </button>
-                                </Link>
+                                </Link>}
 
-                                <Link to= "/">
-                                    <button type="button" className="btn btn-outline-danger btn-sm">
+                                
+
+                                {status && <form action='/logout' method='post'>
+                                    <button type="submit" className="btn btn-outline-danger btn-sm">
                                         <Tooltip
                                             TransitionComponent={Fade}
                                             TransitionProps={{ timeout: 600 }}
@@ -126,7 +139,8 @@ export default function Navbar(props) {
                                             <PowerSettingsNewIcon />
                                         </Tooltip>
                                     </button>
-                                </Link>
+                                </form>}
+                                
 
                             </div>
 
