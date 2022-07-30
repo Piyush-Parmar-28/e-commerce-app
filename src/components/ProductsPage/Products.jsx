@@ -8,9 +8,9 @@ import Catalog_Image from './Catalog_Image'
 const Products = (props) => {
     const [allProducts, setAllProducts] = useState([])
     const [products, setProducts] = useState([])
-
+    if(window.location.search == '') window.location.href ='/';
     useEffect(() => {
-        fetch("/get").then(data => data.json()).then(myData => {
+        fetch(`SearchProducts${window.location.search.toLowerCase()}`).then(data => data.json()).then(myData => {
             setProducts(myData)
             setAllProducts(myData)
         })
