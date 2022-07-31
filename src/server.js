@@ -361,7 +361,7 @@ app.post("/AddToCart", auth, (req, res) => {
 
     //  Getting the object corresponding to the product ID (if it is available)
     var object
-    req.user.Cart.map( (cartItem) =>{
+    req.user.Cart.forEach( (cartItem) =>{
         // console.log("cartItem.productID is: "+ cartItem.productID);
         if(cartItem.productID === myProductID){
             object= cartItem
