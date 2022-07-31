@@ -303,9 +303,9 @@ app.post("/addProduct", upload.single("image"), (req, res) => {
 //  8. Get Image Route
 app.get("/add/:id/image", async (req, res) => {
     const id = req.params.id;
-    console.log(id);
+    // console.log(id);
     const product = await ImageObj.findOne({ id });
-    console.log("getting Image");
+    // console.log("getting Image");
     res.set("Content-Type", "image/jpg");
     // console.log(product);
     res.send(product.Image);
@@ -356,9 +356,27 @@ app.get("/selected/:data", async (req, res) => {
 
 //  11. Add To Cart
 app.post("/AddToCart", auth, (req, res) => {
-    const productID = req.body.cartProduct;
-    console.log(productID);
-    req.user.Cart = req.user.Cart.concat({ productID });
+    const myProductID = req.body.cartProduct;
+    console.log("product ID: "+ myProductID);
+
+    //  Getting the object corresponding to the product ID (if it is available)
+    var object
+    req.user.Cart.map( (cartItem) =>{
+        // console.log("cartItem.productID is: "+ cartItem.productID);
+        if(cartItem.productID === myProductID){
+            object= cartItem
+        }
+    } )
+    const index= req.user.Cart.indexOf(object)
+
+    // If the item is present in the Cart
+    if (index != -1) {
+        req.user.Cart[index].Quantity++;
+    }
+    else{
+        req.user.Cart = req.user.Cart.concat({ productID: myProductID, Quantity: 1 });
+    }
+
     req.user.save();
     res.redirect("/cart");
 });
@@ -387,6 +405,7 @@ app.post("/removeProduct", auth, async (req, res) => {
     req.user.Cart= req.user.Cart.filter( (cartItem) =>{
         // console.log("cartItem.productID is: "+ cartItem.productID);
         return cartItem.productID != productID
+
     } )
     await req.user.save()
     // console.log("cart Product after removal is: "+ req.user.Cart);
