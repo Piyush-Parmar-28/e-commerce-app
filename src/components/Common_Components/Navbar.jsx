@@ -45,7 +45,7 @@ export default function Navbar(props) {
 
     useEffect(()=>{
             axios.get('/status').then(data=>{
-            console.log(data.data)
+            // console.log(data.data)
             setStatus(data.data)
         })
     },[])
@@ -54,7 +54,7 @@ export default function Navbar(props) {
         fetch("/cart").then(data => data.json()).then(myData => {
             setTotalItems(myData.length)
         })
-        console.log(totalItems)
+        // console.log(totalItems)
     }, [])
     
     return (

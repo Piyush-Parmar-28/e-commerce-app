@@ -13,6 +13,11 @@ const Cart = () => {
         })
     }, [])
 
+    // console.log("IDS: "+ IDs);
+    // if (IDs.length === 0) {
+    //     console.log("empty array");
+    // }
+
     return (
         // Fragment just wraps our code.
         //  It is used to prevent unnecessary divs.
@@ -31,14 +36,27 @@ const Cart = () => {
                         <div className="white-bg row g-0">
                             <div>
                                 {
-                                    IDs.map(contents => {
-                                        return (
-                                            <Cart_Item
-                                                key= {contents._id}
-                                                itemID= {contents.productID}
-                                            ></Cart_Item>
-                                        )
-                                    })
+                                    IDs.length === 0 ? 
+                                        <p>Nothing to display here</p> : 
+
+                                        IDs.map(contents => {
+                                            if(contents === null){
+                                                return(
+                                                    <p>Nothing here</p>
+                                                )
+                                            }
+                                            else{
+                                                return (
+                                                    <Cart_Item
+                                                        key= {contents._id}
+                                                        itemID= {contents.productID}
+                                                    ></Cart_Item>
+                                                )
+                                            }
+                                            
+                                        })
+
+
                                 }
 
                             </div>
