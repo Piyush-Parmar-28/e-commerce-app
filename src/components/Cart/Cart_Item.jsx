@@ -10,7 +10,7 @@ const Cart_Item = (props) => {
 
     const productURL = `/getProduct/${props.itemID}`
     const [productData, setProductData] = useState([])
-    const [quantity, setQuantity] = useState(1)
+    const [quantity, setQuantity] = useState(props.quantity)
 
     useEffect(() => {
         fetch(productURL).then(data => data.json()).then(myData => {
@@ -64,7 +64,7 @@ const Cart_Item = (props) => {
                                         {/* Quantity */}
                                         <div className="d-flex flex-column justify-content-center align-items-center col-3">
                                             <h6><b>Quantity</b></h6>
-                                            <input type="number" id="number" className="form-control" defaultValue={1} min={1} onChange={updateCount} />
+                                            <input type="number" id="number" className="form-control" defaultValue={props.quantity} min={1} onChange={updateCount} />
                                         </div>
 
                                         {/* Price */}

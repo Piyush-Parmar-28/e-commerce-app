@@ -9,6 +9,7 @@ const Cart = () => {
     var [IDs, setIDs] = useState([])
     useEffect(() => {
         fetch("/cart").then(data => data.json()).then(myData => {
+            console.log(myData)
             setIDs(myData)
         })
     }, [])
@@ -50,6 +51,7 @@ const Cart = () => {
                                                     <Cart_Item
                                                         key= {contents._id}
                                                         itemID= {contents.productID}
+                                                        quantity={contents.Quantity}
                                                     ></Cart_Item>
                                                 )
                                             }
