@@ -97,32 +97,13 @@ app.post("/signUp", (req, res) => {
 
 //  4. Get Profile Route
 app.get("/getProfile", auth, async (req, res) => {
-    // Access-Control-Allow-Origin will allow response to be send b/w different ports, since our server is running on different port (8000) & our frontend is running on different port (3000).
     res.set({
         "Access-Control-Allow-Origin": "*",
     });
 
-    console.log("\n\nIn getProfile Route");
+    res.send(req.user)
 
-    if (typeof localStorage === "undefined" || localStorage === null) {
-        var LocalStorage = require("node-localstorage").LocalStorage;
-        localStorage = new LocalStorage("./scratch");
-    }
 
-    var data = localStorage.getItem("userToken");
-    // console.log("The token id of the user in different route is: " + data);
-
-    db.collection("users")
-        .find({ _id: ObjectId(data) })
-        .toArray(function (err, result) {
-            if (err) {
-                throw err;
-            } else {
-                // console.log(result);
-            }
-
-            res.json(result);
-        });
 });
 
 //  5. Update User Details Route
@@ -232,28 +213,8 @@ app.post("/updateDetails", auth, upload.single("image"), async (req, res) => {
 //  6. Save Image Route
 app.post("/saveImage", auth, (req, res) => {
     var myImageURL = req.body.mySelectedImage;
-
-    if (typeof localStorage === "undefined" || localStorage === null) {
-        var LocalStorage = require("node-localstorage").LocalStorage;
-        localStorage = new LocalStorage("./scratch");
-    }
-
-    var data = localStorage.getItem("userToken");
-    console.log("The token id of the user in different route is: " + data);
-
-    // console.log(myImageURL);
-
-    // Updating the Avatar
-    db.collection("users").updateOne(
-        { _id: ObjectId(data) },
-        { $set: { ImageURL: myImageURL } }
-    );
-
-    //  If there is a previously uploaded profile image, then remove it.
-    db.collection("users").updateOne(
-        { _id: ObjectId(data) },
-        { $set: { ImageData: 0 } }
-    );
+    req.user.ImageURL = myImageURL;
+    req.user.save()
 
     res.redirect("/profile");
 });
@@ -357,23 +318,23 @@ app.get("/selected/:data", async (req, res) => {
 //  11. Add To Cart
 app.post("/AddToCart", auth, (req, res) => {
     const myProductID = req.body.cartProduct;
-    console.log("product ID: "+ myProductID);
+    console.log("product ID: " + myProductID);
 
     //  Getting the object corresponding to the product ID (if it is available)
     var object
-    req.user.Cart.forEach( (cartItem) =>{
+    req.user.Cart.forEach((cartItem) => {
         // console.log("cartItem.productID is: "+ cartItem.productID);
-        if(cartItem.productID === myProductID){
-            object= cartItem
+        if (cartItem.productID === myProductID) {
+            object = cartItem
         }
-    } )
-    const index= req.user.Cart.indexOf(object)
+    })
+    const index = req.user.Cart.indexOf(object)
 
     // If the item is present in the Cart
     if (index != -1) {
         req.user.Cart[index].Quantity++;
     }
-    else{
+    else {
         req.user.Cart = req.user.Cart.concat({ productID: myProductID, Quantity: 1 });
     }
 
@@ -399,14 +360,14 @@ app.get("/getProduct/:data", async (req, res) => {
 
 //  14. Remove Product Route
 app.post("/removeProduct", auth, async (req, res) => {
-    const productID= req.body.product
+    const productID = req.body.product
     // console.log("Product ID is: "+ productID);
 
-    req.user.Cart= req.user.Cart.filter( (cartItem) =>{
+    req.user.Cart = req.user.Cart.filter((cartItem) => {
         // console.log("cartItem.productID is: "+ cartItem.productID);
         return cartItem.productID != productID
 
-    } )
+    })
     await req.user.save()
     // console.log("cart Product after removal is: "+ req.user.Cart);
     res.redirect("/cart")
