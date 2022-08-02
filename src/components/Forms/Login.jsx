@@ -4,7 +4,7 @@ import {useNavigate } from  'react-router-dom'
 import PageTitle from "../Common_Components/PageTitle"
 
 const Login = (props) => {
-    const navigate= useNavigate ();
+    const navigate= useNavigate();
 
     const [loginDetails, setLoginDetails]= useState({
         Email: "",
@@ -13,13 +13,13 @@ const Login = (props) => {
 
     const handleInputs= (event) =>{
         setLoginDetails({ ...loginDetails, [event.target.name]: event.target.value })
-        console.log(loginDetails);
+        // console.log(loginDetails);
     }
 
     const postData= async (event)=>{
         event.preventDefault();
 
-        //  Writing object destructuring for: const name= loginDetails.name
+        //  Writing object destructuring for: const Email= loginDetails.Email
         const {Email, Password}= loginDetails
 
         const res= await fetch("/login", {
@@ -28,6 +28,7 @@ const Login = (props) => {
                 "Content-Type": "application/json"
             }, 
             // Since our backend will not understand JSON data & hence we must convert to string
+            //  This string will be sent as 'body' to server
             body: JSON.stringify({
                 //  Using object destructuring for: Email: Email
                 Email, Password
@@ -38,7 +39,7 @@ const Login = (props) => {
 
         console.log("Data is: "+ JSON.stringify(data));
 
-        if (data.error === "Invalid Credentials") {
+        if (data.status === 401) {
             window.alert("Invalid Credentials!")
         }
         else{

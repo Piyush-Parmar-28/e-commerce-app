@@ -1,7 +1,58 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import PageTitle from "../Common_Components/PageTitle"
 
 const SignUp = (props) => {
+    const navigate= useNavigate()
+
+    const [signUpDetails, setSignUpDetails] = useState({
+        first_name: "",
+        last_name: "", 
+        Email: "", 
+        Password: "",
+        Phone: "",
+        City: "",
+        Country: "",
+        Address: ""
+    })
+
+    function handleChange(event) {
+        setSignUpDetails( {...signUpDetails, [event.target.name]: event.target.value} )
+        // console.log(signUpDetails);
+    }
+
+    const postData= async (event) =>{
+        event.preventDefault()
+
+        //  Using object destructuring for first_name: signUpDetails.first_name
+        const {first_name, last_name, Email, Password, Phone, City, Country, Address}= signUpDetails
+
+        const res= await fetch("/signUp", {
+            method:"post",
+            headers: {
+                "Content-Type": "application/json"
+            }, 
+
+            //  Converting the response to string, since our backend can only understand string
+            //  The string will be sent as body to the server
+            body: JSON.stringify({
+                // Using object destructuring for: first_name: first_name
+                first_name, last_name, Email, Password, Phone, City, Country, Address
+            })
+        })
+
+        const data = await res.json()
+
+        if (data.status === 200) {
+            window.alert("SignUp Successful!\nLogin To Continue.")
+            navigate("/")
+        }
+        else{
+            window.alert("SignUp Error! Try Again.")
+        }
+    }
+
     return (
         <main>
             <section className="card-block dark-bg">
@@ -13,49 +64,48 @@ const SignUp = (props) => {
                     ></PageTitle>
 
                     {/* In forms, name filed is very Important, because it is used in 'req.body.' while connecting to database */}
-                    <form method="post" className="card-style" action="/signUp">
+                    <form method="post" className="card-style">
 
                         <div className="row">
                             <div className="col">
-                                <div className="mb-3"><label className="form-label" ><strong>First Name</strong></label><input className="form-control" type="text" id="first_name" placeholder="John" name="first_name" /></div>
+                                <div className="mb-3"><label className="form-label" ><strong>First Name</strong></label><input className="form-control" type="text" id="first_name" placeholder="John" name="first_name" onChange= {handleChange}/></div>
                             </div>
                             <div className="col">
-                                <div className="mb-3"><label className="form-label" ><strong>Last Name</strong></label><input className="form-control" type="text" id="last_name" placeholder="Doe" name="last_name" /></div>
+                                <div className="mb-3"><label className="form-label" ><strong>Last Name</strong></label><input className="form-control" type="text" id="last_name" placeholder="Doe" name="last_name" onChange= {handleChange}/></div>
                             </div>
                         </div>
 
                         <div className="mb-3">
                             <label className="form-label"><b>Email</b></label>
-                            <input className="form-control item" type="email" id="email" name="Email" />
+                            <input className="form-control item" type="email" id="email" name="Email" onChange= {handleChange}/>
                         </div>
 
                         <div className="mb-3">
                             <label className="form-label"><b>Password</b></label>
-                            <input className="form-control item" type="password" id="password" name="Password" />
+                            <input className="form-control item" type="password" id="password" name="Password" onChange= {handleChange}/>
                         </div>
 
                         <div className="mb-3">
                             <label className="form-label"><b>Phone Number</b></label>
-                            <input className="form-control item" type="tel" id="phone" name="Phone" />
+                            <input className="form-control item" type="tel" id="phone" name="Phone" onChange= {handleChange}/>
                         </div>
 
                         <div className="row">
                             <div className="col">
-                                <div className="mb-3"><label className="form-label"><strong>City</strong></label><input className="form-control" type="text" id="city" placeholder="Los Angeles" name="City" /></div>
+                                <div className="mb-3"><label className="form-label"><strong>City</strong></label><input className="form-control" type="text" id="city" placeholder="Los Angeles" name="City" onChange= {handleChange}/></div>
                             </div>
                             <div className="col">
-                                <div className="mb-3"><label className="form-label" ><strong>Country</strong></label><input className="form-control" type="text" id="country" placeholder="USA" name="Country" /></div>
+                                <div className="mb-3"><label className="form-label" ><strong>Country</strong></label><input className="form-control" type="text" id="country" placeholder="USA" name="Country" onChange= {handleChange}/></div>
                             </div>
                         </div>
 
                         <div className="mb-3">
                             <label className="form-label"><strong>Address</strong></label>
-
-                            <input className="form-control" type="text" id="address" placeholder="Sunset Valley, 38" name="Address" />
+                            <input className="form-control" type="text" id="address" placeholder="Sunset Valley, 38" name="Address" onChange= {handleChange}/>
                         </div>
 
                         <div className="d-flex justify-content-center">
-                            <button className="btn btn-primary" type="submit">Sign Up</button>
+                            <button className="btn btn-primary" type="submit" onClick={postData}>Sign Up</button>
                         </div>
 
                         <div className="d-flex justify-content-center align-items-center mt-3">

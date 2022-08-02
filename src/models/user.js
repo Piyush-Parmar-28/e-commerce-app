@@ -62,14 +62,14 @@ userSchema.methods.generateAuthToken = async function () {
     return token
 }
 
-userSchema.statics.findByCredentials = async (username, password) => {
-    const user = await UserObj.findOne({ username })
+userSchema.statics.findByCredentials = async (Email, Password) => {
+    const user = await UserObj.findOne({ Email })
 
     if (!user) {
         throw new Error('Invalid Credentials!')
     }
 
-    if (password == user.Password) {
+    if (Password === user.Password) {
         return user
     } else {
         throw new Error('Incorrect Password!')

@@ -58,15 +58,15 @@ app.post("/login", async (req, res) => {
         res.cookie("jwt", token);
         return res.send({message: "Login OK"})
         // res.redirect("/home");
-    } catch (error) {
+    } catch (e) {
         // res.send("Invalid Credentials");
-        return res.send({error: "Invalid Credentials"})
+        return res.send({status: 401, error: "Unauthorized response "})
     }
 });
 
 //  3. SignUp Route
 app.post("/signUp", (req, res) => {
-    console.log(req.body);
+    // console.log("req.body is: "+ JSON.stringify(req.body));
 
     // Saving data with Mongoose Model
     const user = new UserObj({
@@ -88,8 +88,8 @@ app.post("/signUp", (req, res) => {
     user
         .save()
         .then(() => {
-            console.log(user);
-            res.redirect("/");
+            // console.log(user);
+            res.send({status: 200, message: "OK! SignUp Successful"})
         })
         .catch((e) => {
             console.log(e);
