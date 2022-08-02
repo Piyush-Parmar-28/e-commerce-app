@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
-const Shopping_Summary = () => {
+const Shopping_Summary = (props) => {
     const [totalPrice,setTotalPrice] = useState('')
 
     useEffect(()=>{
