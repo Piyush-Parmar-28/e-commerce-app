@@ -320,6 +320,7 @@ app.get("/selected/:data", async (req, res) => {
 //  11. Add To Cart
 app.post("/AddToCart", auth, (req, res) => {
     const myProductID = req.body.cartProduct;
+    const price = req.body.productPrice
     console.log("product ID: " + myProductID);
 
     //  Getting the object corresponding to the product ID (if it is available)
@@ -337,7 +338,7 @@ app.post("/AddToCart", auth, (req, res) => {
         req.user.Cart[index].Quantity++;
     }
     else {
-        req.user.Cart = req.user.Cart.concat({ productID: myProductID, Quantity: 1 });
+        req.user.Cart = req.user.Cart.concat({ productID: myProductID, Quantity: 1,Price:price });
     }
 
     req.user.save();
@@ -385,10 +386,23 @@ app.post("/logout", auth, async (req, res) => {
     res.redirect("/");
 });
 
+app.get('/total',auth,(req,res)=>{
+    var total = 0
+
+    req.user.Cart.forEach((item)=>{
+        total+=item.Quantity*item.Price
+    })
+
+    res.send(total.toString())
+})
+
 //  15. Status Route
 app.get("/status", loginCheck, (req, res) => {
     res.send(req.status)
 });
+
+
+
 
 // ROUTES ENDS HERE ----------------------------------------------------------------------------------------
 
