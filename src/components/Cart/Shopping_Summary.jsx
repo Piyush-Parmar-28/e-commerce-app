@@ -1,6 +1,16 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 
 const Shopping_Summary = () => {
+    const [totalPrice,setTotalPrice] = useState('')
+
+    useEffect(()=>{
+        axios('/total').then((data)=>{
+            setTotalPrice(data.data)
+        })
+    },[])
+
+
     return (
         <div className="greenish-bg mt-4 p-4">
 
@@ -15,7 +25,7 @@ const Shopping_Summary = () => {
                     </div>
 
                     <div>
-                        <p>$360</p>
+                        <p>{totalPrice}</p>
                     </div>
                 </div>
 
@@ -50,7 +60,7 @@ const Shopping_Summary = () => {
                     </div>
 
                     <div>
-                        <p>$360</p>
+                        <p>{totalPrice}</p>
                     </div>
                 </div>
 

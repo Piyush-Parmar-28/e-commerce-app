@@ -35,6 +35,7 @@ const Catalog_Image = (props) => {
 
                     <form action='/AddToCart' method='post'>
                         <input className='d-none' name='cartProduct' type="text" defaultValue={props.productID} ></input>
+                        <input className='d-none' name='productPrice' type="text" defaultValue={props.itemPrice} ></input>
                         <button className="btn btn-danger btn-sm">Cart</button>
                     </form>
 

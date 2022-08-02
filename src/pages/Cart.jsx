@@ -7,6 +7,7 @@ import Shopping_Summary from '../components/Cart/Shopping_Summary';
 const Cart = () => {
 
     var [IDs, setIDs] = useState([])
+    
     useEffect(() => {
         fetch("/cart").then(data => data.json()).then(myData => {
             console.log(myData)
@@ -14,14 +15,9 @@ const Cart = () => {
         })
     }, [])
 
-    // console.log("IDS: "+ IDs);
-    // if (IDs.length === 0) {
-    //     console.log("empty array");
-    // }
+
 
     return (
-        // Fragment just wraps our code.
-        //  It is used to prevent unnecessary divs.
         <Fragment>
             <Navbar></Navbar>
 
@@ -47,11 +43,13 @@ const Cart = () => {
                                                 )
                                             }
                                             else{
+
                                                 return (
                                                     <Cart_Item
                                                         key= {contents._id}
                                                         itemID= {contents.productID}
                                                         quantity={contents.Quantity}
+                                                        price={contents.Price}
                                                     ></Cart_Item>
                                                 )
                                             }
