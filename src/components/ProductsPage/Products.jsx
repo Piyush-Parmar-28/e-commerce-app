@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
 import PageTitle from '../Common_Components/PageTitle'
-import SortProducts from './SortProducts'
 import Filter_Products from './Filter_Products'
 import Catalog_Image from './Catalog_Image'
 
@@ -44,8 +43,6 @@ const Products = (props) => {
                         title="Catalog"
                         desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo."
                     ></PageTitle>
-
-                    <SortProducts></SortProducts>
 
                     <div className="content white-bg">
                         <div className="row">
