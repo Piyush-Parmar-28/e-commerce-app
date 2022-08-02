@@ -7,15 +7,17 @@ import Shopping_Summary from '../components/Cart/Shopping_Summary';
 const Cart = () => {
 
     var [IDs, setIDs] = useState([])
+    
     useEffect(() => {
         fetch("/cart").then(data => data.json()).then(myData => {
+            console.log(myData)
             setIDs(myData)
         })
     }, [])
 
+
+
     return (
-        // Fragment just wraps our code.
-        //  It is used to prevent unnecessary divs.
         <Fragment>
             <Navbar></Navbar>
 
@@ -31,14 +33,30 @@ const Cart = () => {
                         <div className="white-bg row g-0">
                             <div>
                                 {
-                                    IDs.map(contents => {
-                                        return (
-                                            <Cart_Item
-                                                key= {contents._id}
-                                                itemID= {contents.productID}
-                                            ></Cart_Item>
-                                        )
-                                    })
+                                    IDs.length === 0 ? 
+                                        <p>Nothing to display here</p> : 
+
+                                        IDs.map(contents => {
+                                            if(contents === null){
+                                                return(
+                                                    <p>Nothing here</p>
+                                                )
+                                            }
+                                            else{
+
+                                                return (
+                                                    <Cart_Item
+                                                        key= {contents._id}
+                                                        itemID= {contents.productID}
+                                                        quantity={contents.Quantity}
+                                                        price={contents.Price}
+                                                    ></Cart_Item>
+                                                )
+                                            }
+                                            
+                                        })
+
+
                                 }
 
                             </div>

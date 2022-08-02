@@ -45,7 +45,7 @@ export default function Navbar(props) {
 
     useEffect(()=>{
             axios.get('/status').then(data=>{
-            console.log(data.data)
+            // console.log(data.data)
             setStatus(data.data)
         })
     },[])
@@ -54,7 +54,7 @@ export default function Navbar(props) {
         fetch("/cart").then(data => data.json()).then(myData => {
             setTotalItems(myData.length)
         })
-        console.log(totalItems)
+        // console.log(totalItems)
     }, [])
     
     return (
@@ -73,8 +73,8 @@ export default function Navbar(props) {
                             </div>
 
                             <div>
-                                <form className="d-flex" role="search">
-                                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                                <form className="d-flex"  method='get' action='/products'>
+                                    <input className="form-control me-2" type="text" placeholder="Search" name='item'/>
                                     <button className="btn btn-success btn-sm" type="submit">
                                         <SearchIcon />
                                     </button>

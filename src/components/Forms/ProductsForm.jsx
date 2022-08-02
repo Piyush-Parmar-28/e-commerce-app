@@ -145,7 +145,7 @@ const AddProducts = (props) => {
                                     className="form-control item"
                                     type="text"
                                     placeholder="Laptop, Computer, ..."
-                                    name="tag"
+                                    name="tags"
                                 />
                             </div>
                         </div>
