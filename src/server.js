@@ -338,17 +338,54 @@ app.post("/AddToCart", auth, (req, res) => {
         req.user.Cart[index].Quantity++;
     }
     else {
-        req.user.Cart = req.user.Cart.concat({ productID: myProductID, Quantity: 1,Price:price });
+        req.user.Cart = req.user.Cart.concat({ productID: myProductID, Quantity: 1, Price:price });
     }
 
     req.user.save();
     res.send({status: 200, message: "Added to cart!"});
 });
 
+//  11. Add To Cart
+app.post("/removeOneFromCart", auth, (req, res) => {
+    const myProductID = req.body.productID;
+    const price = req.body.itemPrice
+    console.log("product ID: " + myProductID);
+
+    //  Getting the object corresponding to the product ID (if it is available)
+    var object
+    req.user.Cart.forEach((cartItem) => {
+        // console.log("cartItem.productID is: "+ cartItem.productID);
+        if (cartItem.productID === myProductID) {
+            object = cartItem
+        }
+    })
+    const index = req.user.Cart.indexOf(object)
+
+    // If the item is present in the Cart
+    if (index != -1) {
+
+        if(req.user.Cart[index].Quantity == 1){
+            //  Remove the item from the cart
+            req.user.Cart = req.user.Cart.filter((cartItem) => {
+                // console.log("cartItem.productID is: "+ cartItem.productID);
+                return cartItem.productID != myProductID
+            })
+        }
+
+        else{
+            req.user.Cart[index].Quantity--;
+        }
+    }
+    else {
+        req.user.Cart = req.user.Cart.concat({ productID: myProductID, Quantity: 1, Price:price });
+    }
+
+    req.user.save();
+    res.send({status: 200, message: "Removed one item from cart!"});
+});
+
 //  12. Get Cart Data
 app.get("/cart", auth, (req, res) => {
-    // console.log('getting cart of length: ' + req.user.Cart.length)
-    // console.log("Cart Data is: "+ req.user.Cart);
     res.send(req.user.Cart);
 });
 

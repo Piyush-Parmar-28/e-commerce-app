@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import Navbar from '../components/Common_Components/Navbar'
 import PageTitle from '../components/Common_Components/PageTitle';
-import Cart_Item from '../components/Cart/Cart_Item';
+import All_Cart_Items from '../components/Cart/All_Cart_Items';
 import Shopping_Summary from '../components/Cart/Shopping_Summary';
 
 const Cart = () => {
@@ -10,7 +10,7 @@ const Cart = () => {
     useEffect( () => {
 
         fetch("/cart").then(data => data.json()).then(myData => {
-            console.log(myData)
+            // console.log(myData)
             setIDs(myData)
         })
     }, [])
@@ -45,12 +45,12 @@ const Cart = () => {
                                             else{
 
                                                 return (
-                                                    <Cart_Item
+                                                    <All_Cart_Items
                                                         key= {contents._id}
                                                         itemID= {contents.productID}
                                                         quantity={contents.Quantity}
                                                         price={contents.Price}
-                                                    ></Cart_Item>
+                                                    ></All_Cart_Items>
                                                 )
                                             }
                                             
