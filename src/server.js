@@ -214,11 +214,11 @@ app.post("/updateDetails", auth, upload.single("image"), async (req, res) => {
 
 //  6. Save Image Route
 app.post("/saveImage", auth, (req, res) => {
-    var myImageURL = req.body.mySelectedImage;
+    var myImageURL = req.body.image;
     req.user.ImageURL = myImageURL;
     req.user.save()
 
-    res.redirect("/profile");
+    res.send({status: 200})
 });
 
 //  7. Add Products Route
