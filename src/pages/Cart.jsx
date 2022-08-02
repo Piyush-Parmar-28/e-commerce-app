@@ -7,7 +7,7 @@ import Shopping_Summary from '../components/Cart/Shopping_Summary';
 const Cart = () => {
 
     var [IDs, setIDs] = useState([])
-    useEffect(() => {
+    useEffect( () => {
         fetch("/cart").then(data => data.json()).then(myData => {
             console.log(myData)
             setIDs(myData)
@@ -57,7 +57,6 @@ const Cart = () => {
                                             }
                                             
                                         })
-
 
                                 }
 

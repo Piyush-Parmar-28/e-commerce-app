@@ -56,9 +56,11 @@ app.post("/login", async (req, res) => {
         );
         const token = await user.generateAuthToken();
         res.cookie("jwt", token);
-        res.redirect("/home");
+        return res.send({message: "Login OK"})
+        // res.redirect("/home");
     } catch (error) {
-        res.send("Invalid Credentials");
+        // res.send("Invalid Credentials");
+        return res.send({error: "Invalid Credentials"})
     }
 });
 
