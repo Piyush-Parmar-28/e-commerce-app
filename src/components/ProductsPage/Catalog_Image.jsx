@@ -1,9 +1,51 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate, Link } from 'react-router-dom';
 
 import Image from '../../pages/Image'
 import Rating from '@mui/material/Rating';
 
 const Catalog_Image = (props) => {
+
+    const navigate= useNavigate()
+
+    const [product, setProduct]= useState({
+        productID: "",
+        itemPrice: ""
+    })
+
+    useEffect(() =>{
+        setProduct( {productID: props.productID, itemPrice: props.itemPrice} )
+    }, [])
+
+    const postData= async (event)=>{
+        event.preventDefault()
+
+        // Using object destructuring for: productID= product.productID
+        const {productID, itemPrice}= product
+
+        const res= await fetch("/AddToCart", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            // Converting JSON to string since our backend cannot understand JSON
+            //  The string will be sent as body
+            body: JSON.stringify({
+                //  Uisng object destructuring for productID= productID
+                productID, itemPrice
+            })
+        })
+
+        const data= await res.json()
+
+        if(data.status === 200){
+            navigate("/cart")
+        }
+        else{
+            window.alert("Failed to add product to cart!\nTry Again.")
+        }
+    }
 
     return (
 
@@ -28,15 +70,15 @@ const Catalog_Image = (props) => {
 
 
                 <div className='d-flex justify-content-between'>
-                    <form action='/selected' method='get'>
-                        <input className='d-none' name='selectedProduct' type="text" defaultValue={props.productID} ></input>
-                        <button type="submit" className="btn btn-primary btn-sm">Details</button>
-                    </form>
+                    
+                    <Link to= {"/selected?selectedProduct="+ props.productID} >
+                        <button type="submit" className="btn btn-primary btn-sm" >Details</button>
+                    </Link>
 
-                    <form action='/AddToCart' method='post'>
+                    <form method='post'>
                         <input className='d-none' name='cartProduct' type="text" defaultValue={props.productID} ></input>
                         <input className='d-none' name='productPrice' type="text" defaultValue={props.itemPrice} ></input>
-                        <button className="btn btn-danger btn-sm">Cart</button>
+                        <button className="btn btn-danger btn-sm" onClick={postData}>Cart</button>
                     </form>
 
                 </div>

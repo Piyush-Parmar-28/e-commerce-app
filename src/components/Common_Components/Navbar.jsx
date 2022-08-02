@@ -14,11 +14,8 @@ import Fade from '@mui/material/Fade';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import LoginIcon from '@mui/icons-material/Login';
 import axios from 'axios';
-import { set } from 'mongoose';
 
 function ElevationScroll(props) {
-
-
 
     const { children, window } = props;
     // Note that you normally won't need to set the window ref as useScrollTrigger
@@ -29,8 +26,6 @@ function ElevationScroll(props) {
         threshold: 0,
         target: window ? window() : undefined,
     });
-
-
 
     return React.cloneElement(children, {
         elevation: trigger ? 4 : 0,
@@ -56,6 +51,11 @@ export default function Navbar(props) {
         })
         // console.log(totalItems)
     }, [])
+
+    const [textData, setTextData]= useState("")
+    const getSearchText= async (event) =>{
+        setTextData(event.target.value)
+    }
     
     return (
         <React.Fragment>
@@ -72,13 +72,17 @@ export default function Navbar(props) {
                                 </Link>
                             </div>
 
-                            <div>
-                                <form className="d-flex"  method='get' action='/products'>
-                                    <input className="form-control me-2" type="text" placeholder="Search" name='item'/>
-                                    <button className="btn btn-success btn-sm" type="submit">
-                                        <SearchIcon />
-                                    </button>
-                                </form>
+                            <div className='d-flex'>
+                                {/* <form className="d-flex"  method='get' action='/products'> */}
+                                    <input className="form-control me-2" type="text" placeholder="Search" name='item' onChange={getSearchText}/>
+                                    
+                                    <Link to= {"/products?item="+ textData}>
+                                        <button className="btn btn-success btn-sm" type="submit">
+                                            <SearchIcon />
+                                        </button>
+                                    </Link>
+                                    
+                                {/* </form> */}
 
                             </div>
 

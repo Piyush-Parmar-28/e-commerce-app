@@ -36,26 +36,6 @@ const Filter_Products = (props) => {
 
                 </div>
 
-                {/* 2. Brands */}
-                <div>
-                    <h4>Brands</h4>
-
-                    <div>
-                        <input className="form-check-input" type="checkbox" id="formCheck-5" />
-                        <label className="form-check-label ms-2">Samsung</label>
-                    </div>
-
-                    <div>
-                        <input className="form-check-input" type="checkbox" id="formCheck-6" />
-                        <label className="form-check-label ms-2">Apple</label>
-                    </div>
-
-                    <div>
-                        <input className="form-check-input" type="checkbox" id="formCheck-7" />
-                        <label className="form-check-label ms-2">HTC</label>
-                    </div>
-                </div>
-
             </div>
         </div>
     )

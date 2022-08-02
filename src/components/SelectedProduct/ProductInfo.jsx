@@ -10,7 +10,6 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 const ProductInfo = () => {
 
-
     const [ID, productID] = useState("")
     const [products, setProducts] = useState([])
     var myCount = 0;

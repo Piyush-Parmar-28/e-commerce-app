@@ -319,8 +319,8 @@ app.get("/selected/:data", async (req, res) => {
 
 //  11. Add To Cart
 app.post("/AddToCart", auth, (req, res) => {
-    const myProductID = req.body.cartProduct;
-    const price = req.body.productPrice
+    const myProductID = req.body.productID;
+    const price = req.body.itemPrice
     console.log("product ID: " + myProductID);
 
     //  Getting the object corresponding to the product ID (if it is available)
@@ -342,7 +342,7 @@ app.post("/AddToCart", auth, (req, res) => {
     }
 
     req.user.save();
-    res.redirect("/cart");
+    res.send({status: 200, message: "Added to cart!"});
 });
 
 //  12. Get Cart Data
