@@ -1,12 +1,53 @@
-import { height, maxHeight } from '@mui/system'
-import React from 'react'
+import React, { useState } from 'react'
+import {useNavigate } from  'react-router-dom'
+
 import PageTitle from "../Common_Components/PageTitle"
 
 const Login = (props) => {
+    const navigate= useNavigate();
 
-    // const preventReload= (event)=>{
-    //     event.preventDefault();
-    // }
+    const [loginDetails, setLoginDetails]= useState({
+        Email: "",
+        Password: ""
+    })
+
+    const handleInputs= (event) =>{
+        setLoginDetails({ ...loginDetails, [event.target.name]: event.target.value })
+        // console.log(loginDetails);
+    }
+
+    const postData= async (event)=>{
+        event.preventDefault();
+
+        //  Writing object destructuring for: const Email= loginDetails.Email
+        const {Email, Password}= loginDetails
+
+        const res= await fetch("/login", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            }, 
+            // Since our backend will not understand JSON data & hence we must convert to string
+            //  This string will be sent as 'body' to server
+            body: JSON.stringify({
+                //  Using object destructuring for: Email: Email
+                Email, Password
+            })
+        })
+
+        const data= await res.json()
+
+        console.log("Data is: "+ JSON.stringify(data));
+
+        if (data.status === 401) {
+            window.alert("Invalid Credentials!")
+        }
+        else{
+            window.alert("Login Successful!")
+            console.log("Login Success");
+            navigate("/home")
+        }
+    }
 
     return (
         <main >
@@ -18,20 +59,19 @@ const Login = (props) => {
                         desc="Log In to continue..."
                     ></PageTitle>
 
-                    {/*  onSubmit={preventReload} */}
-                    <form className="card-style" action="/login" method="post">
+                    <form className="card-style" method="post">
                         <div className="mb-3">
                             <label className="form-label" ><b>Email</b></label>
-                            <input className="form-control item" type="email" id="email" name="Email" required />
+                            <input className="form-control item" type="email" id="email" name="Email" required onChange={handleInputs} />
                         </div>
 
                         <div className="mb-3">
                             <label className="form-label"><b>Password</b></label>
-                            <input className="form-control" type="password" id="password" name="Password" required />
+                            <input className="form-control" type="password" id="password" name="Password" required onChange={handleInputs} />
                         </div>
 
                         <div className="d-flex justify-content-center">
-                            <button className="btn btn-primary" type="submit">Login</button>
+                            <button className="btn btn-primary" type="submit" onClick={postData}>Login</button>
                         </div>
 
                         <div className="d-flex justify-content-center align-items-center mt-3">

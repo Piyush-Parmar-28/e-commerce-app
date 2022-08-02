@@ -12,7 +12,7 @@ const UpdateInfo = () => {
             <section className="clean-block clean-form dark">
                 <div className="container-fluid px-5">
                     <PageTitle
-                        title="Update Profile"
+                        title="Update Avatar"
                         desc=""
                     ></PageTitle>
 

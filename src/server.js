@@ -56,15 +56,17 @@ app.post("/login", async (req, res) => {
         );
         const token = await user.generateAuthToken();
         res.cookie("jwt", token);
-        res.redirect("/home");
-    } catch (error) {
-        res.send("Invalid Credentials");
+        return res.send({message: "Login OK"})
+        // res.redirect("/home");
+    } catch (e) {
+        // res.send("Invalid Credentials");
+        return res.send({status: 401, error: "Unauthorized response "})
     }
 });
 
 //  3. SignUp Route
 app.post("/signUp", (req, res) => {
-    console.log(req.body);
+    // console.log("req.body is: "+ JSON.stringify(req.body));
 
     // Saving data with Mongoose Model
     const user = new UserObj({
@@ -86,8 +88,8 @@ app.post("/signUp", (req, res) => {
     user
         .save()
         .then(() => {
-            console.log(user);
-            res.redirect("/");
+            // console.log(user);
+            res.send({status: 200, message: "OK! SignUp Successful"})
         })
         .catch((e) => {
             console.log(e);
@@ -212,11 +214,11 @@ app.post("/updateDetails", auth, upload.single("image"), async (req, res) => {
 
 //  6. Save Image Route
 app.post("/saveImage", auth, (req, res) => {
-    var myImageURL = req.body.mySelectedImage;
+    var myImageURL = req.body.image;
     req.user.ImageURL = myImageURL;
     req.user.save()
 
-    res.redirect("/profile");
+    res.send({status: 200})
 });
 
 //  7. Add Products Route
