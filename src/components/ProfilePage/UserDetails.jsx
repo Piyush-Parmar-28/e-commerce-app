@@ -29,7 +29,7 @@ const UserDetails = () => {
             )}
 
             {/* User Details */}
-            <form action="/profile" className="card-style">
+            <form action="/profile" className="form-style">
                 <div className="mb-2 d-flex">
                     <div>
                         <b>Name:</b>

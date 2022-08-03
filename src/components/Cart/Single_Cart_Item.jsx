@@ -115,7 +115,7 @@ const Single_Cart_Item = (props) => {
                             </form>
 
                             <form>
-                                <input type="number" id="number" className="form-control" value={quantity} min={1} onChange={verifyQuantity} />
+                                <input type="number" id="number" value={quantity} min={1} onChange={verifyQuantity} />
                             </form>
 
                             {/* Increase Quantity Button */}

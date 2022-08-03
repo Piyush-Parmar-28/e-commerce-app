@@ -98,7 +98,7 @@ const UpdateImage = (props) => {
                             Select Avatar as Profile Photo...
                         </p>
 
-                        <form method="post" className="card-style">
+                        <form method="post" className="form-style">
                             <div className="d-flex justify-content-center mb-4">
                                 <img
                                     className="mb-1"
@@ -108,7 +108,7 @@ const UpdateImage = (props) => {
                                 ></img>
                             </div>
                             <input
-                                className="form-control item d-none"
+                                className="item d-none"
                                 type="text"
                                 name="mySelectedImage"
                                 defaultValue={selectedImage.image}

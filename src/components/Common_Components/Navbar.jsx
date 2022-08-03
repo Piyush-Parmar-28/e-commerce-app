@@ -74,7 +74,7 @@ export default function Navbar(props) {
 
                             <div className='d-flex'>
                                 {/* <form className="d-flex"  method='get' action='/products'> */}
-                                    <input className="form-control me-2" type="text" placeholder="Search" name='item' onChange={getSearchText}/>
+                                    <input className="me-2" type="text" placeholder="Search" name='item' onChange={getSearchText}/>
                                     
                                     <Link to= {"/products?item="+ textData}>
                                         <button className="btn btn-success btn-sm" type="submit">

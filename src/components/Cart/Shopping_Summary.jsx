@@ -16,7 +16,7 @@ const Shopping_Summary = () => {
 
             <h2 className="d-flex justify-content-center">Order Summary</h2>
 
-            <div className="card-style mt-4 ">
+            <div className="form-style mt-4 ">
 
                 {/* Sub-Total */}
                 <div className="d-flex justify-content-between">

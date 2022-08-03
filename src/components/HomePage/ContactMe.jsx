@@ -24,7 +24,7 @@ const ContactMe = () => {
 
                                 {/* Social Profiles */}
                                 <div className="col-md-12">
-                                    <div className="card-style">
+                                    <div className="form-style">
 
                                         <div className="d-flex justify-content-center">
                                             <i className="contact-btn"><ShareIcon></ShareIcon></i>
@@ -52,7 +52,7 @@ const ContactMe = () => {
                                 {/* Call & Email */}
                                 <div className="col-md-12">
 
-                                    <div className="card-style mt-4 mb-4 d-flex justify-content-between">
+                                    <div className="form-style mt-4 mb-4 d-flex justify-content-between">
                                         <div>
                                             <div className="d-flex justify-content-center">
                                                 <i className="contact-btn"><a><EmailOutlinedIcon /></a></i>
@@ -82,7 +82,7 @@ const ContactMe = () => {
                         <div className="col-lg-6">
 
                             <form action="https://formsubmit.co/9136b2c305e27e56dc48df97e6f3158b" method="post" role="form"
-                                className="card-style">
+                                className="form-style">
 
                                 <input type="hidden" name="_captcha" value="false" />
                                 <input type="hidden" name="_template" value="table" />
@@ -91,24 +91,24 @@ const ContactMe = () => {
                                 <div className="row">
 
                                     <div className="col-md-6">
-                                        <input type="text" className="form-control"
+                                        <input type="text" 
                                             id="name" placeholder="Your Name" required />
                                     </div>
 
                                     <div className="col-md-6 mt-3 mt-md-0">
-                                        <input type="email" className="form-control" name="email"
+                                        <input type="email" name="email"
                                             id="email" placeholder="Your Email" required />
                                     </div>
 
                                 </div>
 
                                 <div className="mt-3">
-                                    <input type="text" className="form-control mt-3" name="subject"
+                                    <input type="text" className="mt-3" name="subject"
                                         id="subject" placeholder="Subject" required />
                                 </div>
 
                                 <div className="mt-3">
-                                    <textarea className="form-control" name="message" id="message" rows="6" placeholder="Message" required>
+                                    <textarea name="message" id="message" rows="6" placeholder="Message" required>
                                     </textarea>
                                 </div>
 

@@ -1,0 +1,34 @@
+.form-style {
+  border-top: 2px solid #e1775d;
+  background-color: #fff;
+  max-width: 500px;
+  margin: auto;
+  padding: 40px;
+  box-shadow: 4px 4px 10px #a2adaa;
+}
+
+/* Input Fields */
+input, textarea{
+  border: 1px solid #a2adaa;
+  border-radius: 10px;
+  padding: .4rem;
+  outline: none;
+}
+
+input:focus, textarea:focus{
+  border: 1px solid #e1775d;
+  outline: 1px solid #e1775d;
+}
+
+/* File type input */
+.file-input{
+  border: 1px solid #a2adaa;
+  border-radius: 10px;
+  padding: .4rem;
+  outline: none;
+}
+
+.file-input:focus{
+  border: 1px solid #e1775d;
+  outline: 1px solid #e1775d;
+}

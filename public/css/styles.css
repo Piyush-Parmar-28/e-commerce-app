@@ -4,12 +4,15 @@ body {
   padding: 0;
   background-color: #f4f9fd;
   min-height: 100%;
-  /* display: flex;
-  flex-direction: column; */
 }
 
 main{
   height: 100%;
+}
+
+.extra-padding {
+  padding-bottom: 50px;
+  padding-top: 30px;
 }
 
 /* SimpleText Style for anchor tags */
@@ -90,26 +93,6 @@ main{
   background-position: left center;
   background-size: contain;
   margin-bottom: 5px;
-}
-
-
-
-/* All Cards */
-.card-block{
-  padding-bottom:50px;
-  padding-top: 30px;
-  height: 100%;
-
-}
-
-.card-style{
-  border-top:2px solid #5ea4f3;
-  background-color:#fff;
-  max-width:500px;
-  margin:auto;
-  padding:40px;
-  box-shadow:0px 2px 10px rgba(0,0,0,.075);
-  border-radius: 2%;
 }
 
 /* For Categories Page */
