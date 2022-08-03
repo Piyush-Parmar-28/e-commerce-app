@@ -21,7 +21,6 @@ const Single_Cart_Item = (props) => {
 
     // Increase Value Function
     const increaseValue = async (event) => {
-        event.preventDefault()
         setQuantity(quantity+1)
         const myProductID = props._id
         // console.log("myProductID is: " + myProductID);
@@ -50,7 +49,6 @@ const Single_Cart_Item = (props) => {
 
     // Decrease Value Function
     const decreaseValue = async (event) => {
-        event.preventDefault()
         setQuantity(quantity-1)
         const myProductID= props._id
 
