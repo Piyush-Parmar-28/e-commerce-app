@@ -15,7 +15,6 @@ const Cart = () => {
     }, [])
 
 
-
     return (
         <Fragment>
             <Navbar></Navbar>

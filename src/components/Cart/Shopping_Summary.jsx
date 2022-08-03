@@ -25,7 +25,7 @@ const Shopping_Summary = () => {
                     </div>
 
                     <div>
-                        <p>{totalPrice}</p>
+                        <p>$ {totalPrice}</p>
                     </div>
                 </div>
 
@@ -60,7 +60,7 @@ const Shopping_Summary = () => {
                     </div>
 
                     <div>
-                        <p>{totalPrice}</p>
+                        <p>$ {totalPrice}</p>
                     </div>
                 </div>
 
