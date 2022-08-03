@@ -45,7 +45,7 @@ export default function Navbar(props) {
         })
     },[])
 
-    React.useEffect(() => {
+    useEffect(() => {
         fetch("/cart").then(data => data.json()).then(myData => {
             setTotalItems(myData.length)
         })
