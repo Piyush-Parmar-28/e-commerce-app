@@ -5,7 +5,6 @@ import All_Cart_Items from '../components/Cart/All_Cart_Items';
 import Shopping_Summary from '../components/Cart/Shopping_Summary';
 
 const Cart = () => {
-
     var [IDs, setIDs] = useState([])
     useEffect( () => {
 
