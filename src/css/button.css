@@ -1,4 +1,4 @@
-/* Normal Button */
+/* -------------------------1. Normal Button---------------------------------------- */
 .btn-normal {
   background-color: #e1775d;
   border: 0px;
@@ -20,7 +20,7 @@
   box-shadow: 2px 2px 5px gray;
 }
 
-/* Icon Button */
+/* ---------------------------------------------2. Icon Button--------------------------------------------------------- */
 .btn-icon-no-click {
   background-color: #a2adaa;
   border: none;
@@ -36,7 +36,7 @@
   justify-content: center;
   font-size: 1rem;
   display: inline-block;
-  color: #687683;
+  color: #656565;
   line-height: 1;
   margin: 0 8px;
   transition: 0.3s;
@@ -53,6 +53,53 @@
 }
 
 .btn-icon:active{
-    transform: scale(0.9);
-    box-shadow: 2px 2px 5px gray;
+  transform: scale(0.9);
+  box-shadow: 2px 2px 5px gray;
+}
+
+/* -------------------------------------------------------Size Variety----------------------------------------------------------- */
+/* 1. small button */
+.btn-small{
+  padding: 10px;
+}
+
+.btn-xsmall{
+  padding: 5px;
+}
+
+/* ---------------------------------------------------Colour Variety--------------------------------------------------------- */
+/* A. Red Button */
+.btn-bg-red{
+  background-color: #e1775d;
+  border: 1px solid #e1775d;
+  color: white;
+}
+
+.btn-bg-red:hover {
+  color: white;
+  background-color: #d1654a;
+  transition: 0.2s;
+}
+
+.btn-bg-red:active {
+  transform: scale(0.9);
+  box-shadow: 2px 2px 5px gray;
+}
+
+/* B. Green Button */
+.btn-bg-green{
+  background-color: #01966e;
+  border: 1px solid #01966e;
+  color: white;
+}
+
+.btn-bg-green:hover {
+  color: white;
+  background-color: #098060;
+  transition: 0.2s;
+}
+
+.btn-bg-green:active {
+  transform: scale(0.9);
+  box-shadow: 2px 2px 5px gray;
 }
