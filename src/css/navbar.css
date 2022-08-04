@@ -3,7 +3,7 @@
     background: #ffffff;
     position: sticky;
     top: 0;
-    box-shadow: 4px 4px 10px #a2adaa;
+    box-shadow: 0.1rem 0.1rem 0.7rem rgba(162, 173, 170, 0.5);
 }
 
 .badge{
@@ -15,4 +15,47 @@
     margin-right: -2rem;
     right: -2rem;
     z-index: 1;
+}
+
+
+#profile_icon{
+    transition: all 0.5s ease;
+}
+
+
+
+@media screen and (max-width:800px){
+    #cart,#profile{
+    display: none;
+    transition: all 0.5s ease;
+    }
+    
+}
+@media screen and (max-width:600px){
+    #cart_icon,#logout_icon{
+        display: none;
+        transition: all 0.5s ease;
+
+    }
+    #profile_icon{
+        background: #e1775d;
+        color: white;
+        border: none;
+        align-self: center;
+        justify-self: center;
+        transition: all 0.5s ease;
+    }
+}
+
+@media screen and (max-width:480px){
+    #search_div{
+        border: 2px solid red;
+        width: 100%;
+    }
+    #logo{
+        display: none;
+    }
+    #search_input{
+        width: 100%;
+    }
 }

@@ -19,14 +19,32 @@
   width: 80%;
   height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
 }
 
 .right_inner_div {
   width: 95%;
   height: 95%;
   /* border: 2px solid green; */
-  background: #f4f9fd;
+  background: transparent;
+  padding: 1rem;
+  display: block;
 }
 
+@media screen and (max-width:400px){
+  .left_div{
+    width: 25%;
+  }
+  .right_div{
+    width: 65%;
+  }
+}
+
+@media screen and (max-width:670px){
+  .right_inner_div{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    padding: 0;
+  }
+}
