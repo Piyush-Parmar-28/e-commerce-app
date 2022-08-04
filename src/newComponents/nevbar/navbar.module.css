@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
+.header{
+    height: 3rem;
+    /* border: 2px solid red; */
+    width: 100%;
+    background: #e1775d;
+    display: flex;
+    overflow: hidden;
+    border-bottom: 1px solid #020202;
+    box-shadow: 0rem 0.4rem 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo_div{
+    height: 100%;
+    width: 15%;
+    /* border: 2px solid black; */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.search_div{
+    width: 45%;
+    height: 100%;
+    /* border: 2px solid red; */
+    position: relative;
+    display: flex;
+    padding: 0.2rem;
+    align-items: center;
+}
+
+.search_div span{
+    border: none;
+    margin: 0;
+    height: fit-content;
+    width: fit-content;
+}
+
+.search_div svg{
+    width: 1rem;
+    height: 1rem;
+    transform: translateY(-0.1rem);
+
+}
+
+.button_div{
+    height: 80%;
+    width: 8%;
+    margin-left: 1%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    border: 0.1rem solid #020202;
+    color: #020202;
+    background: #f4f9fd;
+}
+
+.search_div span{
+    border: none;
+}
+
+.input{
+    width: 90%;
+    height: 80%;
+    background: #f4f9fd;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    border: 0.1rem solid #020202;
+    border-radius: 1rem;
+    padding-left: 1rem;
+    letter-spacing: 1px;
+}
+
+.a{
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #020202;
+    font-family: 'Play', sans-serif;
+    font-weight: bold;
+    
+}
+.a2{
+    width: fit-content;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #020202;
+    /* margin-right: 3rem; */
+    font-weight: bold;
+    height: 100%;
+    align-items: center;
+    align-content: center;
+    padding-top: 0.7rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    cursor: pointer;
+    
+}
+
+.a2:hover{
+
+    color: #f4f9fd;
+    background: #020202;
+
+}
+
+
+.a2 span{
+    margin-right: 0.8rem;
+    display: inline-block;
+    transform: translateY(-0.1rem);
+}
+
+.a2 svg{
+    width: 1rem;
+    height: 1rem;
+}
+.a2:hover svg{
+   color: #f4f9fd;
+}
+
+.cart_span{
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    background: #020202;
+    color: #f4f9fd;
+    width: 1.5rem;
+    border-radius: 1rem;
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+.navigation_div{
+    width: 40%;
+    height: 100%;
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
