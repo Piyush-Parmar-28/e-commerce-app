@@ -1,0 +1,18 @@
+.my-navbar{
+    padding: 2rem;
+    background: #ffffff;
+    position: sticky;
+    top: 0;
+    box-shadow: 4px 4px 10px #a2adaa;
+}
+
+.badge{
+    border-radius: 100%;
+    background-color: #e1775d;
+    color: white;
+    vertical-align: top;
+    position: relative;
+    margin-right: -2rem;
+    right: -2rem;
+    z-index: 1;
+}

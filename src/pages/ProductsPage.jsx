@@ -6,14 +6,14 @@ import Products from "../components/ProductsPage/Products";
 import Section from "../newComponents/section/section";
 import Productss from "../newComponents/productsPage/products";
 const ProductsPage = () => {
-  return (
-    <Fragment>
-        <Section>
-        <NavBar></NavBar>
-        <Productss/>
-        </Section>
-    </Fragment>
-  );
+    return (
+        <Fragment>
+            <Section>
+                <NavBar></NavBar>
+                <Productss />
+            </Section>
+        </Fragment>
+    );
 };
 
 export default ProductsPage;

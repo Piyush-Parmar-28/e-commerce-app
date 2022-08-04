@@ -3,8 +3,6 @@ import { Link, useNavigate } from "react-router-dom"
 import Image from '../../pages/Image'
 
 import DeleteIcon from '@mui/icons-material/Delete';
-import Tooltip from '@mui/material/Tooltip';
-import Fade from '@mui/material/Fade';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 

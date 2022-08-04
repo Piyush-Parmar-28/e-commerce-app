@@ -31,6 +31,7 @@
 }
 
 .btn-icon {
+  background-color: white;
   margin-top: 15px;
   display: flex;
   justify-content: center;
@@ -64,7 +65,7 @@
 }
 
 .btn-xsmall{
-  padding: 5px;
+  padding: 7px;
 }
 
 /* ---------------------------------------------------Colour Variety--------------------------------------------------------- */
@@ -100,6 +101,25 @@
 }
 
 .btn-bg-green:active {
+  transform: scale(0.9);
+  box-shadow: 2px 2px 5px gray;
+}
+
+/* B. Blue Button */
+.btn-bg-blue{
+  background-color: #7cd5ff;
+  border: 1px solid #7cd5ff;
+  color: white;
+}
+
+.btn-bg-blue:hover {
+  color: white;
+  background-color: #03aed8;
+  border: 1px solid #03aed8;
+  transition: 0.2s;
+}
+
+.btn-bg-blue:active {
   transform: scale(0.9);
   box-shadow: 2px 2px 5px gray;
 }
