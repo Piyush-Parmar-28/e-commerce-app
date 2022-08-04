@@ -65,7 +65,7 @@ const Shopping_Summary = () => {
                 </div>
 
                 {/* Buy Button */}
-                <button className="btn btn-primary mt-4 w-100" type="button">Buy</button>
+                <button className="btn-normal mt-4 w-100" type="button">Buy</button>
             </div>
 
         </div>
