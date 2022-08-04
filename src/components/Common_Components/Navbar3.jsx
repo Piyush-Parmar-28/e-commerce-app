@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 
-// import Badge from '@mui/material/Badge';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
@@ -63,9 +62,7 @@ export default function Navbar3(props) {
                         <p className='badge'>{totalItems}</p>
 
                         <button type="button" className="btn-icon btn-xsmall me-2">
-                            {/* <Badge badgeContent={totalItems} color="secondary"> */}
-                                <ShoppingCartOutlinedIcon />
-                            {/* </Badge> */}
+                            <ShoppingCartOutlinedIcon />
                         </button>
                     </Link>
                 </div>
