@@ -29,6 +29,13 @@ const NavBar = () => {
     setTextData(event.target.value);
   };
 
+  function logout(){
+    fetch('/logout',{
+      method:'post'
+    })
+    window.location.href = '/'
+  }
+
   return (
     <header className={style.header}>
       <div className={style.logo_div}>
@@ -60,6 +67,7 @@ const NavBar = () => {
             </svg>
           </span>
           Cart
+          {status && <span className={style.cart_span}>{totalItems}</span>}
         </a>
         <a className={style.a2}>
           <span>
@@ -70,7 +78,7 @@ const NavBar = () => {
           Orders
         </a>
         {status ? (
-          <a className={style.a2}>
+          <a className={style.a2} onClick={logout}>
             <span>
               <svg fill="currentColor">
                 <path
@@ -86,7 +94,8 @@ const NavBar = () => {
             Logout
           </a>
         ) : (
-          <a className={style.a2}>
+          <Link to='/' className={style.a2}>
+          <a >
             <span>
               <svg fill="currentColor">
                 <path
@@ -101,6 +110,7 @@ const NavBar = () => {
             </span>
             Login
           </a>
+          </Link>
         )}
       </div>
     </header>

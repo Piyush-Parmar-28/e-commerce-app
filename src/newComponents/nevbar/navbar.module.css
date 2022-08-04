@@ -6,10 +6,10 @@
     /* border: 2px solid red; */
     width: 100%;
     background: #e1775d;
-    position: absolute;
-    top:0;
     display: flex;
     overflow: hidden;
+    border-bottom: 1px solid #020202;
+    box-shadow: 0rem 0.4rem 5px rgba(0, 0, 0, 0.2);
 }
 
 .logo_div{
@@ -98,6 +98,7 @@
     padding-right: 1rem;
     padding-left: 1rem;
     font-family: 'Source Sans Pro', sans-serif;
+    cursor: pointer;
     
 }
 
@@ -121,6 +122,17 @@
 }
 .a2:hover svg{
    color: #f4f9fd;
+}
+
+.cart_span{
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    background: #020202;
+    color: #f4f9fd;
+    width: 1.5rem;
+    border-radius: 1rem;
+    font-family: 'Source Sans Pro', sans-serif;
+
 }
 
 .navigation_div{

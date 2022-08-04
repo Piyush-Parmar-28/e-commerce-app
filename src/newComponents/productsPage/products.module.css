@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
+
+.outter_div {
+  width: 100%;
+  height: 94%;
+  /* border: 2px solid red; */
+  display: flex;
+}
+
+.left_div {
+  /* border: 2px solid black; */
+  width: 20%;
+  height: 100%;
+  background: #f4f9fd;
+  box-shadow: 0.4rem 0rem 0.6rem rgba(0, 0, 0, 0.2);
+}
+.right_div {
+  /* border: 2px solid black; */
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right_inner_div {
+  width: 95%;
+  height: 95%;
+  /* border: 2px solid green; */
+  background: #f4f9fd;
+}
+

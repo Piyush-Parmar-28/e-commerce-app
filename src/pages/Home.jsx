@@ -1,6 +1,7 @@
 import React from 'react'
 
-import Navbar from '../components/Common_Components/Navbar'
+// import Navbar from '../components/Common_Components/Navbar'
+import NavBar from '../newComponents/nevbar/navbar'
 import Slider from '../components/HomePage/Slider'
 import Offers from '../components/HomePage/Offers'
 import Categories from '../components/HomePage/Categories'
@@ -11,7 +12,7 @@ import TopPicks from '../components/HomePage/TopPicks'
 const Home = () => {
     return (
         <div className= "dark-bg">
-            <Navbar></Navbar>
+            <NavBar></NavBar>
             <Slider></Slider>
             <Categories></Categories>
             <TopPicks></TopPicks>
