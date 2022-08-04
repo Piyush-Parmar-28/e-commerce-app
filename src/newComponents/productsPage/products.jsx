@@ -26,6 +26,7 @@ const Productss = () => {
           <div className={style.right_inner_div}>
 
             {render}
+   
           </div>
         </div>
       </div>

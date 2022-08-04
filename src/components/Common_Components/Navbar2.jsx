@@ -36,8 +36,8 @@ export default function Navbar2(props) {
         <div className="my-navbar d-flex justify-content-between align-items-center" >
 
             <div id='logo'>
-                <Link to="/home">
-                    <h5 className="text-black">Sliver Store</h5>
+                <Link to="/home" id='text'>
+                    <h5  id='text'>Sliver Store</h5>
                 </Link>
             </div>
 
