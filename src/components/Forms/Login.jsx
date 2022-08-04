@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import "./forms.css"
-import "./button.css"
 import PageTitle from "../Common_Components/PageTitle"
 
 const Login = (props) => {

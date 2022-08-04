@@ -62,7 +62,7 @@ const UserDetails = () => {
 
                 <div className="d-flex justify-content-around">
                     <Link to="/update">
-                        <button className="btn btn-warning">Update Details</button>
+                        <button className="btn-normal">Update Details</button>
                     </Link>
                 </div>
             </form>

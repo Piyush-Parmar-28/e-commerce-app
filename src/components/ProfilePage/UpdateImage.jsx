@@ -115,12 +115,12 @@ const UpdateImage = (props) => {
                             />
                             <div className="d-flex justify-content-between mt-4">
                                 <Link to="/update">
-                                    <button className="btn btn-primary" type="submit" onClick={refreshPage}>
+                                    <button className="btn-normal" type="submit" onClick={refreshPage}>
                                         Refresh <RefreshIcon />
                                     </button>
                                 </Link>
 
-                                <button className="btn btn-primary" type="submit" onClick={postData}>
+                                <button className="btn-normal" type="submit" onClick={postData}>
                                     Set Profile
                                 </button>
                             </div>

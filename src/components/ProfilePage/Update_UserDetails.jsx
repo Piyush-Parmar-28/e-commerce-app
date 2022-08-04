@@ -59,7 +59,7 @@ const User_Details = () => {
                 </div>
 
                 <div className="d-flex justify-content-center">
-                    <button className="btn btn-success" type="submit">Update</button>
+                    <button className="btn-normal" type="submit">Update</button>
                 </div>
 
             </form>

@@ -27,22 +27,22 @@ const ContactMe = () => {
                                     <div className="form-style">
 
                                         <div className="d-flex justify-content-center">
-                                            <i className="contact-btn"><ShareIcon></ShareIcon></i>
+                                            <i className="btn-icon-no-click"><ShareIcon></ShareIcon></i>
                                         </div>
 
                                         <h3 className="pt-1 pb-2 d-flex justify-content-center" >Social Profiles</h3>
 
-                                        <div className="d-flex justify-content-center">
+                                        <div className="d-flex justify-content-between">
 
-                                            <a className="contact-btn" href="#"><i className="bi bi-instagram p"></i></a>
-                                            
-                                            <a className="contact-btn" href="https://github.com/Piyush-Parmar-28?tab=repositories" target="_blank"><i className="bi bi-github 2"></i></a>
-                                            
-                                            <a className="contact-btn" href="https://www.linkedin.com/in/piyush-parmar-76b97820b/" target="_blank"><i className="bi bi-linkedin"></i></a>
-                                            
-                                            <a className="contact-btn" href="https://www.linkedin.com/in/piyush-parmar-76b97820b/" target="_blank"><i className="bi bi-twitter"></i></a>
-                                            
-                                            <a className="contact-btn" href="https://www.linkedin.com/in/piyush-parmar-76b97820b/" target="_blank"><i className="bi bi-whatsapp"></i></a>
+                                            <a className="btn-icon" href="#"><i className="bi bi-instagram p"></i></a>
+
+                                            <a className="btn-icon" href="https://github.com/Piyush-Parmar-28?tab=repositories" target="_blank"><i className="bi bi-github 2"></i></a>
+
+                                            <a className="btn-icon" href="https://www.linkedin.com/in/piyush-parmar-76b97820b/" target="_blank"><i className="bi bi-linkedin"></i></a>
+
+                                            <a className="btn-icon" href="https://www.linkedin.com/in/piyush-parmar-76b97820b/" target="_blank"><i className="bi bi-twitter"></i></a>
+
+                                            <a className="btn-icon" href="https://www.linkedin.com/in/piyush-parmar-76b97820b/" target="_blank"><i className="bi bi-whatsapp"></i></a>
 
                                         </div>
 
@@ -55,17 +55,16 @@ const ContactMe = () => {
                                     <div className="form-style mt-4 mb-4 d-flex justify-content-between">
                                         <div>
                                             <div className="d-flex justify-content-center">
-                                                <i className="contact-btn"><a><EmailOutlinedIcon /></a></i>
+                                                <i className="btn-icon-no-click"><a><EmailOutlinedIcon /></a></i>
                                             </div>
 
                                             <h3 className="pt-1 pb-2 d-flex justify-content-center">Email Me</h3>
                                             <p className="d-flex justify-content-center">piyush2822ecommerce@gmail.com</p>
                                         </div>
 
-
                                         <div >
                                             <div className="d-flex justify-content-center">
-                                                <i className="contact-btn"><a><LocalPhoneOutlinedIcon /></a></i>
+                                                <i className="btn-icon-no-click"><a><LocalPhoneOutlinedIcon /></a></i>
                                             </div>
                                             <h3 className="pt-1 pb-2 d-flex justify-content-center">Call Me</h3>
                                             <p className="d-flex justify-content-center">7014628881</p>
@@ -90,30 +89,36 @@ const ContactMe = () => {
 
                                 <div className="row">
 
-                                    <div className="col-md-6">
-                                        <input type="text" 
-                                            id="name" placeholder="Your Name" required />
+                                    <div className="col d-flex flex-column">
+                                        <div className="mb-3">
+                                            <label><strong>Name</strong></label>
+                                            <input type="text" id="name" placeholder="John Carter" />
+                                        </div>
                                     </div>
 
-                                    <div className="col-md-6 mt-3 mt-md-0">
-                                        <input type="email" name="email"
-                                            id="email" placeholder="Your Email" required />
+                                    <div className="col d-flex flex-column">
+                                        <div className="mb-3">
+                                            <label><strong>Subject</strong></label>
+                                            <input type="text" id="subject" name="subject" placeholder="Your Subject" />
+                                        </div>
                                     </div>
 
                                 </div>
 
-                                <div className="mt-3">
-                                    <input type="text" className="mt-3" name="subject"
-                                        id="subject" placeholder="Subject" required />
+                                <div className="mb-3 d-flex flex-column">
+                                    <label><strong>Email</strong></label>
+                                    <input type="email" id="email" name="email" placeholder="johncarter@gmail.com" required />
                                 </div>
 
-                                <div className="mt-3">
+
+                                <div className="mt-3 d-flex flex-column">
+                                    <label><strong>Message</strong></label>
                                     <textarea name="message" id="message" rows="6" placeholder="Message" required>
                                     </textarea>
                                 </div>
 
                                 <div className="d-flex justify-content-center">
-                                    <button type="submit" className="btn btn-primary my-3">Send Message</button>
+                                    <button type="submit" className="btn-normal my-3">Send Message</button>
                                 </div>
                             </form>
                         </div>
