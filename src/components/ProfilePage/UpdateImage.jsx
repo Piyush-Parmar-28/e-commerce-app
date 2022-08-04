@@ -127,8 +127,7 @@ const UpdateImage = (props) => {
                         </form>
                     </div>
 
-                    {/* Update Details Form */}
-                    {/* <Update_UserDetails /> */}
+                    <Update_UserDetails />
                 </div>
             </section>
         </main>

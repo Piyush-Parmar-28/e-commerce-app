@@ -14,7 +14,7 @@ const Productss = () => {
    }, [])
 
    const render = products.map((data)=>
-      <Card key={data._id} name={data.Product} ratings={data.Ratings} price={data.Price} imageID={data.ImageID}></Card>
+      <Card key={data._id} name={data.Product} productID={data._id} ratings={data.Ratings} price={data.Price} imageID={data.ImageID}></Card>
    )
 
 
@@ -26,8 +26,7 @@ const Productss = () => {
           <div className={style.right_inner_div}>
 
             {render}
-
-
+   
           </div>
         </div>
       </div>

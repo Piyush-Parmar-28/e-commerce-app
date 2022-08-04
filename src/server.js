@@ -336,8 +336,10 @@ app.post("/AddToCart", auth, (req, res) => {
     // If the item is present in the Cart
     if (index != -1) {
         req.user.Cart[index].Quantity++;
+
     }
     else {
+        console.log(req.user.Cart)
         req.user.Cart = req.user.Cart.concat({ productID: myProductID, Quantity: 1, Price:price });
     }
 
