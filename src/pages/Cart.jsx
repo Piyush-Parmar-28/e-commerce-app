@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import Navbar3 from '../components/Common_Components/Navbar3'
+import Navbar2 from '../components/Common_Components/Navbar2'
 import PageTitle from '../components/Common_Components/PageTitle';
 import All_Cart_Items from '../components/Cart/All_Cart_Items';
 import Shopping_Summary from '../components/Cart/Shopping_Summary';
@@ -17,7 +17,7 @@ const Cart = () => {
 
     return (
         <Fragment>
-            <Navbar3></Navbar3>
+            <Navbar2></Navbar2>
 
             <main>
                 <section className="clean-block clean-cart dark-bg">

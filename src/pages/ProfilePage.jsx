@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from "../components/Common_Components/Navbar"
+import Navbar2 from "../components/Common_Components/Navbar2"
 import PageTitle from "../components/Common_Components/PageTitle"
 import UserDetails from '../components/ProfilePage/UserDetails'
 
@@ -7,7 +7,7 @@ const ProfilePage = () => {
     return (
         
         <div className='dark-bg'>
-            <Navbar></Navbar>
+            <Navbar2></Navbar2>
             <section style={{minHeight:'100vh'}} className="clean-block clean-form dark">
                 <div  className="container-fluid px-5">
                     <PageTitle
