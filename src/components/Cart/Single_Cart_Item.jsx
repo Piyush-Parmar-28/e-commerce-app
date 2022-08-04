@@ -21,6 +21,8 @@ const Single_Cart_Item = (props) => {
 
     // Increase Value Function
     const increaseValue = async (event) => {
+        // event.preventDefault()
+
         setQuantity(quantity+1)
         const myProductID = props._id
         // console.log("myProductID is: " + myProductID);
@@ -49,6 +51,7 @@ const Single_Cart_Item = (props) => {
 
     // Decrease Value Function
     const decreaseValue = async (event) => {
+        // event.preventDefault()
         setQuantity(quantity-1)
         const myProductID= props._id
 
@@ -112,7 +115,7 @@ const Single_Cart_Item = (props) => {
                             </form>
 
                             <form>
-                                <input type="number" id="number" className="form-control" value={quantity} min={1} onChange={verifyQuantity} />
+                                <input type="number" id="number" value={quantity} min={1} onChange={verifyQuantity} />
                             </form>
 
                             {/* Increase Quantity Button */}

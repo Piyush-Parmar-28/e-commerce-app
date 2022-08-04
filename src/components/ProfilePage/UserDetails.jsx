@@ -29,7 +29,7 @@ const UserDetails = () => {
             )}
 
             {/* User Details */}
-            <form action="/profile" className="card-style">
+            <form action="/profile" className="form-style">
                 <div className="mb-2 d-flex">
                     <div>
                         <b>Name:</b>
@@ -62,7 +62,7 @@ const UserDetails = () => {
 
                 <div className="d-flex justify-content-around">
                     <Link to="/update">
-                        <button className="btn btn-warning">Update Details</button>
+                        <button className="btn-normal">Update Details</button>
                     </Link>
                 </div>
             </form>

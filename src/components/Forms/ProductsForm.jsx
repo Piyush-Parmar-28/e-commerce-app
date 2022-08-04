@@ -1,15 +1,15 @@
 import React from "react";
 import PageTitle from "../Common_Components/PageTitle";
 
-const min= 1
+const min = 1
 function setQuantity(event) {
-    event.target.value= Math.max(min, event.target.value)
+    event.target.value = Math.max(min, event.target.value)
 }
 
 const AddProducts = (props) => {
     return (
         <main>
-            <section className="card-block dark-bg">
+            <section className="extra-padding dark-bg">
                 <div className="container">
                     <PageTitle
                         title="Add Products"
@@ -19,17 +19,16 @@ const AddProducts = (props) => {
                     {/* In forms, 'name' field is very Important, because it is used in 'req.body.' while connecting to database */}
                     <form
                         method="post"
-                        className="card-style"
+                        className="form-style"
                         encType="multipart/form-data"
                         action="/addProduct"
                     >
                         <div className="row">
-                            <div className="mb-3">
-                                <label className="form-label">
+                            <div className="mb-3 d-flex flex-column">
+                                <label>
                                     <strong>Product Name</strong>
                                 </label>
                                 <input
-                                    className="form-control"
                                     type="text"
                                     placeholder="Jacket"
                                     name="product"
@@ -39,8 +38,8 @@ const AddProducts = (props) => {
 
                         <div className="row">
                             <div className="col">
-                                <div className="mb-3">
-                                    <label className="form-label">
+                                <div className="mb-3 d-flex flex-column">
+                                    <label>
                                         <b>Category</b>
                                     </label>
                                     <select className="form-select" name="category">
@@ -54,12 +53,12 @@ const AddProducts = (props) => {
                             </div>
 
                             <div className="col">
-                                <div className="mb-3">
-                                    <label className="form-label">
+                                <div className="mb-3 d-flex flex-column">
+                                    <label>
                                         <b>Price ($) </b>
                                     </label>
                                     <input
-                                        className="form-control item"
+                                        className="item"
                                         type="number"
                                         placeholder="$20"
                                         name="price"
@@ -70,12 +69,12 @@ const AddProducts = (props) => {
 
                         <div className="row">
                             <div className="col">
-                                <div className="mb-3">
-                                    <label className="form-label">
+                                <div className="mb-3 d-flex flex-column">
+                                    <label>
                                         <b>Stock</b>
                                     </label>
                                     <input
-                                        className="form-control item"
+                                        className="item"
                                         type="number"
                                         min={1}
                                         placeholder="Available Quantity"
@@ -86,12 +85,12 @@ const AddProducts = (props) => {
                             </div>
 
                             <div className="col">
-                                <div className="mb-3">
-                                    <label className="form-label">
+                                <div className="mb-3 d-flex flex-column">
+                                    <label>
                                         <b>Brand</b>
                                     </label>
                                     <input
-                                        className="form-control item"
+                                        className="item"
                                         type="text"
                                         placeholder="Dell"
                                         name="brand"
@@ -102,12 +101,12 @@ const AddProducts = (props) => {
 
                         <div className="row">
                             <div className="col">
-                                <div className="mb-3">
-                                    <label className="form-label">
+                                <div className="mb-3 d-flex flex-column">
+                                    <label>
                                         <b>Ratings</b>
                                     </label>
                                     <input
-                                        className="form-control item"
+                                        className="item"
                                         type="number"
                                         min={0}
                                         max={5}
@@ -120,12 +119,12 @@ const AddProducts = (props) => {
                             </div>
 
                             <div className="col">
-                                <div className="mb-3">
-                                    <label className="form-label">
+                                <div className="mb-3 d-flex flex-column">
+                                    <label>
                                         <b>Offers (% Off)</b>
                                     </label>
                                     <input
-                                        className="form-control item"
+                                        className="item"
                                         type="number"
                                         name="offers"
                                         placeholder="50% Off"
@@ -137,12 +136,12 @@ const AddProducts = (props) => {
                         </div>
 
                         <div className="col">
-                            <div className="mb-3">
-                                <label className="form-label">
+                            <div className="mb-3 d-flex flex-column">
+                                <label>
                                     <b>Tags</b>
                                 </label>
                                 <input
-                                    className="form-control item"
+                                    className="item"
                                     type="text"
                                     placeholder="Laptop, Computer, ..."
                                     name="tags"
@@ -150,27 +149,25 @@ const AddProducts = (props) => {
                             </div>
                         </div>
 
-                        <div className="mb-3">
-                            <label className="form-label">
+                        <div className="mb-3 d-flex flex-column">
+                            <label>
                                 <b>Image</b>
                             </label>
 
-                            <input
-                                className="form-control item"
-                                type="file"
-                                name="image"
-                                placeholder="select image"
-                                accept="image/png, image/jpeg"
-                            />
+                            {/* To hide the default style of the file type input, it must be wrapped to a label & then we can style the label */}
+                            {/* <label className="file-input" htmlFor="file">
+                                Choose File
+                            </label> */}
+
+                            <input type="file" id="file" name="image" placeholder="select image" accept="image/png, image/jpeg" />
                         </div>
 
-                        <div className="mb-3">
-                            <label className="form-label">
+                        <div className="mb-3 d-flex flex-column">
+                            <label>
                                 <b>Description</b>
                             </label>
 
                             <textarea
-                                className="form-control"
                                 name="desc"
                                 cols="30"
                                 rows="2"
@@ -179,7 +176,7 @@ const AddProducts = (props) => {
                         </div>
 
                         <div className="d-flex justify-content-center">
-                            <button className="btn btn-primary" type="submit">
+                            <button className="btn-normal" type="submit">
                                 Add Product
                             </button>
                         </div>
