@@ -90,7 +90,7 @@ const UpdateImage = (props) => {
                 <div className="d-flex justify-content-evenly flex-wrap mt-2">
                     {/* Selected Avatar */}
                     <div className="mt-5 col-12 col-lg-6">
-                        <h2 className="text-info d-flex justify-content-center">
+                        <h2 className="d-flex justify-content-center" style={{color:'#e1775d'}}>
                             Select Avatar
                         </h2>
                         <p className=" d-flex justify-content-center">

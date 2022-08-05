@@ -3,9 +3,21 @@ import Navbar2 from '../components/Common_Components/Navbar2'
 import PageTitle from '../components/Common_Components/PageTitle';
 import All_Cart_Items from '../components/Cart/All_Cart_Items';
 import Shopping_Summary from '../components/Cart/Shopping_Summary';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
+    const navigate = useNavigate();
+    useEffect(()=>{
+        axios('/status').then((data)=>{
+            console.log(data.data.status);
+            if(!data.data.status){
+                navigate('/')
+            }
+        })
+    },[])
     var [IDs, setIDs] = useState([])
+
     useEffect( () => {
 
         fetch("/cart").then(data => data.json()).then(myData => {
@@ -13,6 +25,8 @@ const Cart = () => {
             setIDs(myData)
         })
     }, [])
+
+
 
 
     return (
