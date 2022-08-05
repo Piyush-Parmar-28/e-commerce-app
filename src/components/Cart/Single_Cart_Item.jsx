@@ -87,9 +87,10 @@ const Single_Cart_Item = (props) => {
                     <div className='d-flex flex-column'>
                         <Image photoID={props.ImageID}></Image>
 
-                        <button className="btn-normal mt-3">
-                            View Product
-                        </button>
+                        <Link to={"/selected?selectedProduct=" + props._id} >
+                            <button className="btn-normal mt-3">View Product</button>
+                        </Link>
+
                     </div>
 
                     <div className='ms-5 d-flex justify-content-center align-items-center'>
