@@ -18,7 +18,7 @@ const Image = (props) => {
 
     return (
         <div className="d-flex justify-content-center">
-            <img className="mx-auto" style={{width: "80%"}} src={img} alt="image not loaded" />
+            <img className="mx-auto" style={{width:`${props.size?props.size:'10rem'}`}} src={img} alt="image not loaded" />
         </div>
     );
 };

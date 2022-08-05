@@ -121,7 +121,7 @@ const SignUp = (props) => {
                         <div className="d-flex justify-content-center align-items-center mt-3">
                             <p className="align-middle my-0 me-2">Already have an account?</p>
 
-                            <button className="btn-normal" type="submit" onClick={props.changeStateFunc}>Login</button>
+                            <button className="btn-normal" type="submit" onClick={props.changeStateFunc} style={{background:'#656565'}}>Login</button>
                         </div>
                     </form>
 

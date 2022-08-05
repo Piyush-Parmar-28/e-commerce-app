@@ -54,7 +54,7 @@ const postData= async (event)=>{
     <div className={style.card}>
       <Link to={"/selected?selectedProduct=" + props.productID}>
         <div className={style.image}>
-          <Image photoID={props.imageID}></Image>
+          <Image photoID={props.imageID} size='80%'></Image>
         </div>
       </Link>
       <div className={style.detail_div}>

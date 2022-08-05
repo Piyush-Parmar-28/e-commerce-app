@@ -53,6 +53,7 @@ const ProductInfo = () => {
                                                 <div className='d-flex justify-content-center align-items-center mt-auto'>
                                                     <Image
                                                         photoID={contents.ImageID}
+                                                        size='25rem'
                                                     ></Image>
                                                 </div>
 

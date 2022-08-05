@@ -379,7 +379,7 @@ app.get('/total',auth,(req,res)=>{
 
 //  15. Status Route
 app.get("/status", loginCheck, (req, res) => {
-    res.send(req.status)
+    res.send({status:req.status,fname:req.fname})
 });
 
 
