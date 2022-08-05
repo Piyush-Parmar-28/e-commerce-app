@@ -106,6 +106,7 @@ app.get("/getProfile", auth, async (req, res) => {
     res.send(req.user)
 });
 
+//  5. Get Profile Image
 app.get("/getProfileImage", auth, async (req, res) => {
     res.set({
         "Access-Control-Allow-Origin": "*",
@@ -233,6 +234,7 @@ app.get("/SearchProducts", async (req, res) => {
     });
     if (!req.query.item == '') {
         console.log(req.query.item.toLowerCase());
+        
         const products = await ProductObj.getProduct(
             req.query.item.toLowerCase().split(" ")
         );

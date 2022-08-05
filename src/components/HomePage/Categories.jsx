@@ -1,19 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import axios from "axios"
+import React, { useState } from 'react'
 
+import { categoryData } from '../../Data'
+import Category_Image from './Category_Image'
 import PageTitle from "../Common_Components/PageTitle"
 
 const Categories = () => {
 
-    const url = "https://free-store-api.herokuapp.com/categories"
-
-    var [category, setCategory] = useState([])
-
-    useEffect(() => {
-        axios.get(url).then(res => {
-            setCategory(res.data)
-        })
-    }, [])
+    const [displayClass, setDisplayClass]= useState("col-4 col-lg-3 item zoom-on-hover position-relative pb-0")
+    const [noDisplayClass, setNoDisplayClass]= useState("d-none d-lg-block col-lg-3 item zoom-on-hover position-relative pb-0")
 
     return (
         <section className="dark-bg pt-5 pb-5">
@@ -26,18 +20,16 @@ const Categories = () => {
             <div className="row g-0">
 
                 {
-                    category.map((contents) => {
+                    categoryData.map((contents) => {
 
                         return (
-                            <div key={contents.id} className="col-6 col-lg-4 item1 zoom-on-hover position-relative pb-0" style={{ display: contents.id > 6 ? "none" : "" }}>
-                                <a href="#">
-                                    <img className="img-fluid image fill-image" src={contents.image} alt="{contents.altText}" />
-                                    <span className="info">
-                                        <span className="info-heading">contents.label</span>
-                                        <span className="info-body">contents.desc</span>
-                                    </span>
-                                </a>
-                            </div>
+                            <Category_Image 
+                                key= {contents.id}
+                                display= {contents.id >6 ? noDisplayClass: displayClass }
+                                id= {contents.id}
+                                image= {contents.src}  
+                                label= {contents.label}                          
+                            />
                         )
 
                     })

@@ -56,7 +56,7 @@ const Shopping_Summary = () => {
                 {/* Total Amount */}
                 <div className="d-flex justify-content-between">
                     <div>
-                        <h5 className="text-primary">Total</h5>
+                        <h5 className='red-color'>Total</h5>
                     </div>
 
                     <div>

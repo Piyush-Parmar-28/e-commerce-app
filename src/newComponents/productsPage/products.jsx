@@ -14,6 +14,7 @@ const Productss = () => {
       })
   }, [])
 
+<<<<<<< HEAD
   function filterElectronics(){
       setProducts(allProducts.filter(data=>data.Category==='electronics'))
   }
@@ -32,6 +33,20 @@ const Productss = () => {
   function getAll(){
       setProducts(allProducts)
   }
+=======
+   const [products, setProducts] = useState([])
+   if(window.location.search == '') window.location.href ='/';
+   
+   useEffect(() => {
+       fetch(`SearchProducts${window.location.search.toLowerCase()}`).then(data => data.json()).then(myData => {
+           setProducts(myData)
+       })
+   }, [])
+
+   const render = products.map((data)=>
+      <Card key={data._id} name={data.Product} productID={data._id} ratings={data.Ratings} price={data.Price} imageID={data.ImageID}></Card>
+   )
+>>>>>>> 43c8f0c109ff186ffb2f4feff4fd37303dc9025f
 
   const render = products.map((data) => (
     <Card
@@ -65,6 +80,7 @@ const Productss = () => {
       </div>
     </Fragment>
   );
+
 };
 
 export default Productss;

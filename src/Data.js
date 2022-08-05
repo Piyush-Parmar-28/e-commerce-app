@@ -132,4 +132,67 @@ var profileAvatar = [
     },
 ]
 
-export { sliderData, productsData, profileAvatar }
+var categoryData = [
+    {
+        id: 1,
+        src: "img/categories/books.jpg",
+        altText: "Image Loading...",
+        label: "Books"
+
+    },
+
+    {
+        id: 2,
+        src: "img/categories/electronics.jpg",
+        altText: "Image Loading...",
+        label: "Electronics"
+
+    },
+
+    {
+        id: 3,
+        src: "img/categories/fashion.jpg",
+        altText: "Image Loading...",
+        label: "Fashion"
+
+    },
+
+    {
+        id: 4,
+        src: "img/categories/home.jpg",
+        altText: "Image Loading...",
+        label: "Home"
+
+    },
+
+    {
+        id: 5,
+        src: "img/categories/movies.jpg",
+        altText: "Image Loading...",
+        label: "Movies"
+
+    },
+
+    {
+        id: 6,
+        src: "img/categories/sports.jpg",
+        altText: "Image Loading...",
+        label: "Sports"
+    },
+
+    {
+        id: 7,
+        src: "img/categories/toys.jpg",
+        altText: "Image Loading...",
+        label: "Toys"
+    },
+
+    {
+        id: 8,
+        src: "img/categories/vehicle.jpg",
+        altText: "Image Loading...",
+        label: "Vehicle"
+    },
+]
+
+export { sliderData, productsData, profileAvatar, categoryData }
