@@ -11,7 +11,7 @@ const LoginSignUp = () => {
     useEffect(()=>{
             axios.get('/status').then(data=>{
             console.log(data.data)
-            setStatus(data.data)
+            setStatus(data.data.status)
         })
     },[])
 

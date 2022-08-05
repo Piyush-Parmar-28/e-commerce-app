@@ -13,6 +13,7 @@ const loginCheck = async (req, res, next) => {
         }
 
         req.status = true
+        req.fname = user.Fname
         next()
     } catch (e) {
         req.status = false

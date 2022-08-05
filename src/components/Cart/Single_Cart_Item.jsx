@@ -85,7 +85,7 @@ const Single_Cart_Item = (props) => {
                 <div className='d-flex justify-content-evenly'>
 
                     <div className='d-flex flex-column'>
-                        <Image photoID={props.ImageID}></Image>
+                        <Image photoID={props.ImageID} size='10rem'></Image>
 
                         <Link to={"/selected?selectedProduct=" + props._id} >
                             <button className="btn-normal mt-3">View Product</button>

@@ -31,7 +31,7 @@ input:focus, textarea:focus{
 
 /* ------------------------------------------File type input----------------------------------------- */
 input::file-selector-button {
-  background-color: #e1775d;
+  background-color: #656565;
   border: 0px;
   border-radius: 30px;
   padding: 0.5rem;

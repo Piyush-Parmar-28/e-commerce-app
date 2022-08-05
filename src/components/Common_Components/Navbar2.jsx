@@ -12,11 +12,13 @@ export default function Navbar2(props) {
     const [totalItems, setTotalItems] = React.useState('')
 
     const [status, setStatus] = useState(false);
+    const [fname,setfname] = useState('Profile')
 
     useEffect(() => {
         axios.get('/status').then(data => {
             // console.log(data.data)
-            setStatus(data.data)
+            setStatus(data.data.status)
+            setfname(data.data.fname)
         })
     }, [])
 
@@ -68,7 +70,7 @@ export default function Navbar2(props) {
                 </div>
 
                 <div className='d-flex justify-content-center align-items-center ms-2'>
-                    <label id="profile"><b>Profile</b></label>
+                    <label id="profile"><b>{fname?fname:'Profile'}</b></label>
 
                     <Link to="/profile">
                         <button type="button" className="btn-icon btn-xsmall me-2"  id='profile_icon'>
