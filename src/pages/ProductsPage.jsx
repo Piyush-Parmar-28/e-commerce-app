@@ -10,7 +10,7 @@ const ProductsPage = () => {
         <Fragment>
             <Section>
                 <Navbar2></Navbar2>
-                <Products />
+                <Productss />
             </Section>
         </Fragment>
     );
