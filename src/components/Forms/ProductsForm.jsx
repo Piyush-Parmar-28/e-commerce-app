@@ -47,7 +47,8 @@ const AddProducts = (props) => {
                                         <option value="electronics">Electronics</option>
                                         <option value="fashion">Fashion</option>
                                         <option value="kitchen">kitchen</option>
-                                        <option value="homeDecor">Home Decor</option>
+                                        <option value="sports">Sports</option>
+                                        <option value="study">Study</option>
                                     </select>
                                 </div>
                             </div>

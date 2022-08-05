@@ -233,6 +233,7 @@ app.get("/SearchProducts", async (req, res) => {
     });
     if (!req.query.item == '') {
         console.log(req.query.item.toLowerCase());
+        
         const products = await ProductObj.getProduct(
             req.query.item.toLowerCase().split(" ")
         );

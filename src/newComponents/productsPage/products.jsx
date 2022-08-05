@@ -1,4 +1,4 @@
-import React, { Fragment,useState,useEffect } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import style from "./products.module.css";
 import Card from "./card/card";
 
@@ -7,6 +7,7 @@ const Productss = () => {
 
    const [products, setProducts] = useState([])
    if(window.location.search == '') window.location.href ='/';
+   
    useEffect(() => {
        fetch(`SearchProducts${window.location.search.toLowerCase()}`).then(data => data.json()).then(myData => {
            setProducts(myData)
@@ -34,6 +35,7 @@ const Productss = () => {
       </div>
     </Fragment>
   );
+
 };
 
 export default Productss;
