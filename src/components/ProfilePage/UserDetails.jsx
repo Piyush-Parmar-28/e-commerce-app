@@ -1,31 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import ProfileImage from "./ProfileImage";
 import axios from "axios";
+import ProfileImage2 from "../../pages/profileImage";
+import ProfileImage from './ProfileImage'
 
 const UserDetails = () => {
     //  (Refer point 1 from Image-Route.js)
     //  2. Hum API de saara data yaha get kar rahe hai.
     const url = "/getProfile";
     const [userDetails, setUserDetails] = useState({});
+    
 
     useEffect(() => {
         axios.get(url).then((res) => {
             setUserDetails(res.data);
             console.log(res.data);
-            console.log(userDetails.Fname);
         });
     }, []);
 
+    console.log('photo'+userDetails.ImageData);
     return (
         <div className="container">
             {!userDetails.ImageURL == "" ? (
                 <ProfileImage imgSrc={userDetails.ImageURL}></ProfileImage>
             ) : (
-                <ProfileImage
-                    imgSrc={"data:image/jpg;image/png;base64," + userDetails.ImageData}
-                ></ProfileImage>
+                <div className="d-flex justify-content-center pb-4">
+                    <ProfileImage2></ProfileImage2>
+            </div>
             )}
 
             {/* User Details */}

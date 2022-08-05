@@ -12,6 +12,7 @@
 
 .image {
   height: 60%;
+  overflow: hidden;
 }
 .detail_div {
   height: 40%;

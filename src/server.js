@@ -104,8 +104,15 @@ app.get("/getProfile", auth, async (req, res) => {
     });
 
     res.send(req.user)
+});
 
+app.get("/getProfileImage", auth, async (req, res) => {
+    res.set({
+        "Access-Control-Allow-Origin": "*",
+    });
+    res.set("Content-Type", "image/jpg");
 
+    res.send(req.user.ImageData)
 });
 
 //  5. Update User Details Route
@@ -113,9 +120,7 @@ app.post("/updateDetails", auth, upload.single("image"), async (req, res) => {
     res.set({
         "Access-Control-Allow-Origin": "*",
     });
-
-    // console.log(req.body);
-
+try {
     var fName = req.body.first_name;
     var lName = req.body.last_name;
     var email = req.body.Email;
@@ -124,92 +129,29 @@ app.post("/updateDetails", auth, upload.single("image"), async (req, res) => {
     var city = req.body.city;
     var country = req.body.country;
     var address = req.body.address;
-
-    console.log("req.file: " + req.file);
     var image = req.file.buffer;
 
-    console.log("\n\nIn Update Details Route.");
-    console.log("fName: " + fName);
+    if(fName) req.user.Fname = fName;
+    if(lName) req.user.Lname = lName;
+    if(email) req.user.Email = email;
+    if(password) req.user.Password = password;
+    if(phone) req.user.Phone = phone;
+    if(city) req.user.City =city;
+    if(country) req.user.Country = country;
+    if(address) req.user.Address = address;
+    if(image){
+        req.user.ImageURL = '';
+        req.user.ImageData = image;
+    };
+    
+    req.user.save()
 
-    if (typeof localStorage === "undefined" || localStorage === null) {
-        var LocalStorage = require("node-localstorage").LocalStorage;
-        localStorage = new LocalStorage("./scratch");
-    }
+    res.redirect('/profile')    
+} catch (error) {
+    res.send('error: Please! upload image')
+}
 
-    var data = localStorage.getItem("userToken");
-    console.log("The token id of the user in different route is: " + data);
 
-    if (fName != "") {
-        db.collection("users").updateOne(
-            { _id: ObjectId(data) },
-            { $set: { Fname: fName } }
-        );
-    }
-
-    if (lName != "") {
-        db.collection("users").updateOne(
-            { _id: ObjectId(data) },
-            { $set: { Lname: lName } }
-        );
-    }
-
-    if (email != "") {
-        db.collection("users").updateOne(
-            { _id: ObjectId(data) },
-            { $set: { Email: email } }
-        );
-    }
-
-    if (password != "") {
-        db.collection("users").updateOne(
-            { _id: ObjectId(data) },
-            { $set: { Password: password } }
-        );
-    }
-
-    if (phone != "") {
-        db.collection("users").updateOne(
-            { _id: ObjectId(data) },
-            { $set: { Phone: phone } }
-        );
-    }
-
-    if (city != "") {
-        db.collection("users").updateOne(
-            { _id: ObjectId(data) },
-            { $set: { City: city } }
-        );
-    }
-
-    if (country != "") {
-        db.collection("users").updateOne(
-            { _id: ObjectId(data) },
-            { $set: { Country: country } }
-        );
-    }
-
-    if (address != "") {
-        db.collection("users").updateOne(
-            { _id: ObjectId(data) },
-            { $set: { Address: address } }
-        );
-    }
-
-    if (image != 0) {
-        // If we have uploaded an image, then set avatar to be null
-        db.collection("users").updateOne(
-            { _id: ObjectId(data) },
-            { $set: { ImageURL: "" } }
-        );
-
-        // Save the uploaded image in ImageData
-        db.collection("users").updateOne(
-            { _id: ObjectId(data) },
-            { $set: { ImageData: image } }
-        );
-    }
-
-    res.redirect("/profile");
 });
 
 //  6. Save Image Route

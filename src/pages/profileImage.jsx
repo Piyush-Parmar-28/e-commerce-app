@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-const Image = (props) => {
+const ProfileImage2 = (props) => {
     
-    const imageUrl = `/add/${props.photoID}/image`;
+    const imageUrl = '/getProfileImage';
     const [img, setImg] = useState();
 
     useEffect(() => {
@@ -18,8 +18,8 @@ const Image = (props) => {
 
     return (
         <div className="d-flex justify-content-center">
-            <img className="mx-auto" style={{width: "80%"}} src={img} alt="image not loaded" />
+            <img className="mx-auto" style={{width: "220px"}} src={img} alt="image not loaded" />
         </div>
     );
 };
-export default Image
+export default ProfileImage2

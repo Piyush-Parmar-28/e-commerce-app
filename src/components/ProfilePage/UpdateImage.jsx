@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { profileAvatar } from "../../Data";
-import PageTitle from "../Common_Components/PageTitle";
 import AvatarCard from "./AvatarCard";
 import Update_UserDetails from "./Update_UserDetails";
 import RefreshIcon from "@mui/icons-material/Refresh";

@@ -1,6 +1,8 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router-dom'
 const User_Details = () => {
+const navigate = useNavigate();
+
 
 
 
@@ -59,7 +61,7 @@ const User_Details = () => {
                 </div>
 
                 <div className="d-flex justify-content-center">
-                    <button className="btn-normal" type="submit">Update</button>
+                    <button className="btn-normal" type="submit" >Update</button>
                 </div>
 
             </form>
