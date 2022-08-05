@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import PageTitle from "../Common_Components/PageTitle"
 import FlashCard from './FlashCard';
-import axios from 'axios';
 
 // Material UI
-import Fab from '@mui/material/Fab';
 import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 
@@ -16,13 +14,6 @@ const FlashDeals = () => {
     var [displayStatus, setDisplayStatus] = useState("d-none d-lg-block card ms-2 me-2");
 
     var [flashData, setFlashData] = useState([])
-    // var url = "https://free-store-api.herokuapp.com/offers"
-
-    // useEffect(() => {
-    //     axios.get(url).then(res => {
-    //         setFlashData(res.data)
-    //     })
-    // }, [])
 
     useEffect(() => {
         fetch("/get").then(data => data.json()).then(myData => {
@@ -61,8 +52,6 @@ const FlashDeals = () => {
                                         myClass = "card ms-2 me-2";
                                     }
                                     productsDisplayed1++
-
-                                    // console.log(contents);
 
                                     return (
                                         <FlashCard
