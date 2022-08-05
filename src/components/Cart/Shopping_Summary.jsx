@@ -12,9 +12,9 @@ const Shopping_Summary = () => {
 
 
     return (
-        <div className="greenish-bg mt-4 p-4">
+        <div className="mt-4 p-4">
 
-            <h2 className="d-flex justify-content-center">Order Summary</h2>
+            <h2 className="d-flex justify-content-center heading">Order Summary</h2>
 
             <div className="form-style mt-4 ">
 
@@ -36,7 +36,7 @@ const Shopping_Summary = () => {
                     </div>
 
                     <div>
-                        <p>$0</p>
+                        <p>$ 0</p>
                     </div>
                 </div>
 
@@ -47,7 +47,7 @@ const Shopping_Summary = () => {
                     </div>
 
                     <div>
-                        <p>$0</p>
+                        <p>FREE</p>
                     </div>
                 </div>
 

@@ -2,6 +2,8 @@ import React, { Fragment } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./css/forms.css"
+import "./css/fonts_colors.css"
+import "./css/table.css"
 import "./css/navbar.css"
 import "./css/button.css"
 import "./css/box.css"

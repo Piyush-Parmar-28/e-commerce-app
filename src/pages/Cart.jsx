@@ -19,13 +19,12 @@ const Cart = () => {
         <Fragment>
             <Navbar2></Navbar2>
 
-            <main>
-                <section className="clean-block clean-cart dark-bg">
+                <section className="clean-block clean-cart dark-bg pt-4">
                     <div className="container">
 
                         <PageTitle
                             title="Shopping Cart"
-                            desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo."
+                            desc="Get all your products of interset here. Proceed to buy & get FREE shipping only on 'Silver Shop'."
                         />
 
                         <div className="white-bg row g-0">
@@ -66,7 +65,6 @@ const Cart = () => {
 
                     </div>
                 </section>
-            </main>
 
         </Fragment>
     )

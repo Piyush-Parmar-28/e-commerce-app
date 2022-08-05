@@ -30,18 +30,26 @@ input:focus, textarea:focus{
 }
 
 /* ------------------------------------------File type input----------------------------------------- */
-.file-input{
-  border: 1px solid #a2adaa;
-  border-radius: 10px;
-  padding: .4rem;
-  outline: none;
+input::file-selector-button {
+  background-color: #e1775d;
+  border: 0px;
+  border-radius: 30px;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: white;
+  cursor: pointer;
 }
 
-.file-input:focus{
-  border: 1px solid #e1775d;
-  outline: 1px solid #e1775d;
+input::file-selector-button:hover {
+  background-color: #d1654a;
+  transition: 0.2s;
 }
 
+input::file-selector-button:focus {
+  transform: scale(0.9);
+  box-shadow: 2px 2px 5px gray;
+}
 /* -----------------------------------Input Number arrow hide-------------------------------------- */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

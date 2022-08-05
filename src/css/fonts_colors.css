@@ -1,0 +1,28 @@
+/* Importing fonts from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Play&family=Source+Serif+Pro&display=swap');
+
+.page-title{
+    font-family: 'Play', sans-serif;
+}
+
+.heading{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+}
+
+/* .description{
+    font-family: 'Source Serif Pro', serif;
+} */
+
+/* --------------------------------------------Colours-------------------------------------------- */
+.red-color{
+    color: #e1775d;
+}
+
+.black-color{
+    color: #202020;
+}
+
+.light-black-color{
+    color: #656565;
+}
