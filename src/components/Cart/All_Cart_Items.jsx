@@ -31,6 +31,7 @@ const All_Cart_Items = (props) => {
                                 Desc= {contents.Desc}
                                 quantity= {props.quantity}
                                 Price= {contents.Price}
+                                Brand= {contents.Brand}
                             />
                         )
 
