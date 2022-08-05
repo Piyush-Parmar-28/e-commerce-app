@@ -1,4 +1,3 @@
-import { set } from 'mongoose';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -12,7 +11,7 @@ const Login = (props) => {
         Password: ""
     })
 
-    const [loginStatus,setLoginStatus] = useState({state:'Login',status:false})
+    const [loginStatus, setLoginStatus] = useState({ state: 'Login', status: false })
 
     const handleInputs = (event) => {
         setLoginDetails({ ...loginDetails, [event.target.name]: event.target.value })
@@ -44,17 +43,17 @@ const Login = (props) => {
 
         if (data.status === 401) {
             // window.alert("Invalid Credentials!")
-            setLoginStatus({state:'Invalid Credentials !'})
+            setLoginStatus({ state: 'Invalid Credentials !' })
             setTimeout(() => {
-                setLoginStatus({state:'Login'})
+                setLoginStatus({ state: 'Login' })
             }, 2000);
         }
         else {
             // window.alert("Login Successful!")
-            setLoginStatus({state:'Logged in successfully...',status:true})
+            setLoginStatus({ state: 'Logged in successfully...', status: true })
             console.log("Login Success");
             setTimeout(() => {
-            navigate("/home")
+                navigate("/home")
             }, 1500);
         }
     }
@@ -81,13 +80,13 @@ const Login = (props) => {
                         </div>
 
                         <div className="d-flex justify-content-center">
-                            <button className="btn-normal" type="submit" style={loginStatus.status?{background:'#01966e'}:{background:'#e1775d'}} onClick={postData}>{loginStatus.state}</button>
+                            <button className="btn-normal" type="submit" style={loginStatus.status ? { background: '#01966e' } : { background: '#e1775d' }} onClick={postData}>{loginStatus.state}</button>
                         </div>
 
                         <div className="d-flex justify-content-center align-items-center mt-3">
                             <p className="align-middle my-0 me-2">Don't have an account?</p>
-                            
-                            <button className="btn-normal" style={{background:'#656565'}} type="submit" onClick={props.changeStateFunc}>Sign Up</button>
+
+                            <button className="btn-normal btn-bg-grey" type="submit" onClick={props.changeStateFunc}>Sign Up</button>
                         </div>
                     </form>
 

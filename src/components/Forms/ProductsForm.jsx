@@ -7,6 +7,7 @@ function setQuantity(event) {
 }
 
 const AddProducts = (props) => {
+
     return (
         <main>
             <section className="extra-padding dark-bg">
@@ -151,14 +152,7 @@ const AddProducts = (props) => {
                         </div>
 
                         <div className="mb-3 d-flex flex-column">
-                            <label>
-                                <b>Image</b>
-                            </label>
-
-                            {/* To hide the default style of the file type input, it must be wrapped to a label & then we can style the label */}
-                            {/* <label className="file-input" htmlFor="file">
-                                Choose File
-                            </label> */}
+                            <b>Image</b>
 
                             <input type="file" id="file" name="image" placeholder="select image" accept="image/png, image/jpeg" />
                         </div>

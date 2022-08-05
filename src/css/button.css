@@ -105,21 +105,40 @@
   box-shadow: 2px 2px 5px gray;
 }
 
-/* B. Blue Button */
+/* C. Blue Button */
 .btn-bg-blue{
-  background-color: #7cd5ff;
-  border: 1px solid #7cd5ff;
+  background-color: #191d6c;
+  border: 1px solid #191d6c;
   color: white;
 }
 
 .btn-bg-blue:hover {
   color: white;
-  background-color: #03aed8;
-  border: 1px solid #03aed8;
+  background-color: #12165a;
+  border: 1px solid #12165a;
   transition: 0.2s;
 }
 
 .btn-bg-blue:active {
+  transform: scale(0.9);
+  box-shadow: 2px 2px 5px gray;
+}
+
+/* D. Grey Button */
+.btn-bg-grey{
+  background-color: #656565;
+  border: 1px solid #656565;
+  color: white;
+}
+
+.btn-bg-grey:hover {
+  color: white;
+  background-color: #4b4b4b;
+  border: 1px solid #4b4b4b;
+  transition: 0.2s;
+}
+
+.btn-bg-grey:active {
   transform: scale(0.9);
   box-shadow: 2px 2px 5px gray;
 }

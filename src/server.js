@@ -106,6 +106,7 @@ app.get("/getProfile", auth, async (req, res) => {
     res.send(req.user)
 });
 
+//  5. Get Profile Image
 app.get("/getProfileImage", auth, async (req, res) => {
     res.set({
         "Access-Control-Allow-Origin": "*",
