@@ -10,7 +10,7 @@ const Categories = () => {
     const [noDisplayClass, setNoDisplayClass]= useState("d-none d-lg-block col-lg-3 item zoom-on-hover position-relative pb-0")
 
     return (
-        <section className="dark-bg pt-5 pb-5">
+        <section className="blue-bg pt-5 pb-5">
 
             <PageTitle
                 title="Categories"

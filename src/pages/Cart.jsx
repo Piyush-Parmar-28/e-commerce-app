@@ -33,7 +33,7 @@ const Cart = () => {
         <Fragment>
             <Navbar2></Navbar2>
 
-                <section className="clean-block clean-cart dark-bg pt-4">
+                <section className="clean-block clean-cart blue-bg pt-4">
                     <div className="container">
 
                         <PageTitle

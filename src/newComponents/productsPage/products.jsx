@@ -33,11 +33,9 @@ const Productss = () => {
       setProducts(allProducts)
   }
 
-
    const render = products.map((data)=>
       <Card key={data._id} name={data.Product} productID={data._id} ratings={data.Ratings} price={data.Price} imageID={data.ImageID}></Card>
    )
-
 
   return (
     <Fragment>

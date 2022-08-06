@@ -11,7 +11,7 @@ import TopPicks from '../components/HomePage/TopPicks'
 
 const Home = () => {
     return (
-        <div className= "dark-bg">
+        <div className= "blue-bg">
             <Navbar2></Navbar2>
             <Slider></Slider>
             <Categories></Categories>

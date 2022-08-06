@@ -6,7 +6,7 @@ import UpdateImage from '../components/ProfilePage/UpdateImage'
 const UpdateInfo = () => {
 
     return (
-        <div className='dark-bg'>
+        <div className='blue-bg'>
             <Navbar2></Navbar2>
 
             <section className="clean-block clean-form dark">

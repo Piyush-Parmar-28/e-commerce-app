@@ -2,10 +2,9 @@ import React, { useState, useEffect, Fragment } from 'react'
 
 import PageTitle from "../Common_Components/PageTitle"
 import Image from '../../pages/Image'
-import Catalog_Image from '../ProductsPage/Catalog_Image';
-import Comment from './Comment';
+import Card from '../../newComponents/productsPage/card/card';
 import Rating from '@mui/material/Rating';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import AddIcon from "@mui/icons-material/Add";
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 const ProductInfo = () => {
@@ -29,7 +28,7 @@ const ProductInfo = () => {
 
 
     return (
-        <section className="dark-bg pt-4">
+        <section className="blue-bg pt-5">
             <div className="container">
 
                 <PageTitle
@@ -46,54 +45,46 @@ const ProductInfo = () => {
 
                                 if (contents._id === ID) {
                                     return (
-                                        <Fragment key={contents._id}>
+                                        <div key={contents._id} className="d-flex justify-content-between">
                                             {/* Image Gallery */}
-                                            <div className="col-md-6 dark-bg">
+                                            <div className="col-md-5 box">
 
-                                                <div className='d-flex justify-content-center align-items-center mt-auto'>
+                                                <div className='p-5'>
                                                     <Image
                                                         photoID={contents.ImageID}
-                                                        size='25rem'
                                                     ></Image>
                                                 </div>
-
-                                            </div>
-
-                                            {/* Description */}
-                                            <div className="col-md-6">
-                                                <div className='d-flex justify-content-center '>
-                                                    <h3>{contents.Product}</h3>
-                                                </div>
-
-                                                <div className='d-flex justify-content-between mt-2'>
+                                                <div className='d-flex justify-content-between mt-2 ps-4 pe-4'>
                                                     <Rating name="read-only" size="small" precision={0.5} value={4} readOnly />
 
                                                     <div><h5>$ {contents.Price}</h5></div>
                                                 </div>
+                                            </div>
 
-                                                <hr></hr>
+                                            {/* Description */}
+                                            <div className="col-md-5">
+                                                <div className='d-flex justify-content-center '>
+                                                    <h3 className='heading'>{contents.Product}</h3>
+                                                </div>
 
-                                                <div className="m-2 p-2">
+                                                <div className="m-2 p-2 box">
                                                     <p>{contents.Desc}</p>
                                                 </div>
 
-                                                <hr></hr>
-
-                                                <div className='d-flex justify-content-around '>
-                                                    <button className="btn btn-primary d-flex justify-content-between" type="button">
+                                                <div className='d-flex justify-content-around pt-4'>
+                                                    <button className="btn-normal btn-small" type="button">
                                                         <AttachMoneyIcon></AttachMoneyIcon>
                                                         Buy Now
                                                     </button>
 
-                                                    <button className="btn btn-danger d-flex justify-content-between" type="button">
-                                                        <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
-                                                        Add to Cart
+                                                    <button className="btn-icon btn-bg-green btn-small" type="button">
+                                                        <AddIcon />
                                                     </button>
                                                 </div>
 
                                             </div>
 
-                                        </Fragment>
+                                        </div>
                                     )
                                 }
 
@@ -101,31 +92,26 @@ const ProductInfo = () => {
                         }
                     </div>
 
-                    {/* Reviews (Comments) */}
-                    <h3 className="d-flex justify-content-center mt-5" >Reviews</h3>
-                    <Comment></Comment>
-                    <Comment></Comment>
-                    <Comment></Comment>
-
                     {/* Related Products */}
-                    <div className="clean-related-items mt-5">
-                        <h3 className="d-flex justify-content-center">Related Products</h3>
+                    <div className="clean-related-items mt-5 pt-4">
+                        <h3 className="d-flex justify-content-center heading">Related Products</h3>
 
                         <div className="items row g-3">
 
                             {
                                 products.map((contents) => {
-                                    if (contents._id != ID && myCount < 3) {
+                                    if (contents._id != ID && myCount < 4) {
                                         myCount++;
 
                                         return (
-                                            <Catalog_Image
+                                            <Card
                                                 key={contents._id}
-                                                myImageID={contents.ImageID}
-                                                itemPrice={contents.Price}
-                                                starValue={contents.Ratings}
+                                                name={contents.Product}
                                                 productID={contents._id}
-                                            ></Catalog_Image>
+                                                ratings={contents.Ratings}
+                                                price={contents.Price}
+                                                imageID={contents.ImageID}
+                                            ></Card>
                                         )
                                     }
                                 })

@@ -6,7 +6,7 @@ import UserDetails from '../components/ProfilePage/UserDetails'
 const ProfilePage = () => {
     return (
         
-        <div className='dark-bg'>
+        <div className='blue-bg'>
             <Navbar2></Navbar2>
             <section style={{minHeight:'100vh'}} className="clean-block clean-form dark">
                 <div  className="container-fluid px-5">

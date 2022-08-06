@@ -10,7 +10,7 @@ const AddProducts = (props) => {
 
     return (
         <main>
-            <section className="extra-padding dark-bg">
+            <section className="extra-padding blue-bg">
                 <div className="container">
                     <PageTitle
                         title="Add Products"

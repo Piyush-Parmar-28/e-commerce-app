@@ -25,24 +25,24 @@ const navigate = useNavigate();
 
                 <div className="mb-3 d-flex flex-column">
                     <label><b>Email</b></label>
-                    <input className=" item" type="email" name="Email" placeholder='someone@gmail.com' />
+                    <input type="email" name="Email" placeholder='someone@gmail.com' />
                 </div>
 
                 <div className="mb-3 d-flex flex-column">
                     <label><b>Upload Profile Image</b></label>
                     
-                    <input className="item" type="file" name="image" placeholder='select image' accept="image/png, image/jpeg" />
+                    <input type="file" name="image" placeholder='select image' accept="image/png, image/jpeg" />
                 </div>
 
                 <div className='row'>
                     <div className="col mb-3 d-flex flex-column">
                         <label><b>Password</b></label>
-                        <input className="item" type="password" name="Password" />
+                        <input type="password" name="Password" />
                     </div>
 
                     <div className="col mb-3 d-flex flex-column">
                         <label><b>Phone Number</b></label>
-                        <input className="item" placeholder='123456789' type="tel" name="Phone" />
+                        <input placeholder='123456789' type="tel" name="Phone" />
                     </div>
                 </div>
 

@@ -40,7 +40,7 @@ const FlashDeals = () => {
 
                     <div className="carousel-item active">
 
-                        <div className="d-flex justify-content-evenly dark-bg">
+                        <div className="d-flex justify-content-evenly blue-bg">
                             {
                                 flashData.map((contents) => {
 
@@ -71,7 +71,7 @@ const FlashDeals = () => {
 
                     <div className="carousel-item">
 
-                        <div className="d-flex justify-content-evenly dark-bg">
+                        <div className="d-flex justify-content-evenly blue-bg">
                             {
                                 flashData.map((contents) => {
 
@@ -102,7 +102,7 @@ const FlashDeals = () => {
 
                     <div className="carousel-item">
 
-                        <div className="d-flex justify-content-evenly dark-bg">
+                        <div className="d-flex justify-content-evenly blue-bg">
                             {
                                 flashData.map((contents) => {
 
