@@ -74,7 +74,7 @@ const Card = (props) => {
                 <div className="d-flex justify-content-between mt-1">
                     
                     <Link to={"/selected?selectedProduct=" + props.productID}>
-                        <button className="btn-normal btn-xsmall"> Details</button>
+                        <button className="btn-normal btn-xsmall" style={{paddingLeft: "10px", paddingRight: "10px"}}> Details</button>
                     </Link>
 
                     <form method="post">
