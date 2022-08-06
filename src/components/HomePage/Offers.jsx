@@ -32,7 +32,7 @@ const Offers = () => {
                                         <img className="card-img-top scale-on-hover" src={contents.image} alt="{contents.altText}" />
                                     </a>
 
-                                    <div className="card-body dark-bg">
+                                    <div className="card-body blue-bg">
                                         <h6 className='d-flex justify-content-center'>
                                             <a href="#" className="simpleText">{contents.item}</a>
                                         </h6>

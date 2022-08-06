@@ -8,8 +8,9 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 
 const UpdateImage = (props) => {
 
-    const navigate= useNavigate()
+    const navigate = useNavigate()
 
+    var [btnText, setBtnText] = useState("Set Profile")
     var [selectedImage, setselectedImage] = useState({
         image: "",
         myStyle: "",
@@ -25,14 +26,14 @@ const UpdateImage = (props) => {
         });
     }
 
-    const postData= async (event) =>{
+    const postData = async (event) => {
         event.preventDefault()
 
         // Using object destructuring for image= selectedImage.image
-        const {image}= selectedImage
+        const { image } = selectedImage
 
-        const res= await fetch("/saveImage", {
-            method: "post", 
+        const res = await fetch("/saveImage", {
+            method: "post",
             headers: {
                 "Content-Type": "application/json"
             },
@@ -48,10 +49,18 @@ const UpdateImage = (props) => {
         const data = await res.json()
 
         if (data.status === 200) {
-            navigate("/profile")
+            setBtnText("Profile Photo Updated!")
+
+            setTimeout(() => {
+                navigate("/profile")
+            }, 1500)
         }
-        else{
-            window.alert("Error in updating photo!")
+        else {
+            setBtnText("Error in updating photo!")
+
+            setTimeout(() =>{
+                setBtnText("Set Profile")
+            }, 2000)
         }
 
     }
@@ -103,7 +112,7 @@ const UpdateImage = (props) => {
                                     className="mb-1"
                                     style={{ height: "150px", width: "150px" }}
                                     src={selectedImage.image}
-                                    alt='Choose a Avatar!...Refresh to change Avatar list'
+                                    alt="Choose a Avatar!...Refresh to change Avatar list"
                                 ></img>
                             </div>
                             <input
@@ -119,8 +128,8 @@ const UpdateImage = (props) => {
                                     </button>
                                 </Link>
 
-                                <button className="btn-normal" type="submit" onClick={postData}>
-                                    Set Profile
+                                <button className="btn-normal" type="submit" style={ btnText=== "Profile Photo Updated!" ? {background: '#01966e' } : {background: '#e1775d' } } onClick={postData}>
+                                    {btnText}
                                 </button>
                             </div>
                         </form>
