@@ -25,6 +25,8 @@
   /* border: 2px solid green; */
   display: grid;
   justify-content: center;
+  text-overflow: ellipsis;
+
 }
 .name_div span {
   margin: 0;
@@ -34,6 +36,8 @@
   justify-content: center;
   font-weight: bold;
   font-family: "Source Sans Pro", sans-serif;
+  text-overflow: ellipsis;
+
 }
 
 .price_div {

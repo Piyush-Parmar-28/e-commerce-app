@@ -9,10 +9,11 @@
 
 .left_div {
   /* border: 2px solid black; */
+  display: grid;
   width: 20%;
   min-height: 100%;
   background: #f4f9fd;
-  box-shadow: 0.4rem 0rem 0.6rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0.3rem 0rem 0.3rem rgba(0, 0, 0, 0.1);
   /* border: 2px solid green; */
 }
 .right_div {
@@ -24,7 +25,7 @@
 }
 
 .right_inner_div {
-  width: 95%;
+  width: 99%;
   height: 95%;
   /* border: 2px solid green; */
   background: transparent;
@@ -38,6 +39,20 @@
   }
   .right_div{
     width: 65%;
+  }
+}
+
+@media screen and (max-width:450px){
+  .left_div{
+      display: none;
+  }
+
+  .right_div{
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    width: 100%;
   }
 }
 
