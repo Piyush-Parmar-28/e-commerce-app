@@ -89,6 +89,7 @@ const FlashDeals = () => {
                                             cardClass={myClass}
                                             displayStatus={productsDisplayed2 >= 5 && productsDisplayed2 < 9 ? "" : "none"}
                                             key={contents._id}
+                                            productID= {contents._id}
                                             title={contents.Product}
                                             ImageID={contents.ImageID}
                                             Ratings={contents.Ratings}
