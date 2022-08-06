@@ -33,7 +33,7 @@ const ProductInfo = () => {
 
                 <PageTitle
                     title="Product Info"
-                    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo."
+                    desc=""
                 ></PageTitle>
 
                 <div className="white-bg p-5">
@@ -78,7 +78,7 @@ const ProductInfo = () => {
                                                     </button>
 
                                                     <button className="btn-icon btn-bg-green btn-small" type="button">
-                                                        <AddIcon />
+                                                        <AddIcon /> Add to Cart
                                                     </button>
                                                 </div>
 
