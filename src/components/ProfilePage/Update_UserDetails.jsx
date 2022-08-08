@@ -6,8 +6,8 @@ const navigate = useNavigate();
     return (
         <div className="mt-5 col-12 col-lg-6">
 
-            <h2 className=" d-flex justify-content-center" style={{color:'#e1775d'}}>Update Details</h2>
-            <p className=" d-flex justify-content-center">Edit Details to be Updated...</p>
+            <h2 className="heading d-flex justify-content-center">Update Details</h2>
+            <p className="d-flex justify-content-center">Edit Details to be Updated...</p>
 
             <form action="/updateDetails" className="form-style" encType="multipart/form-data" method="post">
 

@@ -65,8 +65,6 @@ const UpdateImage = (props) => {
 
     }
 
-    // console.log("selected Image: "+ selectedImage.image);
-
     var selectedImageBorder = "";
 
     return (
@@ -99,10 +97,10 @@ const UpdateImage = (props) => {
                 <div className="d-flex justify-content-evenly flex-wrap mt-2">
                     {/* Selected Avatar */}
                     <div className="mt-5 col-12 col-lg-6">
-                        <h2 className="d-flex justify-content-center" style={{color:'#e1775d'}}>
+                        <h2 className="d-flex justify-content-center heading">
                             Select Avatar
                         </h2>
-                        <p className=" d-flex justify-content-center">
+                        <p className="d-flex justify-content-center">
                             Select Avatar as Profile Photo...
                         </p>
 

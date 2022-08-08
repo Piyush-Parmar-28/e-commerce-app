@@ -142,3 +142,22 @@
   transform: scale(0.9);
   box-shadow: 2px 2px 5px gray;
 }
+
+/* D. Light Grey Button */
+.btn-bg-lgrey{
+  background-color: #a2adaa;
+  border: 1px solid #a2adaa;
+  color: white;
+}
+
+.btn-bg-lgrey:hover {
+  color: white;
+  background-color: #8f9190;
+  border: 1px solid #8f9190;
+  transition: 0.2s;
+}
+
+.btn-bg-lgrey:active {
+  transform: scale(0.9);
+  box-shadow: 2px 2px 5px gray;
+}

@@ -9,7 +9,7 @@ const UpdateInfo = () => {
         <div className='blue-bg'>
             <Navbar2></Navbar2>
 
-            <section className="clean-block clean-form dark">
+            <section className="clean-block clean-form dark pt-5">
                 <div className="container-fluid px-5">
                     <PageTitle
                         title="Update Avatar"

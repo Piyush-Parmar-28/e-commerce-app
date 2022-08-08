@@ -8,7 +8,7 @@ const ProfilePage = () => {
         
         <div className='blue-bg'>
             <Navbar2></Navbar2>
-            <section style={{minHeight:'100vh'}} className="clean-block clean-form dark">
+            <section style={{minHeight:'100vh'}} className="clean-block clean-form dark pt-5">
                 <div  className="container-fluid px-5">
                     <PageTitle
                         title="My Profile"

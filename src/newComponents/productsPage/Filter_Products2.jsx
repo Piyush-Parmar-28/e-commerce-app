@@ -5,35 +5,35 @@ import style from './filterProduct.module.css'
 const Filter_Products = (props) => {
     return (
 
-            <div className={style.warp_div}>
+        <div className={style.warp_div}>
 
-                    <h4 className={style.heading}>Categories</h4>
+            <h3 className="heading text-center pt-5">Categories</h3>
 
-                    <div style={{margin:'10px'}}>
-                    <button type="button" class="btn btn-secondary" onClick={props.onAll}>All</button>
-                    </div>
+            <div style={{ margin: '10px' }}>
+                <button type="button" class="btn-normal btn-bg-grey" onClick={props.onAll}>All</button>
+            </div>
 
-                    <div style={{margin:'10px'}}>
-                    <button type="button" class="btn btn-light"  onClick={props.onElectronics}>Electronics</button>
-                    </div>
+            <div style={{ margin: '10px' }}>
+                <button type="button" class="btn-normal btn-bg-lgrey" onClick={props.onElectronics}>Electronics</button>
+            </div>
 
-                    <div style={{margin:'10px'}}>
-                    <button type="button" class="btn btn-light"  onClick={props.onFashion}>Fashion</button>
-                    </div>
+            <div style={{ margin: '10px' }}>
+                <button type="button" class="btn-normal btn-bg-lgrey" onClick={props.onFashion}>Fashion</button>
+            </div>
 
-                    <div style={{margin:'10px'}}>
-                    <button type="button" class="btn btn-light"  onClick={props.onFurniture}>Furniture</button>
-                    </div>
+            <div style={{ margin: '10px' }}>
+                <button type="button" class="btn-normal btn-bg-lgrey" onClick={props.onFurniture}>Furniture</button>
+            </div>
 
-                    <div style={{margin:'10px'}}>
-                    <button type="button" class="btn btn-light"  onClick={props.onKitchen}>Kitchen</button>
-                    </div>
+            <div style={{ margin: '10px' }}>
+                <button type="button" class="btn-normal btn-bg-lgrey" onClick={props.onKitchen}>Kitchen</button>
+            </div>
 
-                    <div style={{margin:'10px'}}>
-                    <button type="button" class="btn btn-light"  onClick={props.onHomeDecor}>HomeDecor</button>
-                    </div>
+            <div style={{ margin: '10px' }}>
+                <button type="button" class="btn-normal btn-bg-lgrey" onClick={props.onHomeDecor}>HomeDecor</button>
+            </div>
 
-                </div>
+        </div>
 
     )
 }
