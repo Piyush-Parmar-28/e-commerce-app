@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react'
+import Modal from '../Common_Components/Modal';
 
 import PageTitle from "../Common_Components/PageTitle"
 import Image from '../../pages/Image'
@@ -71,14 +72,17 @@ const ProductInfo = () => {
                                                     <p>{contents.Desc}</p>
                                                 </div>
 
-                                                <div className='d-flex justify-content-around pt-4'>
-                                                    <button className="btn-normal btn-small" type="button">
+                                                <div className='d-flex justify-content-between pt-4'>
+                                                    {/* <button className="btn-normal btn-small" type="button">
                                                         <AttachMoneyIcon></AttachMoneyIcon>
                                                         Buy Now
-                                                    </button>
+                                                    </button> */}
+                                                    <Modal
+                                                        btnTitle= "Buy Now" 
+                                                    ></Modal>
 
-                                                    <button className="btn-icon btn-bg-green btn-small" type="button">
-                                                        <AddIcon /> Add to Cart
+                                                    <button className="btn-normal btn-bg-green mt-4 w-100 ms-1 me-1" type="button">
+                                                        Add to Cart
                                                     </button>
                                                 </div>
 

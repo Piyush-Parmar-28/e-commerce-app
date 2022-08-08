@@ -2,3 +2,9 @@
   border: 1px solid rgb(202, 201, 201);
   border-radius: 0.5rem;
 }
+
+/* -----------------------------------Box Colours---------------------------------------- */
+.box-red {
+  border: 2px solid #e1775d;
+  border-radius: 0.5rem;
+}

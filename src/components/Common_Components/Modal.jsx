@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react'
 
-const Modal = () => {
+const Modal = (props) => {
 
     const [buyText, setBuyText]= useState("Buy")
     const [displayStyle, setDisplayStyle] = useState("none")
@@ -26,7 +26,7 @@ const Modal = () => {
 
     return (
         <Fragment>
-            <button className='btn-normal' onClick={displayModal}>Open Modal</button>
+            <button className='btn-normal mt-4 w-100 ms-1 me-1' onClick={displayModal}>{props.btnTitle}</button>
 
             <div className="modal " style={{ display: displayStyle }}>
 
@@ -41,7 +41,7 @@ const Modal = () => {
                         </div>
 
                         <div>
-                            <p>$ 0</p>
+                            <p>$ {props.subTotal}</p>
                         </div>
                     </div>
 
@@ -76,7 +76,7 @@ const Modal = () => {
                         </div>
 
                         <div>
-                            <p>$ 0</p>
+                            <p>$ {props.totalPrice}</p>
                         </div>
                     </div>
 
@@ -92,7 +92,7 @@ const Modal = () => {
                         <button className="ms-3 btn-normal btn-bg-grey mt-4 w-50" type="button" onClick={closeModal}>Close</button>
                     </div>
 
-                    <div className='box mt-4' style={{ display: boxStyle }}>
+                    <div className='box-red mt-4' style={{ display: boxStyle }}>
                         <h4 className='text-center heading mt-2'><b>Order Placed!</b></h4>
                         <h6 className='text-center'>
                             Items will reach to you within 3 days.

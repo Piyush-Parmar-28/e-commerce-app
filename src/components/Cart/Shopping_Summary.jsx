@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
+import Modal from '../Common_Components/Modal'
+
 const Shopping_Summary = () => {
     const [totalPrice,setTotalPrice] = useState('')
 
@@ -65,7 +67,12 @@ const Shopping_Summary = () => {
                 </div>
 
                 {/* Buy Button */}
-                <button className="btn-normal mt-4 w-100" type="button">Buy</button>
+                {/* <button className="btn-normal mt-4 w-100" type="button">Buy</button> */}
+                <Modal
+                    btnTitle= "Buy"
+                    subTotal= {totalPrice}
+                    totalPrice= {totalPrice}
+                ></Modal>
             </div>
 
         </div>
