@@ -16,26 +16,50 @@ import axios from 'axios';
 var sliderData = [
     {
         id: 1,
-        src: "https://images.unsplash.com/photo-1626288215937-747af7be5b7b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fDklM0ExNnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60",
+        src: "img/slider/slide-1.jpg",
         altText: "img1",
-        label: "First slide label",
-        desc: "Some representative placeholder content for the first slide."
     },
 
     {
         id: 2,
-        src: "https://images.unsplash.com/photo-1626288215937-747af7be5b7b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fDklM0ExNnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60",
+        src: "img/slider/slide-2.jpg",
         altText: "img2",
-        label: "Second slide label",
-        desc: "Some representative placeholder content for the first slide."
     },
 
     {
         id: 3,
-        src: "https://images.unsplash.com/photo-1626288215937-747af7be5b7b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fDklM0ExNnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60",
+        src: "img/slider/slide-3.jpg",
         altText: "img3",
-        label: "Third slide label",
-        desc: "Some representative placeholder content for the first slide."
+    }, 
+
+    {
+        id: 4,
+        src: "img/slider/slide-4.jpg",
+        altText: "img4",
+    }, 
+
+    {
+        id: 6,
+        src: "img/slider/slide-6.png",
+        altText: "img5",
+    },
+
+    {
+        id: 7,
+        src: "img/slider/slide-7.png",
+        altText: "img5",
+    },
+
+    {
+        id: 8,
+        src: "img/slider/slide-8.png",
+        altText: "img5",
+    },
+
+    {
+        id: 9,
+        src: "img/slider/slide-9.png",
+        altText: "img5",
     }
 ]
 
