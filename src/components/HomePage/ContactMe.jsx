@@ -1,9 +1,6 @@
 import React from 'react'
 
 import PageTitle from '../Common_Components/PageTitle'
-import ShareIcon from '@mui/icons-material/Share'
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined'
-import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined'
 
 const ContactMe = () => {
     return (
