@@ -107,16 +107,17 @@
 
 /* C. Blue Button */
 .btn-bg-blue{
-  background-color: #03aed8;
-  border: 1px solid #03aed8;
-  color: white;
+  background-color: #f4f9fd;
+  border: 1px solid #f4f9fd;
+  color: black;
 }
 
 .btn-bg-blue:hover {
   color: white;
-  background-color: #0690b3;
-  border: 1px solid #0690b3;
+  background-color: #656565;
+  border: 1px solid #656565;
   transition: 0.2s;
+  color: white;
 }
 
 .btn-bg-blue:active {

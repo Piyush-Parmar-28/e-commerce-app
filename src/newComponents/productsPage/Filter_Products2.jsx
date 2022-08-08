@@ -14,23 +14,23 @@ const Filter_Products = (props) => {
             </div>
 
             <div style={{ margin: '10px' }}>
-                <button type="button" class="btn-normal btn-bg-lgrey" onClick={props.onElectronics}>Electronics</button>
+                <button type="button" class="btn-normal btn-bg-blue" onClick={props.onElectronics}>Electronics</button>
             </div>
 
             <div style={{ margin: '10px' }}>
-                <button type="button" class="btn-normal btn-bg-lgrey" onClick={props.onFashion}>Fashion</button>
+                <button type="button" class="btn-normal btn-bg-blue" onClick={props.onFashion}>Fashion</button>
             </div>
 
             <div style={{ margin: '10px' }}>
-                <button type="button" class="btn-normal btn-bg-lgrey" onClick={props.onFurniture}>Furniture</button>
+                <button type="button" class="btn-normal btn-bg-blue" onClick={props.onFurniture}>Furniture</button>
             </div>
 
             <div style={{ margin: '10px' }}>
-                <button type="button" class="btn-normal btn-bg-lgrey" onClick={props.onKitchen}>Kitchen</button>
+                <button type="button" class="btn-normal btn-bg-blue" onClick={props.onKitchen}>Kitchen</button>
             </div>
 
             <div style={{ margin: '10px' }}>
-                <button type="button" class="btn-normal btn-bg-lgrey" onClick={props.onHomeDecor}>HomeDecor</button>
+                <button type="button" class="btn-normal btn-bg-blue" onClick={props.onHomeDecor}>HomeDecor</button>
             </div>
 
         </div>
