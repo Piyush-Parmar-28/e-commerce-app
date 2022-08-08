@@ -56,11 +56,11 @@ app.post("/login", async (req, res) => {
         );
         const token = await user.generateAuthToken();
         res.cookie("jwt", token);
-        return res.send({message: "Login OK"})
+        return res.send({ message: "Login OK" })
         // res.redirect("/home");
     } catch (e) {
         // res.send("Invalid Credentials");
-        return res.send({status: 401, error: "Unauthorized response "})
+        return res.send({ status: 401, error: "Unauthorized response " })
     }
 });
 
@@ -89,7 +89,7 @@ app.post("/signUp", (req, res) => {
         .save()
         .then(() => {
             // console.log(user);
-            res.send({status: 200, message: "OK! SignUp Successful"})
+            res.send({ status: 200, message: "OK! SignUp Successful" })
         })
         .catch((e) => {
             console.log(e);
@@ -116,41 +116,53 @@ app.get("/getProfileImage", auth, async (req, res) => {
     res.send(req.user.ImageData)
 });
 
+app.post('/uploadImage', auth, upload.single("image"), async (req, res) => {
+
+    try {
+        var image = req.file.buffer;
+        if (image) {
+            req.user.ImageURL = '';
+            req.user.ImageData = image;
+        };
+        req.user.save()
+        res.redirect('/profile')
+    } catch (error) {
+        res.send('error: please! upload Image')
+    }
+
+})
+
 //  5. Update User Details Route
-app.post("/updateDetails", auth, upload.single("image"), async (req, res) => {
+app.post("/updateDetails", auth, async (req, res) => {
     res.set({
         "Access-Control-Allow-Origin": "*",
     });
-try {
-    var fName = req.body.first_name;
-    var lName = req.body.last_name;
-    var email = req.body.Email;
-    var password = req.body.Password;
-    var phone = req.body.Phone;
-    var city = req.body.city;
-    var country = req.body.country;
-    var address = req.body.address;
-    var image = req.file.buffer;
+    try {
+        var fName = req.body.first_name;
+        var lName = req.body.last_name;
+        var email = req.body.Email;
+        var password = req.body.Password;
+        var phone = req.body.Phone;
+        var city = req.body.city;
+        var country = req.body.country;
+        var address = req.body.address;
 
-    if(fName) req.user.Fname = fName;
-    if(lName) req.user.Lname = lName;
-    if(email) req.user.Email = email;
-    if(password) req.user.Password = password;
-    if(phone) req.user.Phone = phone;
-    if(city) req.user.City =city;
-    if(country) req.user.Country = country;
-    if(address) req.user.Address = address;
-    if(image){
-        req.user.ImageURL = '';
-        req.user.ImageData = image;
-    };
-    
-    req.user.save()
+        if (fName) req.user.Fname = fName;
+        if (lName) req.user.Lname = lName;
+        if (email) req.user.Email = email;
+        if (password) req.user.Password = password;
+        if (phone) req.user.Phone = phone;
+        if (city) req.user.City = city;
+        if (country) req.user.Country = country;
+        if (address) req.user.Address = address;
 
-    res.redirect('/profile')    
-} catch (error) {
-    res.send('error: Please! upload image')
-}
+
+        req.user.save()
+
+        res.redirect('/profile')
+    } catch (error) {
+        res.send('error: something went wrong!')
+    }
 
 
 });
@@ -161,7 +173,7 @@ app.post("/saveImage", auth, (req, res) => {
     req.user.ImageURL = myImageURL;
     req.user.save()
 
-    res.send({status: 200})
+    res.send({ status: 200 })
 });
 
 //  7. Add Products Route
@@ -234,7 +246,7 @@ app.get("/SearchProducts", async (req, res) => {
     });
     if (!req.query.item == '') {
         console.log(req.query.item.toLowerCase());
-        
+
         const products = await ProductObj.getProduct(
             req.query.item.toLowerCase().split(" ")
         );
@@ -284,11 +296,11 @@ app.post("/AddToCart", auth, (req, res) => {
     }
     else {
         console.log(req.user.Cart)
-        req.user.Cart = req.user.Cart.concat({ productID: myProductID, Quantity: 1, Price:price });
+        req.user.Cart = req.user.Cart.concat({ productID: myProductID, Quantity: 1, Price: price });
     }
 
     req.user.save();
-    res.send({status: 200, message: "Added to cart!"});
+    res.send({ status: 200, message: "Added to cart!" });
 });
 
 //  11. Add To Cart
@@ -310,7 +322,7 @@ app.post("/removeOneFromCart", auth, (req, res) => {
     // If the item is present in the Cart
     if (index != -1) {
 
-        if(req.user.Cart[index].Quantity == 1){
+        if (req.user.Cart[index].Quantity == 1) {
             //  Remove the item from the cart
             req.user.Cart = req.user.Cart.filter((cartItem) => {
                 // console.log("cartItem.productID is: "+ cartItem.productID);
@@ -318,16 +330,16 @@ app.post("/removeOneFromCart", auth, (req, res) => {
             })
         }
 
-        else{
+        else {
             req.user.Cart[index].Quantity--;
         }
     }
     else {
-        req.user.Cart = req.user.Cart.concat({ productID: myProductID, Quantity: 1, Price:price });
+        req.user.Cart = req.user.Cart.concat({ productID: myProductID, Quantity: 1, Price: price });
     }
 
     req.user.save();
-    res.send({status: 200, message: "Removed one item from cart!"});
+    res.send({ status: 200, message: "Removed one item from cart!" });
 });
 
 //  12. Get Cart Data
@@ -369,11 +381,11 @@ app.post("/logout", auth, async (req, res) => {
     res.redirect("/");
 });
 
-app.get('/total',auth,(req,res)=>{
+app.get('/total', auth, (req, res) => {
     var total = 0
 
-    req.user.Cart.forEach((item)=>{
-        total+=item.Quantity*item.Price
+    req.user.Cart.forEach((item) => {
+        total += item.Quantity * item.Price
     })
 
     res.send(total.toString())
@@ -381,7 +393,7 @@ app.get('/total',auth,(req,res)=>{
 
 //  15. Status Route
 app.get("/status", loginCheck, (req, res) => {
-    res.send({status:req.status,fname:req.fname})
+    res.send({ status: req.status, fname: req.fname })
 });
 
 

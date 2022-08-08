@@ -6,15 +6,16 @@ import Card from "./card/card";
 import Filter_Products from "./Filter_Products2";
 
 const Productss = () => {
-    const [allProducts, setAllProducts] = useState([])
-    const [products, setProducts] = useState([])
-    if (window.location.search == '') window.location.href = '/';
-    useEffect(() => {
-        fetch(`SearchProducts${window.location.search.toLowerCase()}`).then(data => data.json()).then(myData => {
-            setProducts(myData)
-            setAllProducts(myData)
-        })
-    }, [])
+  const [allProducts, setAllProducts] = useState([])
+  const [products, setProducts] = useState([])
+  if(window.location.search == '') window.location.href ='/';
+  useEffect(() => {
+      fetch(`SearchProducts${window.location.search.trim().toLowerCase()}`).then(data => data.json()).then(myData => {
+          setProducts(myData)
+          setAllProducts(myData)
+      })
+  }, [])
+
 
     function filterElectronics() {
         setProducts(allProducts.filter(data => data.Category === 'electronics'))

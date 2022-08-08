@@ -8,12 +8,13 @@ import Categories from '../components/HomePage/Categories'
 import ContactMe from '../components/HomePage/ContactMe'
 import FlashDeals from '../components/HomePage/FlashDeals'
 import TopPicks from '../components/HomePage/TopPicks'
+import Slider2 from '../newComponents/slider/Slider2'
 
 const Home = () => {
     return (
         <div className= "blue-bg">
             <Navbar2></Navbar2>
-            <Slider></Slider>
+            <Slider2></Slider2>
             <Categories></Categories>
             <TopPicks></TopPicks>
             <FlashDeals></FlashDeals>
