@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./css/backgrounds.css"
+import "./css/modal.css"
 import "./css/forms.css"
 import "./css/fonts_colors.css"
 import "./css/table.css"
@@ -19,6 +20,7 @@ import UpdateInfo from "./pages/UpdateInfo";
 import Footer from "./components/Common_Components/Footer";
 import AddProducts from "./pages/AddProducts";
 import Get from "./pages/Get"
+import Modal from "./components/Common_Components/Modal";
 
 function App() {
     return (
@@ -34,6 +36,7 @@ function App() {
                     <Route exact path="cart" element={<Cart />} />
                     <Route exact path="profile" element={<ProfilePage />} />
                     <Route exact path="update" element={<UpdateInfo />} />
+                    <Route exact path="modal" element={<Modal />} />
                 </Routes>
             </BrowserRouter>
             
