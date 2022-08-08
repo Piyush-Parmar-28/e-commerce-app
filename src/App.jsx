@@ -21,6 +21,7 @@ import Footer from "./components/Common_Components/Footer";
 import AddProducts from "./pages/AddProducts";
 import Get from "./pages/Get"
 import Modal from "./components/Common_Components/Modal";
+import WebMasters from "./newComponents/WebMasters/webMasters";
 
 function App() {
     return (
@@ -29,7 +30,6 @@ function App() {
                 <Routes>
                     <Route exact path="/" element={<LoginSignUp />} />
                     <Route exact path="add" element={<AddProducts />} />
-                    <Route exact path="get" element={<Get />} />
                     <Route exact path="home" element={<Home />} />
                     <Route exact path="products" element={<ProductsPage />} />
                     <Route exact path="selected" element={<SelectedProduct />} />
@@ -37,6 +37,7 @@ function App() {
                     <Route exact path="profile" element={<ProfilePage />} />
                     <Route exact path="update" element={<UpdateInfo />} />
                     <Route exact path="modal" element={<Modal />} />
+                    <Route exact path="webmasters" element={<WebMasters />} />
                 </Routes>
             </BrowserRouter>
             
