@@ -87,7 +87,7 @@ const Single_Cart_Item = (props) => {
                     <div className='d-flex flex-column'>
                         <Image photoID={props.ImageID} size='10rem'></Image>
 
-                        <Link to={"/selected?selectedProduct=" + props._id} className= "d-flex justify-content-center">
+                        <Link to={"/selected?selectedProduct=" + props._id} className= "d-flex justify-content-center" style={{textDecoration : "none"}}>
                             <button className="btn-normal mt-3">View Product</button>
                         </Link>
 

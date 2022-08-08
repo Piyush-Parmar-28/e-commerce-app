@@ -41,7 +41,7 @@ const Modal = (props) => {
                         </div>
 
                         <div>
-                            <p>$ {props.subTotal}</p>
+                            <p>₹ {props.subTotal}</p>
                         </div>
                     </div>
 
@@ -52,7 +52,7 @@ const Modal = (props) => {
                         </div>
 
                         <div>
-                            <p>$ 0</p>
+                            <p>₹ 0</p>
                         </div>
                     </div>
 
@@ -76,7 +76,7 @@ const Modal = (props) => {
                         </div>
 
                         <div>
-                            <p>$ {props.totalPrice}</p>
+                            <p>₹ {props.totalPrice}</p>
                         </div>
                     </div>
 
