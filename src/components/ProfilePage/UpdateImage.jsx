@@ -5,6 +5,7 @@ import { profileAvatar } from "../../Data";
 import AvatarCard from "./AvatarCard";
 import Update_UserDetails from "./Update_UserDetails";
 import RefreshIcon from "@mui/icons-material/Refresh";
+import ProfilePhoto from "./updateProfilePhoto";
 
 const UpdateImage = (props) => {
 
@@ -134,6 +135,7 @@ const UpdateImage = (props) => {
                     </div>
 
                     <Update_UserDetails />
+                    <ProfilePhoto/>
                 </div>
             </section>
         </main>

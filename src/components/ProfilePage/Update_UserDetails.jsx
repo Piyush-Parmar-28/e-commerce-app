@@ -9,7 +9,7 @@ const navigate = useNavigate();
             <h2 className="heading d-flex justify-content-center">Update Details</h2>
             <p className="d-flex justify-content-center">Edit Details to be Updated...</p>
 
-            <form action="/updateDetails" className="form-style" encType="multipart/form-data" method="post">
+            <form action="/updateDetails" className="form-style"  method="post">
 
                 <div className="row">
                     <div className="col mb-3 d-flex flex-column">
@@ -28,11 +28,7 @@ const navigate = useNavigate();
                     <input type="email" name="Email" placeholder='someone@gmail.com' />
                 </div>
 
-                <div className="mb-3 d-flex flex-column">
-                    <label><b>Upload Profile Image</b></label>
-                    
-                    <input type="file" name="image" placeholder='select image' accept="image/png, image/jpeg" />
-                </div>
+
 
                 <div className='row'>
                     <div className="col mb-3 d-flex flex-column">
