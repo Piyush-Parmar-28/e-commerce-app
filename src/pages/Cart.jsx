@@ -19,13 +19,18 @@ const Cart = () => {
     var [IDs, setIDs] = useState([])
 
     useEffect( () => {
-
         fetch("/cart").then(data => data.json()).then(myData => {
             // console.log(myData)
             setIDs(myData)
         })
     }, [])
 
+    const clearCart= () =>{
+        fetch("/clearCart").then(data => data.json()).then(myData => {
+            // console.log(myData)
+            setIDs(myData)
+        })
+    }
 
     return (
         <Fragment>
@@ -72,7 +77,9 @@ const Cart = () => {
 
                         {/* Shopping Summary */}
                         <div className='pb-5'>
-                            <Shopping_Summary />
+                            <Shopping_Summary 
+                                clearCartfunc1= {clearCart}
+                            />
                         </div>
 
                     </div>

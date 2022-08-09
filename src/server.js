@@ -303,7 +303,7 @@ app.post("/AddToCart", auth, (req, res) => {
     res.send({ status: 200, message: "Added to cart!" });
 });
 
-//  11. Add To Cart
+//  11. Remove one item from cart
 app.post("/removeOneFromCart", auth, (req, res) => {
     const myProductID = req.body.productID;
     const price = req.body.itemPrice
@@ -341,6 +341,14 @@ app.post("/removeOneFromCart", auth, (req, res) => {
     req.user.save();
     res.send({ status: 200, message: "Removed one item from cart!" });
 });
+
+//  12. Clear Cart
+app.get("/clearCart", auth, (req, res) =>{
+    req.user.Cart= []
+    req.user.save();
+
+    res.send(req.user.Cart)
+})
 
 //  12. Get Cart Data
 app.get("/cart", auth, (req, res) => {

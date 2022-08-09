@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 
 import Modal from '../Common_Components/Modal'
 
-const Shopping_Summary = () => {
+const Shopping_Summary = (props) => {
     const [totalPrice,setTotalPrice] = useState('')
 
     useEffect(()=>{
@@ -72,6 +72,8 @@ const Shopping_Summary = () => {
                     btnTitle= "Buy"
                     subTotal= {totalPrice}
                     totalPrice= {totalPrice}
+
+                    clearCartfunc2= {props.clearCartfunc1}
                 ></Modal>
             </div>
 

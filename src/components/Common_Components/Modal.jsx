@@ -22,6 +22,8 @@ const Modal = (props) => {
             setBuyText("Items Purchased!")
             setBoxStyle("block")
         }, 1500 )
+
+        props.clearCartfunc2();
     }
 
     return (

@@ -35,7 +35,7 @@ const FlashDeals = () => {
                 desc="Explore the Flash Deals of This Season!!"
             ></PageTitle>
 
-            <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleControls1" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
 
                     <div className="carousel-item active">
@@ -56,7 +56,7 @@ const FlashDeals = () => {
                                     return (
                                         <FlashCard
                                             cardClass={myClass}
-                                            displayStatus={productsDisplayed1 >4 ? "none" : ""}
+                                            displayStatus={productsDisplayed1 > 4 ? "none" : ""}
                                             key={contents._id}
                                             title={contents.Product}
                                             ImageID={contents.ImageID}
@@ -89,7 +89,7 @@ const FlashDeals = () => {
                                             cardClass={myClass}
                                             displayStatus={productsDisplayed2 >= 5 && productsDisplayed2 < 9 ? "" : "none"}
                                             key={contents._id}
-                                            productID= {contents._id}
+                                            productID={contents._id}
                                             title={contents.Product}
                                             ImageID={contents.ImageID}
                                             Ratings={contents.Ratings}
@@ -134,17 +134,25 @@ const FlashDeals = () => {
 
                 </div>
 
-                <div className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+
+                <div className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="prev">
                     <button type="button" className="btn-icon btn-xsmall">
                         <ArrowBackIosSharpIcon />
                     </button>
                 </div>
 
-                <div className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                {/* <div className= "d-flex justify-content-center align-items-center mt-auto">
+                    <button className="btn-icon btn-xsmall carousel-control-prev " data-bs-target="#carouselExampleControls1" data-bs-slide="prev" style={{height: "5rem", width: "5rem"}}>
+                        <ArrowBackIosSharpIcon />
+                    </button>
+                </div> */}
+
+                <div className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="next">
                     <button type="button" className="btn-icon btn-xsmall">
                         <ArrowForwardIosSharpIcon />
                     </button>
                 </div>
+
 
             </div>
         </div>
