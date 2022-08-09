@@ -1,14 +1,14 @@
 import React, { Fragment } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import "./css/backgrounds.css"
-import "./css/modal.css"
-import "./css/forms.css"
-import "./css/fonts_colors.css"
-import "./css/table.css"
-import "./css/navbar.css"
-import "./css/button.css"
-import "./css/box.css"
+import "./common_CSS/backgrounds.css"
+import "./common_CSS/modal.css"
+import "./common_CSS/forms.css"
+import "./common_CSS/fonts_colors.css"
+import "./common_CSS/table.css"
+import "./common_CSS/navbar.css"
+import "./common_CSS/button.css"
+import "./common_CSS/box.css"
 
 import Home from "./pages/Home";
 import ProductsPage from "./pages/ProductsPage";
