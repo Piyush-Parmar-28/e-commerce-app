@@ -59,7 +59,7 @@ const UpdateImage = (props) => {
         else {
             setBtnText("Error in updating photo!")
 
-            setTimeout(() =>{
+            setTimeout(() => {
                 setBtnText("Set Profile")
             }, 2000)
         }
@@ -127,15 +127,17 @@ const UpdateImage = (props) => {
                                     </button>
                                 </Link>
 
-                                <button className="btn-normal" type="submit" style={ btnText=== "Profile Photo Updated!" ? {background: '#01966e' } : {background: '#e1775d' } } onClick={postData}>
+                                <button className="btn-normal" type="submit" style={btnText === "Profile Photo Updated!" ? { background: '#01966e' } : { background: '#e1775d' }} onClick={postData}>
                                     {btnText}
                                 </button>
                             </div>
                         </form>
+
+                        <ProfilePhoto />
+
                     </div>
 
                     <Update_UserDetails />
-                    <ProfilePhoto/>
                 </div>
             </section>
         </main>
