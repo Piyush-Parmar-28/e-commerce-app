@@ -23,6 +23,7 @@ const FlashCard = (props) => {
 
     const postData = async (event) => {
         event.preventDefault()
+
         // Using object destructuring for: productID= product.productID
         const { productID, Price } = product
 
