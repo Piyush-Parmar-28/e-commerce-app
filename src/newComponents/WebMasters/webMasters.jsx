@@ -19,7 +19,7 @@ const WebMasters = () => {
                         <div className={style.content_div}>
                             <div className={style.image_div}>
                                 <img
-                                    className={style.image}
+                                    className={`${style.image}`}
                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQq6gaTf6N93kzolH98ominWZELW881HqCgw&usqp=CAU"
                                 ></img>
                             </div>
