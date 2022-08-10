@@ -33,6 +33,10 @@
     transition: all 0.5s ease;
 }
 
+#logo-img{
+    display: none;
+}
+
 
 
 @media screen and (max-width:800px){
@@ -65,6 +69,9 @@
     }
     #logo{
         display: none;
+    }
+    #logo-img{
+        display: block;
     }
     #search_input{
         width: 100%;

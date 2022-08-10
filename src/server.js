@@ -389,6 +389,8 @@ app.post("/logout", auth, async (req, res) => {
     res.redirect("/");
 });
 
+// 15. SubTotal of Cart item (Total Price of items in cart)
+
 app.get('/total', auth, (req, res) => {
     var total = 0
 
@@ -399,7 +401,7 @@ app.get('/total', auth, (req, res) => {
     res.send(total.toString())
 })
 
-//  15. Status Route
+//  16. Status Route
 app.get("/status", loginCheck, (req, res) => {
     res.send({ status: req.status, fname: req.fname })
 });
