@@ -5,7 +5,7 @@ import Navbar2 from '../components/Common_Components/Navbar2'
 import Slider from '../components/HomePage/Slider'
 import Offers from '../components/HomePage/Offers'
 import Categories from '../components/HomePage/Categories'
-import ContactMe from '../components/HomePage/ContactMe'
+import Masters_ContactMe from '../components/HomePage/Masters_ContactMe'
 import FlashDeals from '../components/HomePage/FlashDeals'
 import TopPicks from '../components/HomePage/TopPicks'
 import Slider2 from '../newComponents/slider/Slider2'
@@ -19,7 +19,7 @@ const Home = () => {
             <TopPicks></TopPicks>
             <FlashDeals></FlashDeals>
             <Offers></Offers>
-            <ContactMe></ContactMe>
+            <Masters_ContactMe></Masters_ContactMe>
         </div>
     )
 }

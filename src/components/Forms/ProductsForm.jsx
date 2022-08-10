@@ -57,12 +57,11 @@ const AddProducts = (props) => {
                             <div className="col">
                                 <div className="mb-3 d-flex flex-column">
                                     <label>
-                                        <b>Price ($) </b>
+                                        <b>Price (₹) </b>
                                     </label>
                                     <input
-                                        className="item"
                                         type="number"
-                                        placeholder="$20"
+                                        placeholder="₹20"
                                         name="price"
                                     />
                                 </div>
@@ -76,7 +75,6 @@ const AddProducts = (props) => {
                                         <b>Stock</b>
                                     </label>
                                     <input
-                                        className="item"
                                         type="number"
                                         min={1}
                                         placeholder="Available Quantity"
@@ -92,7 +90,6 @@ const AddProducts = (props) => {
                                         <b>Brand</b>
                                     </label>
                                     <input
-                                        className="item"
                                         type="text"
                                         placeholder="Dell"
                                         name="brand"
@@ -108,7 +105,6 @@ const AddProducts = (props) => {
                                         <b>Ratings</b>
                                     </label>
                                     <input
-                                        className="item"
                                         type="number"
                                         min={0}
                                         max={5}
@@ -126,7 +122,6 @@ const AddProducts = (props) => {
                                         <b>Offers (% Off)</b>
                                     </label>
                                     <input
-                                        className="item"
                                         type="number"
                                         name="offers"
                                         placeholder="50% Off"
@@ -137,13 +132,12 @@ const AddProducts = (props) => {
                             </div>
                         </div>
 
-                        <div className="col">
+                        <div className="col p-0">
                             <div className="mb-3 d-flex flex-column">
                                 <label>
                                     <b>Tags</b>
                                 </label>
                                 <input
-                                    className="item"
                                     type="text"
                                     placeholder="Laptop, Computer, ..."
                                     name="tags"
