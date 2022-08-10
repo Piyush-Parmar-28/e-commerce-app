@@ -3,9 +3,6 @@ import Section from "../section/section";
 import Navbar2 from "../../components/Common_Components/Navbar2";
 import style from "./wm.module.css";
 import PageTitle from "../../components/Common_Components/PageTitle";
-import ShareIcon from "@mui/icons-material/Share";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 
 const WebMasters = () => {
     return (
@@ -30,6 +27,7 @@ const WebMasters = () => {
                             <div className={style.name_div}>
                                 <span>Abhishek Chorotiya</span>
                             </div>
+
                             <div className={style.socials_div}>
                                 <div
                                     style={{ width: "100%", padding: "1rem" }}

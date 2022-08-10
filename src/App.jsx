@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./common_CSS/backgrounds.css"
+import "./common_CSS/web_masters_home.css"
 import "./common_CSS/modal.css"
 import "./common_CSS/forms.css"
 import "./common_CSS/fonts_colors.css"
