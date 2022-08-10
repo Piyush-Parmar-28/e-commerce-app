@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom"
 
 import PageTitle from '../Common_Components/PageTitle'
 
 const Masters_ContactMe = () => {
+    const [addProductDisplay, setAddProductDisplay] = useState("none")
+
+    useEffect( () =>{
+        fetch("/checkAdmin").then( data => data.json() ).then( myData =>{
+            
+            if(myData.status === "admin"){
+                setAddProductDisplay("")
+            }
+        } )
+    }, [] )
+
     return (
         <main>
             <section id="contact" className="contact pt-0">
@@ -24,19 +35,28 @@ const Masters_ContactMe = () => {
                                 <div className='d-flex justify-content-between'>
 
                                     <div className='d-flex flex-column justify-content-center align-items-center'>
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQq6gaTf6N93kzolH98ominWZELW881HqCgw&usqp=CAU" ></img>
+                                        <img className='img-size' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQq6gaTf6N93kzolH98ominWZELW881HqCgw&usqp=CAU" ></img>
                                         <h4 className='heading name-size'>Piyush Parmar</h4>
                                     </div>
 
                                     <div className='d-flex flex-column justify-content-center align-items-center'>
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQq6gaTf6N93kzolH98ominWZELW881HqCgw&usqp=CAU" ></img>
+                                        <img className='img-size' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQq6gaTf6N93kzolH98ominWZELW881HqCgw&usqp=CAU" ></img>
                                         <h4 className='heading name-size'>Abhishek Chorotiya</h4>
                                     </div>
                                 </div>
 
-                                <Link to="/webmasters" className='d-flex justify-content-center mt-4' style={{ textDecoration: "none" }}>
-                                    <button className='btn-normal'>Web Masters</button>
-                                </Link>
+                                <div className='d-flex justify-content-around'>
+                                    <Link to="/webmasters" className='d-flex justify-content-center mt-4' style={{ textDecoration: "none" }}>
+                                        <button className='btn-normal'>Web Masters</button>
+                                    </Link>
+
+                                    <div style={{display: addProductDisplay}}>
+                                        <Link to="/add" className='d-flex justify-content-center mt-4' style={{ textDecoration: "none"}}>
+                                            <button className='btn-normal'>Add Product</button>
+                                        </Link>
+                                    </div>
+
+                                </div>
 
                             </div>
 
@@ -90,6 +110,7 @@ const Masters_ContactMe = () => {
                                     <div className="d-flex justify-content-center">
                                         <button type="submit" className="btn-normal my-3">Send Message</button>
                                     </div>
+
                                 </form>
                             </div>
 
@@ -98,8 +119,6 @@ const Masters_ContactMe = () => {
 
                 </div>
             </section>
-
-
 
         </main>
     )

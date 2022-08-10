@@ -1,12 +1,8 @@
-img{
+.img-size{
     width: 85%;
 }
 
 @media screen and (max-width: 920px) {
-    /* img{
-        width: 75%;
-    } */
-
     .name-size{
         font-size: 1.3rem;
     }

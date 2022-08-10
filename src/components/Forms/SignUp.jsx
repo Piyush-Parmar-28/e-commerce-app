@@ -97,7 +97,7 @@ const SignUp = (props) => {
 
                             <div className="col d-flex flex-column">
                                 <div className="mb-3"><label><strong>Last Name</strong></label>
-                                    <input type="text" id="last_name" placeholder="Carter" value={signUpDetails.last_name} name="last_name" onChange={handleChange} required/>
+                                    <input type="text" id="last_name" placeholder="Carter" value={signUpDetails.last_name} name="last_name" onChange={handleChange}/>
                                 </div>
                             </div>
                         </div>

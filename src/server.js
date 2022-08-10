@@ -1,4 +1,4 @@
-//  REQUIRING MODULES -------------------------------------------------------------------------------
+//  REQUIRING MODULES ---------------------------------------------------------------------------------------------
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -8,20 +8,20 @@ const port = process.env.PORT || 8000;
 const multer = require("multer");
 const upload = multer();
 const cookieParser = require("cookie-parser");
-// Middleware Auth ----------------------------------
+// Middleware Auth ------------------------------------------------------------------------------------------------
 const auth = require("./Middleware/auth");
 const loginCheck = require("./Middleware/loginCheck");
 
-// Using Mongoose Models ---------------------------------------------------------------------------------
+// Using Mongoose Models ------------------------------------------------------------------------------------------
 const UserObj = require("./models/user");
 const ProductObj = require("./models/product");
 const ImageObj = require("./models/images");
 
-// CREATING SERVER ----------------------------------------------------------------------------------
+// CREATING SERVER -------------------------------------------------------------------------------------------------
 var app = express();
 app.use(cookieParser());
 
-//  USING MODULES -----------------------------------------------------------------------------------
+//  USING MODULES --------------------------------------------------------------------------------------------------
 app.use(express.static("public"));
 app.use(cors());
 app.use(bodyParser.json());
@@ -31,7 +31,7 @@ app.use(
     })
 );
 
-// CONNECTING SERVER TO MONGODB DATABASE ----------------------------------------------------------------
+// CONNECTING SERVER TO MONGODB DATABASE ----------------------------------------------------------------------------
 mongoose.connect("mongodb://127.0.0.1:27017/ECommerce");
 var db = mongoose.connection;
 
@@ -40,7 +40,7 @@ db.once("open", () => {
     console.log("Connection Successful");
 });
 
-// ROUTES HERE ----------------------------------------------------------------------------------------------
+// ROUTES HERE -------------------------------------------------------------------------------------------------------
 
 //  1. Home Route
 app.get("/", (req, res) => {
@@ -106,6 +106,16 @@ app.get("/getProfile", auth, async (req, res) => {
     res.send(req.user)
 });
 
+//  6. Check Admin
+app.get("/checkAdmin", auth, async (req, res) =>{
+    if( req.user.Email == "admin007@gmail.com" && req.user.Password == "iamadmin007" ){
+        res.send({status: "admin"})
+    }
+    else{
+        res.send({status: "notAdmin"})
+    }
+})
+
 //  5. Get Profile Image
 app.get("/getProfileImage", auth, async (req, res) => {
     res.set({
@@ -116,6 +126,7 @@ app.get("/getProfileImage", auth, async (req, res) => {
     res.send(req.user.ImageData)
 });
 
+//  6. Upload Image
 app.post('/uploadImage', auth, upload.single("image"), async (req, res) => {
 
     try {
@@ -163,7 +174,6 @@ app.post("/updateDetails", auth, async (req, res) => {
     } catch (error) {
         res.send('error: something went wrong!')
     }
-
 
 });
 
@@ -235,7 +245,7 @@ app.get("/get", async (req, res) => {
         "Access-Control-Allow-Origin": "*",
     });
     const products = await ProductObj.getAllproducts();
-    console.log("getting products");
+    // console.log("getting products");
     res.json(products);
 });
 
@@ -250,7 +260,7 @@ app.get("/SearchProducts", async (req, res) => {
         const products = await ProductObj.getProduct(
             req.query.item.toLowerCase().split(" ")
         );
-        console.log("getting products");
+        // console.log("getting products");
         res.json(products);
     } else {
         res.redirect('/');
@@ -389,6 +399,7 @@ app.post("/logout", auth, async (req, res) => {
     res.redirect("/");
 });
 
+//  15. Total Price
 app.get('/total', auth, (req, res) => {
     var total = 0
 
@@ -404,10 +415,7 @@ app.get("/status", loginCheck, (req, res) => {
     res.send({ status: req.status, fname: req.fname })
 });
 
-
-
-
-// ROUTES ENDS HERE ----------------------------------------------------------------------------------------
+// ROUTES ENDS HERE ---------------------------------------------------------------------------------------------------
 
 app.listen(port);
 console.log("Server Listening on port: " + port);
