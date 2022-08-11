@@ -36,6 +36,10 @@ export default function Navbar2(props) {
         setTextData(event.target.value);
     };
 
+    function getProducts(){
+        window.location.href = `/products?item=${textData}`
+    }
+
     return (
         <div className="my-navbar d-flex justify-content-between align-items-center">
             <div className="d-flex justify-content-center align-items-center">
@@ -55,11 +59,9 @@ export default function Navbar2(props) {
                     onChange={getSearchText}
                 />
 
-                <Link to={"/products?item=" + textData}>
-                    <button className="btn-icon btn-xsmall" type="submit">
+                    <button className="btn-icon btn-xsmall" type="submit" onClick={getProducts}>
                         <SearchIcon />
                     </button>
-                </Link>
             </div>
 
             <div className="d-flex">
