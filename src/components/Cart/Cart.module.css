@@ -1,0 +1,30 @@
+.justify_complete{
+    justify-content: space-between;
+}
+
+.justify_part1{
+    justify-content: space-between;
+}
+
+.justify_part2{
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 780px) {
+    .cartWrap{
+        flex-wrap: wrap;
+    }
+
+    .justify_complete{
+        justify-content: center;
+    }
+
+    .justify_part1{
+        justify-content: space-evenly;
+    }
+    
+    .justify_part2{
+        margin-top: 2rem;
+        justify-content: space-around;
+    }
+}

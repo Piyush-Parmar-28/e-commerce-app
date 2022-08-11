@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import style from "./ImageSize.module.css"
 
 const Image = (props) => {
     
@@ -18,7 +19,7 @@ const Image = (props) => {
 
     return (
         <div className="d-flex justify-content-center">
-            <img className="mx-auto" style={{width:`${props.size?props.size:'10rem'}`, height: "10rem"}} src={img} alt="image not loaded" />
+            <img className={`mx-auto ${style.imgSize}`} src={img} alt="image not loaded" />
         </div>
     );
 };

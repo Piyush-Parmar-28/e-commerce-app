@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import Image from '../../pages/Image'
 
+import style from "./Cart.module.css"
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
@@ -79,13 +80,13 @@ const Single_Cart_Item = (props) => {
     return (
         <Fragment key={props._id}>
 
-            <div className='d-flex justify-content-between'>
+            <div className={`d-flex ${style.justify_complete} ${style.cartWrap}`}>
 
                 {/* Image & Desc Section */}
-                <div className='d-flex justify-content-evenly'>
+                <div className={`d-flex ${style.justify_part1}`}>
 
                     <div className='d-flex flex-column'>
-                        <Image photoID={props.ImageID} size='10rem'></Image>
+                        <Image photoID={props.ImageID} ></Image>
 
                         <Link to={"/selected?selectedProduct=" + props._id} className= "d-flex justify-content-center" style={{textDecoration : "none"}}>
                             <button className="btn-normal mt-3">View Product</button>
@@ -112,7 +113,7 @@ const Single_Cart_Item = (props) => {
                 </div>
 
                 {/* Quantity, Price & Remove Section */}
-                <div className='d-flex justify-content-between'>
+                <div className={`d-flex ${style.justify_part2}`}>
 
                     {/* Quantity */}
                     <div className="d-flex flex-column justify-content-center align-items-center">
@@ -144,7 +145,7 @@ const Single_Cart_Item = (props) => {
                         <p className='m-0'>$ {props.Price * quantity}</p>
                     </div>
 
-                    {/* Button */}
+                    {/* Delete Button */}
                     <form className="d-flex justify-content-center align-items-center col-3" action='/removeProduct' method='post'>
                         <input className='d-none' type="text" id='myProduct' defaultValue={props._id} name="product"></input>
 
