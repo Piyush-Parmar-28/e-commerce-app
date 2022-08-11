@@ -89,13 +89,13 @@ const Masters_ContactMe = () => {
                                 <div className='d-flex justify-content-between'>
 
                                     <div className='d-flex flex-column justify-content-center align-items-center'>
-                                        <img className='img-size' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQq6gaTf6N93kzolH98ominWZELW881HqCgw&usqp=CAU" ></img>
-                                        <h4 className='heading name-size'>Piyush Parmar</h4>
+                                        <img className='img-size' src="img/webMasters/piyush.jpg" ></img>
+                                        <h4 className='heading name-size mt-2'>Piyush Parmar</h4>
                                     </div>
 
                                     <div className='d-flex flex-column justify-content-center align-items-center'>
-                                        <img className='img-size' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQq6gaTf6N93kzolH98ominWZELW881HqCgw&usqp=CAU" ></img>
-                                        <h4 className='heading name-size'>Abhishek Chorotiya</h4>
+                                        <img className='img-size' src="..." ></img>
+                                        <h4 className='heading name-size mt-2'>Abhishek Chorotiya</h4>
                                     </div>
                                 </div>
 

@@ -135,25 +135,17 @@ const FlashDeals = () => {
 
                 </div>
 
-
                 <div className="carousel-control-prev" style={{height:'fit-content',alignSelf:'center',transform:'translateY(+250%)'}} type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="prev">
                     <button type="button" className="btn-icon btn-xsmall">
                         <ArrowBackIosSharpIcon />
                     </button>
                 </div>
 
-                {/* <div className= "d-flex justify-content-center align-items-center mt-auto">
-                    <button className="btn-icon btn-xsmall carousel-control-prev " data-bs-target="#carouselExampleControls1" data-bs-slide="prev" style={{height: "5rem", width: "5rem"}}>
-                        <ArrowBackIosSharpIcon />
-                    </button>
-                </div> */}
-
                 <div className="carousel-control-next" style={{height:'fit-content',alignSelf:'center',transform:'translateY(+250%)'}} type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="next">
                     <button type="button" className="btn-icon btn-xsmall">
                         <ArrowForwardIosSharpIcon />
                     </button>
                 </div>
-
 
             </div>
         </div>
