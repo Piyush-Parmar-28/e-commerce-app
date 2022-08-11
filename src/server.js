@@ -270,7 +270,7 @@ app.get("/SearchProducts", async (req, res) => {
 //  10. Get Particular Product
 app.get("/selected/:data", async (req, res) => {
     var myData = req.params.data;
-    // console.log("myData is: "+ myData);
+    console.log("myData is: "+ myData);
 
     const product = await ProductObj.findOne({ _id: ObjectId(myData) });
     var productCategory = product.Category;

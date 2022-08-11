@@ -29,6 +29,8 @@ const ProductInfo = () => {
 
     }, [])
 
+    console.log("Product ID is: "+ ID);
+
     //  Post Data to add to cart
     const postData = async (event) => {
         event.preventDefault()
@@ -36,7 +38,7 @@ const ProductInfo = () => {
         // const { productID, Price } = products[0]
         const productID= ID
         const Price= itemPrice
-        console.log("Price is: "+ Price);
+        // console.log("Price is: "+ Price);
 
         const res = await fetch("/AddToCart", {
             method: "post",
