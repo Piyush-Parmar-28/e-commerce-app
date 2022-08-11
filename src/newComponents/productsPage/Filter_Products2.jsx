@@ -42,7 +42,7 @@ const Filter_Products = (props) => {
             </div>
 
             <div style={{ margin: '10px' }}>
-                <button type="button" className="btn-normal btn-bg-blue" onClick={props.onHomeDecor}>HomeDecor</button>
+                <button type="button" className="btn-normal btn-bg-blue" onClick={props.onHomeDecor}>Home Decor</button>
             </div>
 
         </div>
