@@ -13,6 +13,149 @@ import axios from 'axios';
 
 // console.log("categoriesData: "+ categoriesData);
 
+var sliderData = [
+    {
+        id: 1,
+        src: "img/slider/slide-1.jpg",
+        altText: "img1",
+    },
+
+    {
+        id: 2,
+        src: "img/slider/slide-2.jpg",
+        altText: "img2",
+    },
+
+    {
+        id: 3,
+        src: "img/slider/slide-3.jpg",
+        altText: "img3",
+    }, 
+
+    {
+        id: 4,
+        src: "img/slider/slide-4.jpg",
+        altText: "img4",
+    }, 
+
+    {
+        id: 6,
+        src: "img/slider/slide-6.png",
+        altText: "img5",
+    },
+
+    {
+        id: 7,
+        src: "img/slider/slide-7.png",
+        altText: "img5",
+    },
+
+    {
+        id: 8,
+        src: "img/slider/slide-8.png",
+        altText: "img5",
+    },
+
+    {
+        id: 9,
+        src: "img/slider/slide-9.png",
+        altText: "img5",
+    }
+]
+
+var productsData = [
+    {
+        id: 1,
+        src: "img/nature/image1.jpg",
+        altText: "img1",
+        label: "First label",
+        desc: "Some representative placeholder content for the first slide."
+    },
+
+    {
+        id: 2,
+        src: "img/nature/image2.jpg",
+        altText: "img2",
+        label: "First label",
+        desc: "Some representative placeholder content for the first slide."
+    },
+
+    {
+        id: 3,
+        src: "img/nature/image3.jpg",
+        altText: "img3",
+        label: "First label",
+        desc: "Some representative placeholder content for the first slide."
+    },
+
+    {
+        id: 4,
+        src: "img/nature/image4.jpg",
+        altText: "img4",
+        label: "First label",
+        desc: "Some representative placeholder content for the first slide."
+    },
+
+    {
+        id: 5,
+        src: "img/nature/image5.jpg",
+        altText: "img5",
+        label: "First label",
+        desc: "Some representative placeholder content for the first slide."
+    },
+
+    {
+        id: 6,
+        src: "img/nature/image6.jpg",
+        altText: "img6",
+        label: "First label",
+        desc: "Some representative placeholder content for the first slide."
+    },
+]
+
+var profileAvatar = [
+    {
+        id: 1,
+        src: "https://api.multiavatar.com/" + Math.floor(Math.random() * 1000000) + ".svg",
+        altText: "Image Loading...",
+
+    },
+
+    {
+        id: 2,
+        src: "https://api.multiavatar.com/" + Math.floor(Math.random() * 1000000) + ".svg",
+        altText: "Image Loading...",
+
+    },
+
+    {
+        id: 3,
+        src: "https://api.multiavatar.com/" + Math.floor(Math.random() * 1000000) + ".svg",
+        altText: "Image Loading...",
+
+    },
+
+    {
+        id: 4,
+        src: "https://api.multiavatar.com/" + Math.floor(Math.random() * 1000000) + ".svg",
+        altText: "Image Loading...",
+
+    },
+
+    {
+        id: 5,
+        src: "https://api.multiavatar.com/" + Math.floor(Math.random() * 1000000) + ".svg",
+        altText: "Image Loading...",
+
+    },
+
+    {
+        id: 6,
+        src: "https://api.multiavatar.com/" + Math.floor(Math.random() * 1000000) + ".svg",
+        altText: "Image Loading...",
+    },
+]
+
 var categoryData = [
     {
         id: 1,
@@ -76,99 +219,4 @@ var categoryData = [
     },
 ]
 
-var sliderData = [
-    {
-        id: 1,
-        src: "img/slider/slide-1.jpg",
-        altText: "img1",
-    },
-
-    {
-        id: 2,
-        src: "img/slider/slide-2.jpg",
-        altText: "img2",
-    },
-
-    {
-        id: 3,
-        src: "img/slider/slide-3.jpg",
-        altText: "img3",
-    }, 
-
-    {
-        id: 4,
-        src: "img/slider/slide-4.jpg",
-        altText: "img4",
-    }, 
-
-    {
-        id: 6,
-        src: "img/slider/slide-6.png",
-        altText: "img5",
-    },
-
-    {
-        id: 7,
-        src: "img/slider/slide-7.png",
-        altText: "img5",
-    },
-
-    {
-        id: 8,
-        src: "img/slider/slide-8.png",
-        altText: "img5",
-    },
-
-    {
-        id: 9,
-        src: "img/slider/slide-9.png",
-        altText: "img5",
-    }
-]
-
-var profileAvatar = [
-    {
-        id: 1,
-        src: "https://api.multiavatar.com/" + Math.floor(Math.random() * 1000000) + ".svg",
-        altText: "Image Loading...",
-
-    },
-
-    {
-        id: 2,
-        src: "https://api.multiavatar.com/" + Math.floor(Math.random() * 1000000) + ".svg",
-        altText: "Image Loading...",
-
-    },
-
-    {
-        id: 3,
-        src: "https://api.multiavatar.com/" + Math.floor(Math.random() * 1000000) + ".svg",
-        altText: "Image Loading...",
-
-    },
-
-    {
-        id: 4,
-        src: "https://api.multiavatar.com/" + Math.floor(Math.random() * 1000000) + ".svg",
-        altText: "Image Loading...",
-
-    },
-
-    {
-        id: 5,
-        src: "https://api.multiavatar.com/" + Math.floor(Math.random() * 1000000) + ".svg",
-        altText: "Image Loading...",
-
-    },
-
-    {
-        id: 6,
-        src: "https://api.multiavatar.com/" + Math.floor(Math.random() * 1000000) + ".svg",
-        altText: "Image Loading...",
-    },
-]
-
-
-
-export { sliderData, profileAvatar, categoryData }
+export { sliderData, productsData, profileAvatar, categoryData }
