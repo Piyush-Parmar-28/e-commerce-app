@@ -159,17 +159,17 @@ var profileAvatar = [
 var categoryData = [
     {
         id: 1,
-        src: "img/categories/books.jpg",
+        src: "img/categories/electronics.jpg",
         altText: "Image Loading...",
-        label: "Books"
+        label: "Electronics"
 
     },
 
     {
         id: 2,
-        src: "img/categories/electronics.jpg",
+        src: "img/categories/study.jpg",
         altText: "Image Loading...",
-        label: "Electronics"
+        label: "Study"
 
     },
 
@@ -183,17 +183,17 @@ var categoryData = [
 
     {
         id: 4,
-        src: "img/categories/home.jpg",
+        src: "img/categories/kitchen.jpg",
         altText: "Image Loading...",
-        label: "Home"
+        label: "Kitchen"
 
     },
 
     {
         id: 5,
-        src: "img/categories/movies.jpg",
+        src: "img/categories/beauty.jpg",
         altText: "Image Loading...",
-        label: "Movies"
+        label: "Beauty"
 
     },
 
@@ -213,9 +213,9 @@ var categoryData = [
 
     {
         id: 8,
-        src: "img/categories/vehicle.jpg",
+        src: "img/categories/homeDecor.jpg",
         altText: "Image Loading...",
-        label: "Vehicle"
+        label: "Home Decor"
     },
 ]
 

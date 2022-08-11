@@ -44,12 +44,14 @@ const AddProducts = (props) => {
                                         <b>Category</b>
                                     </label>
                                     <select className="form-select" name="category">
-                                        <option value="furniture">Furniture</option>
                                         <option value="electronics">Electronics</option>
-                                        <option value="fashion">Fashion</option>
-                                        <option value="kitchen">kitchen</option>
-                                        <option value="sports">Sports</option>
                                         <option value="study">Study</option>
+                                        <option value="fashion">Fashion</option>
+                                        <option value="kitchen">Kitchen</option>
+                                        <option value="beauty">Beauty</option>
+                                        <option value="sports">Sports</option>
+                                        <option value="toys">Toys</option>
+                                        <option value="home">Home Decor</option>
                                     </select>
                                 </div>
                             </div>
