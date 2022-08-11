@@ -107,12 +107,12 @@ app.get("/getProfile", auth, async (req, res) => {
 });
 
 //  6. Check Admin
-app.get("/checkAdmin", auth, async (req, res) =>{
-    if( req.user.Email == "admin007@gmail.com" && req.user.Password == "iamadmin007" ){
-        res.send({status: "admin"})
+app.get("/checkAdmin", auth, async (req, res) => {
+    if (req.user.Email == "admin007@gmail.com" && req.user.Password == "iamadmin007") {
+        res.send({ status: "admin" })
     }
-    else{
-        res.send({status: "notAdmin"})
+    else {
+        res.send({ status: "notAdmin" })
     }
 })
 
@@ -254,14 +254,30 @@ app.get("/SearchProducts", async (req, res) => {
     res.set({
         "Access-Control-Allow-Origin": "*",
     });
+
+    //  Getting the data after 'item=' in the URL by using req.query
+    //  req.query.item will give us the value of 'item' in the URL
+
     if (!req.query.item == '') {
         console.log(req.query.item.toLowerCase());
 
-        const products = await ProductObj.getProduct(
-            req.query.item.toLowerCase().split(" ")
-        );
-        // console.log("getting products");
-        res.json(products);
+        //  Getting products related to any specific category
+        if (req.query.item == "electronics" || req.query.item == "study" || req.query.item == "fashion" || req.query.item == "kitchen" || req.query.item == "beauty" || req.query.item == "sports" || req.query.item == "toys" || req.query.item == "home" ) {
+            //  Just send all products. We will filter them in the bakend
+            const products = await ProductObj.getAllproducts();
+            console.log("getting all products");
+            res.json(products);
+        }
+
+        //  Getting a searched product
+        else{
+            const products = await ProductObj.getProduct(
+                req.query.item.toLowerCase().split(" ")
+            );
+            // console.log("getting products");
+            res.json(products);
+        }
+        
     } else {
         res.redirect('/');
     }
@@ -270,7 +286,7 @@ app.get("/SearchProducts", async (req, res) => {
 //  10. Get Particular Product
 app.get("/selected/:data", async (req, res) => {
     var myData = req.params.data;
-    console.log("myData is: "+ myData);
+    console.log("myData is: " + myData);
 
     const product = await ProductObj.findOne({ _id: ObjectId(myData) });
     var productCategory = product.Category;
@@ -281,6 +297,7 @@ app.get("/selected/:data", async (req, res) => {
             // console.log("result is: "+ result);
             res.send(result);
         });
+
 });
 
 //  11. Add To Cart
@@ -353,8 +370,8 @@ app.post("/removeOneFromCart", auth, (req, res) => {
 });
 
 //  12. Clear Cart
-app.get("/clearCart", auth, (req, res) =>{
-    req.user.Cart= []
+app.get("/clearCart", auth, (req, res) => {
+    req.user.Cart = []
     req.user.save();
 
     res.send(req.user.Cart)

@@ -6,8 +6,12 @@ import PageTitle from "../Common_Components/PageTitle"
 
 const Categories = () => {
 
-    const [displayClass, setDisplayClass]= useState("col-4 col-lg-3 item position-relative p-0")
-    const [noDisplayClass, setNoDisplayClass]= useState("d-none d-lg-block col-lg-3 item position-relative p-0")
+    const [displayClass, setDisplayClass] = useState("col-4 col-lg-3 item position-relative p-0")
+    const [noDisplayClass, setNoDisplayClass] = useState("d-none d-lg-block col-lg-3 item position-relative p-0")
+
+    const displayItems = () => {
+
+    }
 
     return (
         <section className="blue-bg pt-5 pb-5">
@@ -23,12 +27,13 @@ const Categories = () => {
                     categoryData.map((contents) => {
 
                         return (
-                            <Category_Image 
-                                key= {contents.id}
-                                display= {contents.id >6 ? noDisplayClass: displayClass }
-                                id= {contents.id}
-                                image= {contents.src}  
-                                label= {contents.label}                          
+                            <Category_Image
+                                key={contents.id}
+                                display={contents.id > 6 ? noDisplayClass : displayClass}
+                                id={contents.id}
+                                image={contents.src}
+                                label={contents.label}
+                                category= {contents.category}
                             />
                         )
 

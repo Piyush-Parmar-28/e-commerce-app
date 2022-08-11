@@ -161,61 +161,64 @@ var categoryData = [
         id: 1,
         src: "img/categories/electronics.jpg",
         altText: "Image Loading...",
-        label: "Electronics"
-
+        label: "Electronics",
+        category: "electronics"
     },
 
     {
         id: 2,
         src: "img/categories/study.jpg",
         altText: "Image Loading...",
-        label: "Study"
-
+        label: "Study",
+        category: "study"
     },
 
     {
         id: 3,
         src: "img/categories/fashion.jpg",
         altText: "Image Loading...",
-        label: "Fashion"
-
+        label: "Fashion",
+        category: "fashion"
     },
 
     {
         id: 4,
         src: "img/categories/kitchen.jpg",
         altText: "Image Loading...",
-        label: "Kitchen"
-
+        label: "Kitchen",
+        category: "kithen"
     },
 
     {
         id: 5,
         src: "img/categories/beauty.jpg",
         altText: "Image Loading...",
-        label: "Beauty"
-
+        label: "Beauty",
+        category: "beauty"
     },
 
     {
         id: 6,
         src: "img/categories/sports.jpg",
         altText: "Image Loading...",
-        label: "Sports"
+        label: "Sports",
+        category: "soprts"
     },
 
     {
         id: 7,
         src: "img/categories/toys.jpg",
         altText: "Image Loading...",
-        label: "Toys"
+        label: "Toys",
+        category: "toys"
     },
 
     {
         id: 8,
         src: "img/categories/homeDecor.jpg",
         altText: "Image Loading...",
-        label: "Home Decor"
+        label: "Home Decor",
+        category: "home"
     },
 ]
 

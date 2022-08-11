@@ -6,22 +6,75 @@ import Card from "./card/card";
 import Filter_Products from "./Filter_Products2";
 
 const Productss = () => {
-  const [allProducts, setAllProducts] = useState([])
-  const [products, setProducts] = useState([])
-  if(window.location.search == '') window.location.href ='/';
-  useEffect(() => {
-      fetch(`SearchProducts${window.location.search.trim().toLowerCase()}`).then(data => data.json()).then(myData => {
-          setProducts(myData)
-          setAllProducts(myData)
-      })
-  }, [])
+    const [allProducts, setAllProducts] = useState([])
+    const [products, setProducts] = useState([])
 
+    if (window.location.search == '') window.location.href = '/';
+
+    const urlString = window.location.search.trim().toLowerCase()
+    const myCategory = urlString.substring(6)   // Substring starting at index 6, because of "?item="
+
+    useEffect( () => {
+
+        fetch(`SearchProducts${window.location.search.trim().toLowerCase()}`).then(data => data.json()).then(myData => {
+            
+            setProducts(myData)
+            setAllProducts(myData)
+
+            //  Filtering products based on category if we have searched using Category in home page
+            if (myCategory === "electronics") {
+                //  Here, we cannot just call filterElectronics(), nor we can use 'setProducts' directly, because at this time 'setProducts' would not have been set. 
+
+                setProducts(myData.filter(data => data.Category === 'electronics'))
+            }
+
+            else if (myCategory === "study") {
+                setProducts(myData.filter(data => data.Category === 'study'))
+            }
+
+            else if (myCategory === "fashion") {
+                setProducts(myData.filter(data => data.Category === 'fashion'))
+
+            }
+
+            else if (myCategory === "kitchen") {
+                setProducts(myData.filter(data => data.Category === 'kitchen'))
+
+            }
+
+            else if (myCategory === "beauty") {
+                setProducts(myData.filter(data => data.Category === 'beauty'))
+
+            }
+
+            else if (myCategory === "sports") {
+                setProducts(myData.filter(data => data.Category === 'sports'))
+
+            }
+
+            else if (myCategory === "toys") {
+                setProducts(myData.filter(data => data.Category === 'toys'))
+
+            }
+
+            else if (myCategory === "home") {
+                setProducts(myData.filter(data => data.Category === 'home'))
+            }
+        })
+
+    }, [])
+
+
+    //  Filter functions based on categories
+    function getAll() {
+        setProducts(allProducts)
+    }
 
     function filterElectronics() {
         setProducts(allProducts.filter(data => data.Category === 'electronics'))
     }
-    function filterFurniture() {
-        setProducts(allProducts.filter(data => data.Category === 'furniture'))
+    function filterStudy() {
+        setProducts(allProducts.filter(data => data.Category === 'study'))
     }
     function filterFashion() {
         setProducts(allProducts.filter(data => data.Category === 'fashion'))
@@ -29,11 +82,17 @@ const Productss = () => {
     function filterKitchen() {
         setProducts(allProducts.filter(data => data.Category === 'kitchen'))
     }
-    function filterHomeDecor() {
-        setProducts(allProducts.filter(data => data.Category === 'homeDecor'))
+    function filterBeauty() {
+        setProducts(allProducts.filter(data => data.Category === 'beauty'))
     }
-    function getAll() {
-        setProducts(allProducts)
+    function filterSports() {
+        setProducts(allProducts.filter(data => data.Category === 'sports'))
+    }
+    function filterToys() {
+        setProducts(allProducts.filter(data => data.Category === 'toys'))
+    }
+    function filterHomeDecor() {
+        setProducts(allProducts.filter(data => data.Category === 'home'))
     }
 
     const render = products.map((data) =>
@@ -54,11 +113,15 @@ const Productss = () => {
                 <div className={style.left_div}>
 
                     <Filter_Products
-                        onElectronics={filterElectronics}
                         onAll={getAll}
-                        onKitchen={filterKitchen}
-                        onFurniture={filterFurniture}
+
+                        onElectronics={filterElectronics}
+                        onStudy={filterStudy}
                         onFashion={filterFashion}
+                        onKitchen={filterKitchen}
+                        onBeauty={filterBeauty}
+                        onSports={filterSports}
+                        onToys={filterToys}
                         onHomeDecor={filterHomeDecor}
                     ></Filter_Products>
                 </div>
@@ -67,7 +130,7 @@ const Productss = () => {
 
                     <div className={style.right_inner_div}>
                         <PageTitle
-                            title="Explore"
+                            title="Explore Products"
                             desc="Explore all your searched products here!"
                         />
                         {render}
