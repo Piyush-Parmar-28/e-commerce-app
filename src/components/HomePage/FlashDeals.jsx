@@ -136,7 +136,7 @@ const FlashDeals = () => {
                 </div>
 
 
-                <div className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="prev">
+                <div className="carousel-control-prev" style={{height:'fit-content',alignSelf:'center',transform:'translateY(+250%)'}} type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="prev">
                     <button type="button" className="btn-icon btn-xsmall">
                         <ArrowBackIosSharpIcon />
                     </button>
@@ -148,7 +148,7 @@ const FlashDeals = () => {
                     </button>
                 </div> */}
 
-                <div className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="next">
+                <div className="carousel-control-next" style={{height:'fit-content',alignSelf:'center',transform:'translateY(+250%)'}} type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="next">
                     <button type="button" className="btn-icon btn-xsmall">
                         <ArrowForwardIosSharpIcon />
                     </button>

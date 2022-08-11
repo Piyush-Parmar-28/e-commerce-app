@@ -11,13 +11,13 @@ const FlashCard = (props) => {
 
     const [product, setProduct] = useState({
         productID: "",
-        Price: ""
+        Price:0,
     })
 
     useEffect(() => {
         setProduct({ 
             productID: props.productID, 
-            Price: props.price
+            Price:props.Price
         })
     }, [])
 
@@ -25,7 +25,6 @@ const FlashCard = (props) => {
         event.preventDefault()
 
         // Using object destructuring for: productID= product.productID
-        const { productID, Price } = product
 
         const res = await fetch("/AddToCart", {
             method: "post",
@@ -37,7 +36,8 @@ const FlashCard = (props) => {
             //  The string will be sent as body
             body: JSON.stringify({
                 //  Uisng object destructuring for productID= productID
-                productID, Price
+                productID:product.productID,
+                itemPrice:product.Price
             })
         })
 
