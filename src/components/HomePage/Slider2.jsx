@@ -8,10 +8,6 @@ const Slider2 = () => {
 
             <div className="carousel-inner">
 
-                <div className="carousel-item active">
-                    <img className="d-block w-100" src="https://realkart.in/images/home/slide-2.jpg" alt="First slide" />
-                </div>
-
                 {
                     sliderData.map((contents) => {
                         return (
