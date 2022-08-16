@@ -7,7 +7,7 @@ import Categories from '../components/HomePage/Categories'
 import Masters_ContactMe from '../components/HomePage/Masters_ContactMe'
 import FlashDeals from '../components/HomePage/FlashDeals'
 import TopPicks from '../components/HomePage/TopPicks'
-import Slider2 from '../components/slider/Slider2'
+import Slider2 from '../components/HomePage/Slider2'
 
 const Home = () => {
     return (
