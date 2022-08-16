@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 import Section from "../section/section";
-import Navbar2 from "../../components/Common_Components/Navbar2";
+import Navbar2 from "../Common_Components/Navbar2";
 import style from "./wm.module.css";
-import PageTitle from "../../components/Common_Components/PageTitle";
+import PageTitle from "../Common_Components/PageTitle";
 
 const WebMasters = () => {
     return (

@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 
-import PageTitle from "../../components/Common_Components/PageTitle";
+import PageTitle from "../Common_Components/PageTitle";
 import style from "./products.module.css";
 import Card from "./card/card";
 import Filter_Products from "./Filter_Products2";

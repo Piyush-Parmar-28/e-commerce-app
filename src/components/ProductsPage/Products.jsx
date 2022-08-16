@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import PageTitle from '../Common_Components/PageTitle'
 import Filter_Products from './Filter_Products'
 // import Catalog_Image from './Catalog_Image'
-import Card from "../../newComponents/productsPage/card/card"
+import Card from "../../components/productsPage2/card/card"
 
 const Products = (props) => {
     const [allProducts, setAllProducts] = useState([])

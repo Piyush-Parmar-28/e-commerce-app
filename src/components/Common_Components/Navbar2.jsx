@@ -118,11 +118,11 @@ export default function Navbar2(props) {
                             </p>
                         </Link>
 
-                        <form action="/logout" method="post">
+                        {status &&<form action="/logout" method="post">
                             <button className="dropdown-item font-weight-bold" type="submit">
                                 Logout
                             </button>
-                        </form>
+                        </form>}
                     </div>
                 </div>
 
