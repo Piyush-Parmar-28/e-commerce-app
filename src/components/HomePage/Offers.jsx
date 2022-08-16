@@ -20,13 +20,14 @@ const Offers = () => {
                         return (
                             <div key={contents.id} className="col-md-6 col-lg-4">
                                 <div className="card border-0">
-                                    <a href="#">
+                                <Link to={`/products?item=${contents.tag}`} className='description text-black' style= {{textDecoration: "none"}}>
+                                    
                                         <img className="card-img-top scale-on-hover" src={contents.src} alt="{contents.altText}" />
-                                    </a>
+                                </Link>
 
                                     <div className="card-body blue-bg">
                                         <h6 className='d-flex justify-content-center'>
-                                            <Link to="" className='description text-black' style= {{textDecoration: "none"}}>
+                                            <Link to={`/products?item=${contents.tag}`} className='description text-black' style= {{textDecoration: "none"}} class='text-black'>
                                                 <h4>{contents.label}</h4>
                                             </Link>
                                         </h6>

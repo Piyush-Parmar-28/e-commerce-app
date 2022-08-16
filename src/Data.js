@@ -57,42 +57,48 @@ var offersData = [
         id: 1,
         src: "img/offers/bag.jpg",
         altText: "img1",
-        label: "Bags"
+        label: "Bags",
+        tag:'bag'
     },
 
     {
         id: 2,
         src: "img/offers/cycle.jpg",
         altText: "img2",
-        label: "Cycles"
+        label: "Cycles",
+        tag: "cycle"
     },
 
     {
         id: 3,
         src: "img/offers/Jacket.jpg",
         altText: "img3",
-        label: "Jackets"
+        label: "Jackets",
+        tag: "jacket"
     }, 
 
     {
         id: 4,
         src: "img/offers/laptop.jpg",
         altText: "img4",
-        label: "Laptops"
+        label: "Laptops",
+        tag: "laptop"
     }, 
 
     {
         id: 5,
         src: "img/offers/mobile.jpg",
         altText: "img5",
-        label: "Mobiles"
+        label: "Mobiles",
+        tag: "mobile"
     },
 
     {
         id: 6,
         src: "img/offers/shoes.jpg",
         altText: "img6",
-        label: "Shoes"
+        label: "Shoes",
+        tag: "shoes"
     }
     
 ]
