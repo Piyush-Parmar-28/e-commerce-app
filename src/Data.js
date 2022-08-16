@@ -48,13 +48,8 @@ var sliderData = [
         id: 6,
         src: "img/slider/6.png",
         altText: "img6",
-    },
-
-    {
-        id: 7,
-        src: "img/slider/7.png",
-        altText: "img7",
     }
+    
 ]
 
 var productsData = [
