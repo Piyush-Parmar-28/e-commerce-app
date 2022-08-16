@@ -433,6 +433,11 @@ app.get("/status", loginCheck, (req, res) => {
     res.send({ status: req.status, fname: req.fname })
 });
 
+app.get('/allProducts',async (req,res)=>{
+    const product = await ProductObj.getAllproducts()
+    res.json(product)
+})
+
 // ROUTES ENDS HERE ---------------------------------------------------------------------------------------------------
 
 app.listen(port);

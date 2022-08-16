@@ -5,13 +5,17 @@ import TopPick_Card from './TopPick_Card'
 import PageTitle from '../Common_Components/PageTitle'
 
 const TopPicks = () => {
-    const url = "https://free-store-api.herokuapp.com/offers"
 
     var [topOffers, setTopOffers]= useState([])
 
     useEffect( ()=>{
-        axios.get(url).then(res => {
-            setTopOffers(res.data)
+        axios.get('/allProducts').then(res => {
+            var products = []
+            for(let i=1;i<=8;i++){
+                if(!res.data.at(-i)) break
+                products.push(res.data.at(-i))
+            }
+            setTopOffers(products)
         })
     }, [] )
 
@@ -27,10 +31,8 @@ const TopPicks = () => {
                     topOffers.map( (contents)=>{
                         return(
                             <TopPick_Card
-                                key= {contents.id}
-                                displayStatus= {contents.id > 8 ? "none" : ""}
-                                imgSrc= {contents.image}
-                                myItem= {contents.item}
+                                key= {contents._id}
+                                imgID= {contents._id}
                             ></TopPick_Card>
                         )
                     } )

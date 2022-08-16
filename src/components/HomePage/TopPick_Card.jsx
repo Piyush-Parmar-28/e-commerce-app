@@ -2,7 +2,7 @@ import React from 'react'
 
 const TopPick_Card = (props) => {
     return (
-        <div className= "col-sm-6 col-lg-3 px-2" style={{display: props.displayStatus }}>
+        <div className= "col-sm-6 col-lg-3 px-2" >
             <div className="card mb-3">
                 <div className="row">
                     
