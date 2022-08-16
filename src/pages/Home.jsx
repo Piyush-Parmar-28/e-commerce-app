@@ -2,13 +2,12 @@ import React from 'react'
 
 // import Navbar from '../components/Common_Components/Navbar'
 import Navbar2 from '../components/Common_Components/Navbar2'
-import Slider from '../components/HomePage/Slider'
 import Offers from '../components/HomePage/Offers'
 import Categories from '../components/HomePage/Categories'
 import Masters_ContactMe from '../components/HomePage/Masters_ContactMe'
 import FlashDeals from '../components/HomePage/FlashDeals'
 import TopPicks from '../components/HomePage/TopPicks'
-import Slider2 from '../newComponents/slider/Slider2'
+import Slider2 from '../components/slider/Slider2'
 
 const Home = () => {
     return (

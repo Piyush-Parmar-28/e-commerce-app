@@ -20,7 +20,7 @@ import ProfilePage from "./pages/ProfilePage";
 import UpdateInfo from "./pages/UpdateInfo";
 import Footer from "./components/Common_Components/Footer";
 import AddProducts from "./pages/AddProducts";
-import WebMasters from "./newComponents/WebMasters/webMasters";
+import WebMasters from "./components/WebMasters/webMasters";
 
 function App() {
     return (
