@@ -86,14 +86,15 @@ const Masters_ContactMe = () => {
                             {/* Message Box */}
                             <div className="pb-5 form-style">
 
+
                                 <div className='d-flex justify-content-between'>
 
-                                    <div className='d-flex flex-column justify-content-center align-items-center'>
+                                    <div className='d-flex flex-column justify-content-center align-items-center me-3'>
                                         <img className='img-size' src="img/webMasters/piyush.jpg" ></img>
                                         <h4 className='heading name-size mt-2'>Piyush Parmar</h4>
                                     </div>
 
-                                    <div className='d-flex flex-column justify-content-center align-items-center'>
+                                    <div className='d-flex flex-column justify-content-center align-items-center ms-3'>
                                         <img className='img-size' src="img/webMasters/abhishek.jpg" ></img>
                                         <h4 className='heading name-size mt-2'>Abhishek Chorotiya</h4>
                                     </div>
