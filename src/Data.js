@@ -16,50 +16,44 @@ import axios from 'axios';
 var sliderData = [
     {
         id: 1,
-        src: "img/slider/slide-1.jpg",
+        src: "img/slider/1.png",
         altText: "img1",
     },
 
     {
         id: 2,
-        src: "img/slider/slide-2.jpg",
+        src: "img/slider/2.png",
         altText: "img2",
     },
 
     {
         id: 3,
-        src: "img/slider/slide-3.jpg",
+        src: "img/slider/3.png",
         altText: "img3",
     }, 
 
     {
         id: 4,
-        src: "img/slider/slide-4.jpg",
+        src: "img/slider/4.png",
         altText: "img4",
     }, 
 
     {
-        id: 6,
-        src: "img/slider/slide-6.png",
+        id: 5,
+        src: "img/slider/5.png",
         altText: "img5",
+    },
+
+    {
+        id: 6,
+        src: "img/slider/6.png",
+        altText: "img6",
     },
 
     {
         id: 7,
-        src: "img/slider/slide-7.png",
-        altText: "img5",
-    },
-
-    {
-        id: 8,
-        src: "img/slider/slide-8.png",
-        altText: "img5",
-    },
-
-    {
-        id: 9,
-        src: "img/slider/slide-9.png",
-        altText: "img5",
+        src: "img/slider/7.png",
+        altText: "img7",
     }
 ]
 
