@@ -36,7 +36,7 @@ export default function Navbar2(props) {
         setTextData(event.target.value);
     };
 
-    function getProducts(){
+    function getProducts() {
         window.location.href = `/products?item=${textData}`
     }
 
@@ -57,11 +57,18 @@ export default function Navbar2(props) {
                     placeholder="Search anything..."
                     name="item"
                     onChange={getSearchText}
+
+                    //  Search Using enter key
+                    onKeyPress={event => {
+                        if (event.key === 'Enter') {
+                            getProducts()
+                        }
+                    }}
                 />
 
-                    <button className="btn-icon btn-xsmall" type="submit" onClick={getProducts}>
-                        <SearchIcon />
-                    </button>
+                <button className="btn-icon btn-xsmall" type="submit" onClick={getProducts}>
+                    <SearchIcon />
+                </button>
             </div>
 
             <div className="d-flex">
@@ -118,7 +125,7 @@ export default function Navbar2(props) {
                             </p>
                         </Link>
 
-                        {status &&<form action="/logout" method="post">
+                        {status && <form action="/logout" method="post">
                             <button className="dropdown-item font-weight-bold" type="submit">
                                 Logout
                             </button>
