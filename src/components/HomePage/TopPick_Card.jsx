@@ -1,15 +1,22 @@
 import React from 'react'
+import {Link} from "react-router-dom"
+import Image from "../../pages/Image"
 
 const TopPick_Card = (props) => {
     return (
-        <div className= "col-sm-6 col-lg-3 px-2" >
+        <div className="col-sm-6 col-lg-3 px-2" >
             <div className="card mb-3">
                 <div className="row">
-                    
+
                     <div className="col-12">
-                        <img src={props.imgSrc} className="img-fluid rounded w-100 h-100" alt="..." />
+                        {/* <img src={props.imgSrc} className="img-fluid rounded w-100 h-100" alt="..." /> */}
+                        <Link to={`/products?item=${props.name}`}>
+                            <Image
+                                photoID={props.imgID}
+                            ></Image>
+                        </Link>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
