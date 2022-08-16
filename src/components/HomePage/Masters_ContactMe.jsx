@@ -94,7 +94,7 @@ const Masters_ContactMe = () => {
                                     </div>
 
                                     <div className='d-flex flex-column justify-content-center align-items-center'>
-                                        <img className='img-size' src="..." ></img>
+                                        <img className='img-size' src="img/webMasters/abhishek.jpg" ></img>
                                         <h4 className='heading name-size mt-2'>Abhishek Chorotiya</h4>
                                     </div>
                                 </div>
