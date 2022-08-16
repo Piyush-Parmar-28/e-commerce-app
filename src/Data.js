@@ -52,6 +52,51 @@ var sliderData = [
     
 ]
 
+var offersData = [
+    {
+        id: 1,
+        src: "img/offers/bag.jpg",
+        altText: "img1",
+        label: "Bags"
+    },
+
+    {
+        id: 2,
+        src: "img/offers/cycle.jpg",
+        altText: "img2",
+        label: "Cycles"
+    },
+
+    {
+        id: 3,
+        src: "img/offers/Jacket.jpg",
+        altText: "img3",
+        label: "Jackets"
+    }, 
+
+    {
+        id: 4,
+        src: "img/offers/laptop.jpg",
+        altText: "img4",
+        label: "Laptops"
+    }, 
+
+    {
+        id: 5,
+        src: "img/offers/mobile.jpg",
+        altText: "img5",
+        label: "Mobiles"
+    },
+
+    {
+        id: 6,
+        src: "img/offers/shoes.jpg",
+        altText: "img6",
+        label: "Shoes"
+    }
+    
+]
+
 var productsData = [
     {
         id: 1,
@@ -211,4 +256,4 @@ var categoryData = [
     },
 ]
 
-export { sliderData, productsData, profileAvatar, categoryData }
+export { sliderData, productsData, profileAvatar, categoryData, offersData }
