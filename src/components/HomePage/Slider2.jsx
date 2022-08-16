@@ -4,7 +4,7 @@ import { sliderData } from "../../Data"
 const Slider2 = () => {
 
     return (
-        <div id="carouselExampleControls" className="carousel slide" style={{ height: 'calc(80*(9/25)*1vw)', overflow: 'hidden' }} data-ride="carousel" >
+        <div id="carouselExampleControls" className="carousel slide"  data-ride="carousel" >
 
             <div className="carousel-inner">
 
