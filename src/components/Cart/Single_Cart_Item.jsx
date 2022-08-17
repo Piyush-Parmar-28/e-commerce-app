@@ -142,7 +142,7 @@ const Single_Cart_Item = (props) => {
                     {/* Price */}
                     <div className="d-flex flex-column justify-content-center align-items-center col-3">
                         <h5>Price</h5>
-                        <p className='m-0'>$ {props.Price * quantity}</p>
+                        <p className='m-0'>₹ {props.Price * quantity}</p>
                     </div>
 
                     {/* Delete Button */}

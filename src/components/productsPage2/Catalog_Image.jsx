@@ -64,7 +64,7 @@ const Catalog_Image = (props) => {
                     <Rating name="read-only" size="small" precision={0.5} value={props.starValue} readOnly />
 
                     <div>
-                        <h6>$ {props.itemPrice}</h6>
+                        <h6>₹ {props.itemPrice}</h6>
                     </div>
                 </div>
 

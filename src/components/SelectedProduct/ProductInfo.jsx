@@ -29,7 +29,7 @@ const ProductInfo = () => {
 
     }, [])
 
-    console.log("Product ID is: "+ ID);
+    // console.log("Product ID is: "+ ID);
 
     //  Post Data to add to cart
     const postData = async (event) => {

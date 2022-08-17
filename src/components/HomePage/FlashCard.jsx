@@ -63,7 +63,7 @@ const FlashCard = (props) => {
 
                 <div className='d-flex justify-content-between'>
                     <h5 className={"black-color d-flex justify-content-center heading"}>{props.title}</h5>
-                    <p className="card-text text-muted mb-0">Rs. {props.Price}</p>
+                    <p className="card-text text-muted mb-0">₹ {props.Price}</p>
                 </div>
 
                 <div className="d-flex justify-content-between">

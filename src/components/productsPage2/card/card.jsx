@@ -67,7 +67,7 @@ const Card = (props) => {
                         value={props.ratings}
                         readOnly
                     />
-                    <h6> Rs. {props.price}</h6>
+                    <h6> ₹ {props.price}</h6>
                 </div>
 
 

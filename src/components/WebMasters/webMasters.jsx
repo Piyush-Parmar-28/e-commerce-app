@@ -38,13 +38,13 @@ const WebMasters = () => {
                                     </h4>
 
                                     <div className="d-flex justify-content-center">
-                                        <a className="btn-icon" href="#">
+                                        <a className="btn-icon" href="https://www.instagram.com/abhishekchorotiya/">
                                             <i className="bi bi-instagram p"></i>
                                         </a>
 
                                         <a
                                             className="btn-icon"
-                                            href="https://github.com/Piyush-Parmar-28?tab=repositories"
+                                            href="https://github.com/AbhishekChorotiya"
                                             target="_blank"
                                         >
                                             <i className="bi bi-github 2"></i>
@@ -52,7 +52,7 @@ const WebMasters = () => {
 
                                         <a
                                             className="btn-icon"
-                                            href="https://www.linkedin.com/in/piyush-parmar-76b97820b/"
+                                            href="https://www.linkedin.com/in/abhishek-chorotiya-7a1a0a222/"
                                             target="_blank"
                                         >
                                             <i className="bi bi-linkedin"></i>
@@ -60,7 +60,7 @@ const WebMasters = () => {
 
                                         <a
                                             className="btn-icon"
-                                            href="https://www.linkedin.com/in/piyush-parmar-76b97820b/"
+                                            href="https://wa.me/8003132368/"
                                             target="_blank"
                                         >
                                             <i className="bi bi-whatsapp"></i>
@@ -91,7 +91,7 @@ const WebMasters = () => {
                                     </h4>
 
                                     <div className="d-flex justify-content-center">
-                                        <a className="btn-icon" href="#">
+                                        <a className="btn-icon" href="https://www.instagram.com/2822piyushparmar/">
                                             <i className="bi bi-instagram p"></i>
                                         </a>
 
@@ -113,7 +113,7 @@ const WebMasters = () => {
 
                                         <a
                                             className="btn-icon"
-                                            href="https://www.linkedin.com/in/piyush-parmar-76b97820b/"
+                                            href="https://wa.me/7014628881/"
                                             target="_blank"
                                         >
                                             <i className="bi bi-whatsapp"></i>

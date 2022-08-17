@@ -27,7 +27,7 @@ const Shopping_Summary = (props) => {
                     </div>
 
                     <div>
-                        <p>$ {totalPrice}</p>
+                        <p>₹ {totalPrice}</p>
                     </div>
                 </div>
 
@@ -38,7 +38,7 @@ const Shopping_Summary = (props) => {
                     </div>
 
                     <div>
-                        <p>$ 0</p>
+                        <p>₹ 0</p>
                     </div>
                 </div>
 
@@ -62,7 +62,7 @@ const Shopping_Summary = (props) => {
                     </div>
 
                     <div>
-                        <p>$ {totalPrice}</p>
+                        <p>₹ {totalPrice}</p>
                     </div>
                 </div>
 

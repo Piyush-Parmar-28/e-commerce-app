@@ -17,7 +17,8 @@ const TopPicks = () => {
                 if (!res.data.at(-i)) break
                 products.push(res.data.at(-i))
             }
-            console.log(products);
+            // console.log(products);
+            
             setTopOffers(products)
         })
     }, [])
