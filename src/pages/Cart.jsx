@@ -10,7 +10,7 @@ const Cart = () => {
     const navigate = useNavigate();
     useEffect(() => {
         axios('/status').then((data) => {
-            console.log(data.data.status);
+            // console.log(data.data.status);
             if (!data.data.status) {
                 navigate('/')
             }
@@ -19,8 +19,8 @@ const Cart = () => {
     var [IDs, setIDs] = useState([])
 
     useEffect(() => {
-        fetch("/cart").then(data => data.json()).then(myData => {
-            // console.log(myData)
+        fetch("/cartData").then(data => data.json()).then(myData => {
+            console.log('hi'+ myData)
             setIDs(myData)
         })
     }, [])

@@ -23,7 +23,7 @@ export default function Navbar2(props) {
     }, []);
 
     useEffect(() => {
-        fetch("/cart")
+        fetch("/cartData")
             .then((data) => data.json())
             .then((myData) => {
                 setTotalItems(myData.length);

@@ -15,11 +15,11 @@ const UserDetails = () => {
     useEffect(() => {
         axios.get(url).then((res) => {
             setUserDetails(res.data);
-            console.log(res.data);
+            // console.log(res.data);
         });
     }, []);
 
-    console.log('photo'+userDetails.ImageData);
+    // console.log('photo'+userDetails.ImageData);
     return (
         <div className="container">
             {!userDetails.ImageURL == "" ? (

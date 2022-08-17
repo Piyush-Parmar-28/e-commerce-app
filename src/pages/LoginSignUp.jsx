@@ -2,8 +2,11 @@ import React, { Fragment, useState,useEffect } from 'react'
 import Navbar2 from '../components/Common_Components/Navbar2'
 import Login from "../components/Forms/Login"
 import SignUp from '../components/Forms/SignUp'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 const LoginSignUp = () => {
+
+    const navigate = useNavigate();
 
     const [state, setState] = useState("SignUp")
     const[status,setStatus] = useState(false);
@@ -15,7 +18,7 @@ const LoginSignUp = () => {
         })
     },[])
 
-    if(status) window.location.href = '/home';
+    if(status) navigate('/home');
 
     const changeState = () => {
         if (state === "SignUp") {

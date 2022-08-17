@@ -13,7 +13,7 @@ export default function SnackBarMessageBtn(props) {
     const [open, setOpen] = React.useState(false);
 
     const handleClick = () => {
-        console.log("clicked");
+        // console.log("clicked");
         setOpen(true);
     };
 
