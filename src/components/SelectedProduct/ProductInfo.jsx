@@ -5,7 +5,8 @@ import Modal from '../Common_Components/Modal';
 
 import PageTitle from "../Common_Components/PageTitle"
 import Image from '../../pages/Image'
-import Card from "../card/card"
+import Card from "../productsPage2/card/card"
+// import Card from "../card/card"
 import Rating from '@mui/material/Rating';
 
 const ProductInfo = () => {
