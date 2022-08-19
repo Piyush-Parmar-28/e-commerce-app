@@ -24,13 +24,13 @@ const Masters_ContactMe = () => {
                     <div className='p-4'>
                         <PageTitle
                             title="Contact"
-                            desc="Contact us in case of any queries..."
+                            desc="Contact us in case of any queries / to become a Seller..."
                         ></PageTitle>
 
                         <div className="row">
 
                             {/* Message Box */}
-                            <div className="pb-5">
+                            <div className="pb-5" id='contactBox'>
 
                                 <form action="https://formsubmit.co/9136b2c305e27e56dc48df97e6f3158b" method="post" role="form" className="form-style">
 

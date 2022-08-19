@@ -5,7 +5,8 @@ import PageTitle from "../Common_Components/PageTitle"
 
 const SignUp = (props) => {
     const navigate = useNavigate()
-
+    const [passAlert,setPassAlert] = useState({text:'Password',color:'black'})
+    const [phoneAlert,setPhoneAlert] = useState({text:'Phone Number',color:'black'})
     const [btnText, setBtnText] = useState("Sign Up")
     const [signUpDetails, setSignUpDetails] = useState({
         first_name: "",
@@ -23,11 +24,32 @@ const SignUp = (props) => {
         // console.log(signUpDetails);
     }
 
+    function handlePass(event){
+        if(event.target.value<99999){
+            setPassAlert({text:'Password must be atleast 6 characters long!!',color:'red'})
+        }else{
+            setPassAlert({text:'Password',color:'green'})
+        }
+    }
+    function handlePhone(event){
+        if(event.target.value<999999999){
+            setPhoneAlert({text:'Number must be of 10 digits!!',color:'red'})
+        }else{
+            setPhoneAlert({text:'Phone Number',color:'green'})
+        }
+    }
+
     const postData = async (event) => {
         event.preventDefault()
-
         //  Using object destructuring for first_name: signUpDetails.first_name
         const { first_name, last_name, Email, Password, Phone, City, Country, Address } = signUpDetails
+        if( first_name=='' || last_name=='' || Email=='' || parseInt(Password)<99999 || parseInt(Phone)<999999999 || City=='' || Country=='') {
+            setBtnText('Enter all fields!')
+            setTimeout((e)=>{
+                setBtnText('Sign Up')
+            },2000)
+            return;
+        }
 
         const res = await fetch("/signUp", {
             method: "post",
@@ -108,13 +130,13 @@ const SignUp = (props) => {
                         </div>
 
                         <div className="mb-3 d-flex flex-column">
-                            <label><b>Password</b></label>
-                            <input type="password" id="password" name="Password" value={signUpDetails.Password} onChange={handleChange} required />
+                            <label style={{color:`${passAlert.color}`}}><b>{passAlert.text}</b></label>
+                            <input type="password" id="password" name="Password" value={signUpDetails.Password} onChange={(e)=>{handleChange(e);handlePass(e)}} required />
                         </div>
 
                         <div className="mb-3 d-flex flex-column">
-                            <label><b>Phone Number</b></label>
-                            <input type="tel" id="phone" name="Phone" placeholder='1234567890' value={signUpDetails.Phone} onChange={handleChange} required />
+                            <label style={{color:`${phoneAlert.color}`}}><b>{phoneAlert.text}</b></label>
+                            <input maxLength={10} type="tel" id="phone" name="Phone" placeholder='1234567890' value={signUpDetails.Phone} onChange={(e)=>{handleChange(e);handlePhone(e)}} required />
                         </div>
 
                         <div className="d-flex justify-content-between flex-wrap">
@@ -130,10 +152,6 @@ const SignUp = (props) => {
                             </div>
                         </div>
 
-                        <div className="mb-3 d-flex flex-column">
-                            <label><strong>Address</strong></label>
-                            <input type="text" id="address" placeholder="Sunset Valley, 38" value={signUpDetails.Address} name="Address" onChange={handleChange} required />
-                        </div>
 
                         <div className="d-flex justify-content-center">
                             <button className="btn-normal" type="submit" style={btnText === "SignUp Successful! Login To Continue." ? { background: "#01966e" } : { background: "#e1775d" }} onClick={postData}>{btnText}</button>
