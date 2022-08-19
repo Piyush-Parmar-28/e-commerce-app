@@ -62,8 +62,8 @@ const FlashCard = (props) => {
             <div className="p-2">
 
                 <div className='d-flex justify-content-between'>
-                    <div style= {{whiteSpace:'nowrap', overflow: "hidden", textOverflow: "ellipsis"}}>
-                        <h5 className={"black-color d-flex justify-content-center heading"}>{props.title}</h5>
+                    <div className='w-75'>
+                        <h5 className={"black-color heading"} style= {{whiteSpace:'nowrap', overflow: "hidden", textOverflow: "ellipsis"}}>{props.title}</h5>
                     </div>
 
                     <p className="card-text text-muted mb-0">₹ {props.Price}</p>
