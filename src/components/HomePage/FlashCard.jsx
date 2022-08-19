@@ -62,7 +62,7 @@ const FlashCard = (props) => {
             <div className="p-2">
 
                 <div className='d-flex justify-content-between'>
-                    <h5 className={"black-color d-flex justify-content-center heading"}>{props.title}</h5>
+                    <h5 className={"black-color d-flex justify-content-center heading"} >{props.title}</h5>
                     <p className="card-text text-muted mb-0">₹ {props.Price}</p>
                 </div>
 

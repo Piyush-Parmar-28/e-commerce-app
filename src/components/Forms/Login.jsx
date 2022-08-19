@@ -87,7 +87,7 @@ const Login = (props) => {
                         </div>
 
                         <div className="d-flex justify-content-center">
-                            <button className="btn-normal" type="submit" style={loginStatus.status ? { background: '#01966e' } : { background: '#e1775d' }} onClick={postData}>{loginStatus.state}</button>
+                            <button id='pass' className="btn-normal" type="submit" style={loginStatus.status ? { background: '#01966e' } : { background: '#e1775d' }} onClick={postData}>{loginStatus.state}</button>
                         </div>
 
                         <div className="d-flex justify-content-center align-items-center mt-3">
