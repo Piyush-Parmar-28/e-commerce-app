@@ -73,6 +73,7 @@ const ProductInfo = () => {
 
                 <div className="white-bg p-5">
 
+                    {/* Product Info */}
                     <div className="row">
 
                         {
@@ -83,9 +84,9 @@ const ProductInfo = () => {
                                     itemPrice= contents.Price
 
                                     return (
-                                        <div key={contents._id} className="d-flex justify-content-between">
+                                        <div key={contents._id} className="d-flex justify-content-between flex-wrap">
                                             {/* Image Gallery */}
-                                            <div className="col-md-5 box">
+                                            <div className="col-md-5 box mb-3">
 
                                                 <div className='p-5'>
                                                     <Image
@@ -133,10 +134,10 @@ const ProductInfo = () => {
                     </div>
 
                     {/* Related Products */}
-                    <div className="clean-related-items mt-5 pt-4">
+                    <div className="mt-5 pt-4">
                         <h3 className="d-flex justify-content-center heading">Related Products</h3>
 
-                        <div className="items row g-3">
+                        <div className="d-flex justify-content-evenly flex-wrap row g-3">
 
                             {
                                 products.map((contents) => {

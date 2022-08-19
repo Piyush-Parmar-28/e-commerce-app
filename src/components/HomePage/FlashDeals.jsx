@@ -45,7 +45,7 @@ const FlashDeals = () => {
                                 flashData.map((contents) => {
 
                                     var myClass;
-                                    if (productsDisplayed1 == 1) {
+                                    if (productsDisplayed1 == 1 || productsDisplayed1== 2) {
                                         myClass = displayStatus;
                                     }
                                     else {
@@ -77,7 +77,7 @@ const FlashDeals = () => {
                                 flashData.map((contents) => {
 
                                     var myClass;
-                                    if (productsDisplayed2 == 4) {
+                                    if (productsDisplayed2 == 4 || productsDisplayed2 == 5) {
                                         myClass = displayStatus;
                                     }
                                     else {
@@ -109,7 +109,7 @@ const FlashDeals = () => {
                                 flashData.map((contents) => {
 
                                     var myClass;
-                                    if (productsDisplayed3 == 9) {
+                                    if (productsDisplayed3 == 9 || productsDisplayed3 == 10) {
                                         myClass = displayStatus;
                                     }
                                     else {
