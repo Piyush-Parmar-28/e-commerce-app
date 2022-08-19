@@ -63,18 +63,18 @@ var offersData = [
 
     {
         id: 2,
-        src: "img/offers/cycle.jpg",
+        src: "img/offers/beauty.jpg",
         altText: "img2",
-        label: "Cycles",
-        tag: "cycle"
+        label: "Beauty",
+        tag: "beauty"
     },
 
     {
         id: 3,
         src: "img/offers/Jacket.jpg",
         altText: "img3",
-        label: "Jackets",
-        tag: "jacket"
+        label: "Winter Wear",
+        tag: "winter"
     }, 
 
     {

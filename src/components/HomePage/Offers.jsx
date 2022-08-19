@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import PageTitle from "../Common_Components/PageTitle"
 import { offersData } from "../../Data"
 
@@ -20,14 +20,14 @@ const Offers = () => {
                         return (
                             <div key={contents.id} className="col-md-6 col-lg-4">
                                 <div className="card border-0">
-                                <Link to={`/products?item=${contents.tag}`} className='description text-black' style= {{textDecoration: "none"}}>
-                                    
+                                    <Link to={`/products?item=${contents.tag}`} className='description text-black' style={{ textDecoration: "none" }}>
+
                                         <img className="card-img-top scale-on-hover" src={contents.src} alt="{contents.altText}" />
-                                </Link>
+                                    </Link>
 
                                     <div className="card-body blue-bg">
                                         <h6 className='d-flex justify-content-center'>
-                                            <Link to={`/products?item=${contents.tag}`} className='description text-black' style= {{textDecoration: "none"}} class='text-black'>
+                                            <Link to={`/products?item=${contents.tag}`} className='description text-black' style={{ textDecoration: "none" }} class='text-black'>
                                                 <h4>{contents.label}</h4>
                                             </Link>
                                         </h6>
