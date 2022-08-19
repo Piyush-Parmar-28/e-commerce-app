@@ -11,7 +11,7 @@ const TopPicks = () => {
     useEffect(() => {
         axios.get('/allProducts').then(res => {
             var products = []
-            for (let i = 1; i <= 8; i++) {
+            for (let i = 1; i <= 12; i++) {
                 //  Getting the data at the index
                 //  Minus implies index from the end
                 if (!res.data.at(-i)) break
