@@ -64,6 +64,7 @@ const SignUp = (props) => {
             //  Setting what to do after 1500 ms time
             setTimeout(() => {
                 setBtnText("Sign Up")
+                props.changeStateFunc()
             }, 1500)
         }
         else {

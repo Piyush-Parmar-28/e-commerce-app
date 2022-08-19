@@ -86,7 +86,7 @@ const ProductInfo = () => {
                                     return (
                                         <div key={contents._id} className="d-flex justify-content-between flex-wrap">
                                             {/* Image Gallery */}
-                                            <div className="col-md-5 box">
+                                            <div className="col-md-5 box mb-3">
 
                                                 <div className='p-5'>
                                                     <Image
