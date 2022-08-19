@@ -4,7 +4,7 @@ import Image from "../../pages/Image"
 
 const TopPick_Card = (props) => {
     return (
-        <div className="col-6 col-lg-3 px-2" >
+        <div className="col-6 col-md-3 px-2" >
             <div className="card mb-3">
                 <div className="row">
 
