@@ -57,7 +57,7 @@ const Card = (props) => {
 
             <div className={style.detail_div}>
 
-                <h5 className="text-center heading"><b>{props.name}</b></h5>
+                <h5 className="text-center heading" style={{whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}><b>{props.name}</b></h5>
 
                 <div className="d-flex justify-content-between px-2">
                     <Rating
