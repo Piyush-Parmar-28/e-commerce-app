@@ -38,6 +38,7 @@ const TopPicks = () => {
 
                             <TopPick_Card
                                 key={contents._id}
+                                productID= {contents._id}
                                 imgID={contents.ImageID}
                                 name= {contents.Product.toLowerCase()}
                             ></TopPick_Card>

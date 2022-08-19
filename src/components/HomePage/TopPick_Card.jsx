@@ -9,8 +9,7 @@ const TopPick_Card = (props) => {
                 <div className="row">
 
                     <div className="col-12">
-                        {/* <img src={props.imgSrc} className="img-fluid rounded w-100 h-100" alt="..." /> */}
-                        <Link to={`/products?item=${props.name}`}>
+                        <Link to={`/selected?selectedProduct=${props.productID}`}>
                             <Image
                                 photoID={props.imgID}
                             ></Image>
