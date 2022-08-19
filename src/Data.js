@@ -242,7 +242,7 @@ var categoryData = [
         src: "img/categories/sports.jpg",
         altText: "Image Loading...",
         label: "Sports",
-        category: "soprts"
+        category: "sports"
     },
 
     {
