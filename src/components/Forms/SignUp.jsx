@@ -62,7 +62,7 @@ const SignUp = (props) => {
             setBtnText("SignUp Successful! Login To Continue.")
 
             //  Setting what to do after 1500 ms time
-            setTimeout(() =>{
+            setTimeout(() => {
                 setBtnText("Sign Up")
             }, 1500)
         }
@@ -88,52 +88,50 @@ const SignUp = (props) => {
                     {/* In forms, name filed is very Important, because it is used in 'req.body.' while connecting to database */}
                     <form method="post" className="form-style">
 
-                        <div className="row">
-                            <div className="col d-flex flex-column">
-                                <div className="mb-3"><label><strong>First Name</strong></label>
-                                    <input type="text" id="first_name" placeholder="John" value={signUpDetails.first_name} name="first_name" onChange={handleChange} required/>
-                                </div>
+                        <div className="d-flex justify-content-between flex-wrap">
+
+                            <div className="col-12 col-sm-5 mb-3 d-flex flex-column p-0">
+                                <label><b>First Name</b></label>
+                                <input type="text" id="first_name" placeholder="John" value={signUpDetails.first_name} name="first_name" onChange={handleChange} required />
                             </div>
 
-                            <div className="col d-flex flex-column">
-                                <div className="mb-3"><label><strong>Last Name</strong></label>
-                                    <input type="text" id="last_name" placeholder="Carter" value={signUpDetails.last_name} name="last_name" onChange={handleChange}/>
-                                </div>
+                            <div className="col-12 col-sm-5 mb-3 d-flex flex-column p-0">
+                                <label><b>Last Name</b></label>
+                                <input type="text" id="last_name" placeholder="Carter" value={signUpDetails.last_name} name="last_name" onChange={handleChange} />
                             </div>
                         </div>
 
                         <div className="mb-3 d-flex flex-column">
                             <label><b>Email</b></label>
-                            <input type="email" id="email" name="Email" value={signUpDetails.Email} placeholder='johncarter@gmail.com' onChange={handleChange} required/>
+                            <input type="email" id="email" name="Email" value={signUpDetails.Email} placeholder='johncarter@gmail.com' onChange={handleChange} required />
                         </div>
 
                         <div className="mb-3 d-flex flex-column">
                             <label><b>Password</b></label>
-                            <input type="password" id="password" name="Password" value={signUpDetails.Password} onChange={handleChange} required/>
+                            <input type="password" id="password" name="Password" value={signUpDetails.Password} onChange={handleChange} required />
                         </div>
 
                         <div className="mb-3 d-flex flex-column">
                             <label><b>Phone Number</b></label>
-                            <input type="tel" id="phone" name="Phone" placeholder='1234567890' value={signUpDetails.Phone} onChange={handleChange} required/>
+                            <input type="tel" id="phone" name="Phone" placeholder='1234567890' value={signUpDetails.Phone} onChange={handleChange} required />
                         </div>
 
-                        <div className="row">
-                            <div className="col d-flex flex-column">
-                                <div className="mb-3"><label><strong>City</strong></label>
-                                    <input type="text" id="city" placeholder="Los Angeles" value={signUpDetails.City} name="City" onChange={handleChange} required/>
-                                </div>
+                        <div className="d-flex justify-content-between flex-wrap">
+
+                            <div className="col-12 col-sm-5 mb-3 d-flex flex-column p-0">
+                                <label><b>City</b></label>
+                                <input type="text" id="city" placeholder="Los Angeles" value={signUpDetails.City} name="City" onChange={handleChange} required />
                             </div>
 
-                            <div className="col d-flex flex-column">
-                                <div className="mb-3"><label><strong>Country</strong></label>
-                                    <input type="text" id="country" placeholder="USA" name="Country" value={signUpDetails.Country} onChange={handleChange} required/>
-                                </div>
+                            <div className="col-12 col-sm-5 mb-3 d-flex flex-column p-0">
+                                <label><b>Country</b></label>
+                                <input type="text" id="country" placeholder="USA" name="Country" value={signUpDetails.Country} onChange={handleChange} required />
                             </div>
                         </div>
 
                         <div className="mb-3 d-flex flex-column">
                             <label><strong>Address</strong></label>
-                            <input type="text" id="address" placeholder="Sunset Valley, 38" value={signUpDetails.Address} name="Address" onChange={handleChange} required/>
+                            <input type="text" id="address" placeholder="Sunset Valley, 38" value={signUpDetails.Address} name="Address" onChange={handleChange} required />
                         </div>
 
                         <div className="d-flex justify-content-center">

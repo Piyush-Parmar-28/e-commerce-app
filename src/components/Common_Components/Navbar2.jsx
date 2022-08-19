@@ -45,7 +45,9 @@ export default function Navbar2(props) {
             <div className="d-flex justify-content-center align-items-center">
 
                 {/* Logo */}
-                <img src='/img/logo.png' id="logo-img" style={{ width: '2rem', marginLeft: '1rem', marginRight: '1rem' }} />
+                <Link to="/home">
+                    <img src='/img/logo.png' id="logo-img" style={{ width: '2rem', marginLeft: '1rem', marginRight: '1rem' }} />
+                </Link>
 
                 <Link to="/home" id="logo">
                     <h5 id="text">Sliver Store</h5>
