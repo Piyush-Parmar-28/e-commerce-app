@@ -65,6 +65,8 @@ const Login = (props) => {
         }
     }
 
+
+
     return (
         <main className="">
             <section className="extra-padding blue-bg" style={{ height: '100vh', paddingTop: '5%' }} >
@@ -95,6 +97,7 @@ const Login = (props) => {
 
                             <button className="btn-normal btn-bg-grey" type="submit" onClick={props.changeStateFunc}>Sign Up</button>
                         </div>
+                        
                     </form>
 
                 </div>
