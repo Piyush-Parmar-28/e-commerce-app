@@ -31,7 +31,7 @@ const TopPicks = () => {
                 desc="Explore to top picks just for you!!"
             ></PageTitle>
 
-            <div className="row g-0 m-5">
+            <div className="row g-0 m-4">
                 {
                     topOffers.map((contents) => {
                         return (
