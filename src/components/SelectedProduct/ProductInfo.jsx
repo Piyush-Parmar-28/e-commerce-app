@@ -5,7 +5,7 @@ import Modal from '../Common_Components/Modal';
 
 import PageTitle from "../Common_Components/PageTitle"
 import Image from '../../pages/Image'
-import Card from '../../components/productsPage2/card/card';
+import Card from "../card/card"
 import Rating from '@mui/material/Rating';
 
 const ProductInfo = () => {
@@ -34,11 +34,9 @@ const ProductInfo = () => {
     //  Post Data to add to cart
     const postData = async (event) => {
         event.preventDefault()
+
         // Using object destructuring for: productID= product.productID
-        // const { productID, Price } = products[0]
         const productID= ID
-        const Price= itemPrice
-        // console.log("Price is: "+ Price);
 
         const res = await fetch("/AddToCart", {
             method: "post",
@@ -47,10 +45,10 @@ const ProductInfo = () => {
             },
 
             // Converting JSON to string since our backend cannot understand JSON
-            //  The string will be sent as body
+            //  The string will be sent as body.
             body: JSON.stringify({
                 //  Uisng object destructuring for productID= productID
-                productID, Price
+                productID, itemPrice
             })
         })
 
