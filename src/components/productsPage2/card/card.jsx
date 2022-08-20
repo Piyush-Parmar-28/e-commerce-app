@@ -6,7 +6,8 @@ import { useNavigate, Link } from 'react-router-dom';
 import AddIcon from "@mui/icons-material/Add";
 import { Rating } from "@mui/material";
 
-const Card = (props) => {
+const 
+Card = (props) => {
     const navigate = useNavigate()
 
     const [product, setProduct] = useState({

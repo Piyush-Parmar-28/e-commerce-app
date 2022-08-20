@@ -133,7 +133,10 @@ const Productss = () => {
                             title="Explore Products"
                             desc="Explore all your searched products here!"
                         />
-                        {render}
+
+                        <div className="d-flex flex-wrap justify-content-center align-items-center">
+                            {render}
+                        </div>
                     </div>
                 </div>
             </div>
