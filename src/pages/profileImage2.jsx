@@ -17,8 +17,8 @@ const ProfileImage2 = (props) => {
     };
 
     return (
-        <div className="d-flex justify-content-center">
-            <img className="mx-auto" style={{width: "220px"}} src={img} alt="image not loaded" />
+        <div className="d-flex justify-content-center" style={{width: "220px", height: "220px", overflow: "hidden", borderRadius: "50%"}}>
+            <img className="mx-auto" src={img} alt="image not loaded" />
         </div>
     );
 };

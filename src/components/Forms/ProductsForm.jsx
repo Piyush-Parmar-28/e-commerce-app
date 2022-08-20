@@ -43,7 +43,7 @@ const AddProducts = (props) => {
                                     <label>
                                         <b>Category</b>
                                     </label>
-                                    <select className="form-select" name="category">
+                                    <select className="selectBox" name="category">
                                         <option value="electronics">Electronics</option>
                                         <option value="study">Study</option>
                                         <option value="fashion">Fashion</option>

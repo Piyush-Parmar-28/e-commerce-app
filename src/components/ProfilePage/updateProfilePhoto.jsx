@@ -13,16 +13,16 @@ const ProfilePhoto = () => {
                 encType="multipart/form-data"
                 method="post"
             >
-                <div className="d-flex justify-content-between">
-                    
-                    <input
-                        type="file"
-                        name="image"
-                    />
+                <div className="d-flex justify-content-around flex-wrap">
 
-                    <button className="btn-normal" type="submit">
-                        Set Photo
-                    </button>
+                    <input className="" type="file" name="image" />
+
+                    <div className="d-flex align-items-center">
+                        <button className="btn-normal" type="submit">
+                            Set Photo
+                        </button>
+                    </div>
+
                 </div>
             </form>
         </div>

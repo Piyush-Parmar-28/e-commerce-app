@@ -53,12 +53,6 @@ var sliderData = [
 ]
 var sliderData2 = [
     {
-        id: 8,
-        src: "img/slider/8.png",
-        altText: "img1",
-    },
-
-    {
         id: 9,
         src: "img/slider/9.png",
         altText: "img2",

@@ -15,7 +15,7 @@ const Home = () => {
     return (
         <div className= "blue-bg">
             <Navbar2></Navbar2>
-            <Slider2 id='big' active='1.png' reff='carouselExampleControls' data={sliderData}></Slider2>
+            <Slider2 id='big' active='7.png' reff='carouselExampleControls' data={sliderData}></Slider2>
             <Slider2 id='small' active='8.png' data={sliderData2} reff='carouselExampleControls2'></Slider2>
             <Categories></Categories>
             <TopPicks></TopPicks>
