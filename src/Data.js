@@ -53,37 +53,37 @@ var sliderData = [
 ]
 var sliderData2 = [
     {
-        id: 1,
+        id: 8,
         src: "img/slider/8.png",
         altText: "img1",
     },
 
     {
-        id: 2,
+        id: 9,
         src: "img/slider/9.png",
         altText: "img2",
     },
 
     {
-        id: 3,
+        id: 10,
         src: "img/slider/10.png",
         altText: "img3",
     }, 
 
     {
-        id: 4,
+        id: 11,
         src: "img/slider/11.png",
         altText: "img4",
     }, 
 
     {
-        id: 5,
+        id: 12,
         src: "img/slider/12.png",
         altText: "img5",
     },
 
     {
-        id: 6,
+        id: 13,
         src: "img/slider/13.png",
         altText: "img6",
     }
