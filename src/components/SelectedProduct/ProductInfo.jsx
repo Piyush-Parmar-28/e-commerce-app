@@ -141,7 +141,7 @@ const ProductInfo = () => {
 
                             {
                                 products.map((contents) => {
-                                    if (contents._id != ID && myCount < 4) {
+                                    if (contents._id != ID && myCount < 3) {
                                         myCount++;
 
                                         return (

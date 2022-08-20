@@ -258,7 +258,7 @@ var categoryData = [
         src: "img/categories/kitchen.jpg",
         altText: "Image Loading...",
         label: "Kitchen",
-        category: "kithen"
+        category: "kitchen"
     },
 
     {
