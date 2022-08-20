@@ -161,7 +161,7 @@ export default function Navbar2(props) {
           )}
 
           {status && (
-            <form action="/logout" method="post">
+            <form id='logOut' action="/logout" method="post">
               <button type="submit" className="btn-icon btn-xsmall btn-bg-red">
                 <PowerSettingsNewIcon />
               </button>
