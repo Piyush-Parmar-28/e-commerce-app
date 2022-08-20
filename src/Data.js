@@ -51,6 +51,44 @@ var sliderData = [
     }
     
 ]
+var sliderData2 = [
+    {
+        id: 1,
+        src: "img/slider/8.png",
+        altText: "img1",
+    },
+
+    {
+        id: 2,
+        src: "img/slider/9.png",
+        altText: "img2",
+    },
+
+    {
+        id: 3,
+        src: "img/slider/10.png",
+        altText: "img3",
+    }, 
+
+    {
+        id: 4,
+        src: "img/slider/11.png",
+        altText: "img4",
+    }, 
+
+    {
+        id: 5,
+        src: "img/slider/12.png",
+        altText: "img5",
+    },
+
+    {
+        id: 6,
+        src: "img/slider/13.png",
+        altText: "img6",
+    }
+    
+]
 
 var offersData = [
     {
@@ -262,4 +300,4 @@ var categoryData = [
     },
 ]
 
-export { sliderData, productsData, profileAvatar, categoryData, offersData }
+export { sliderData,sliderData2, productsData, profileAvatar, categoryData, offersData }
