@@ -154,10 +154,18 @@ a:hover {
   color: #ffc85a;
   text-decoration: none;
 }
-
-/* .big{
+.small{
   display: none;
-} */
+}
+
+@media screen and (max-width:600px) {
+  .big{
+    display: none;
+  }
+  .small{
+    display: block;
+  }
+}
 
 h1,
 h2,
