@@ -1,10 +1,9 @@
 import React from "react";
-import { sliderData } from "../../Data"
 
-const Slider2 = () => {
+const Slider2 = (props) => {
 
     return (
-        <div id="carouselExampleControls" className="carousel slide"  data-ride="carousel" >
+        <div id="carouselExampleControls" className={`carousel slide ${props.id}`}  data-ride="carousel" >
 
             <div className="carousel-inner">
 
@@ -13,7 +12,7 @@ const Slider2 = () => {
                 </div>
 
                 {
-                    sliderData.map((contents) => {
+                    props.data.map((contents) => {
                         return (
                             <div className="carousel-item" key={contents.id}>
                                 <img className="d-block w-100" src={contents.src} alt="First slide" />

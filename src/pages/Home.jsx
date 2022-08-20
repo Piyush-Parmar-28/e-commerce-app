@@ -8,12 +8,15 @@ import Masters_ContactMe from '../components/HomePage/Masters_ContactMe'
 import FlashDeals from '../components/HomePage/FlashDeals'
 import TopPicks from '../components/HomePage/TopPicks'
 import Slider2 from '../components/HomePage/Slider2'
+import { sliderData,sliderData2 } from "../Data"
+
 
 const Home = () => {
     return (
         <div className= "blue-bg">
             <Navbar2></Navbar2>
-            <Slider2></Slider2>
+            <Slider2 id='big' data={sliderData}></Slider2>
+            <Slider2 id='small' data={sliderData2}></Slider2>
             <Categories></Categories>
             <TopPicks></TopPicks>
             <FlashDeals></FlashDeals>
