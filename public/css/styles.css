@@ -158,6 +158,7 @@ a:hover {
   display: none;
 }
 
+
 @media screen and (max-width:600px) {
   .big{
     display: none;
