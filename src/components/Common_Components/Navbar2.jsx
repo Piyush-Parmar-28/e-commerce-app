@@ -99,12 +99,12 @@ export default function Navbar2(props) {
           </Link>
         </div>
 
-        <div className="d-flex justify-content-center align-items-center ms-2">
+        {status && <div className="d-flex justify-content-center align-items-center ms-2">
           <label id="profile">
             <b>{fname ? fname : "Profile"}</b>
           </label>
 
-          <button
+           <button
             type="button"
             className="btn-icon btn-xsmall me-2"
             id="profile_icon"
@@ -129,11 +129,11 @@ export default function Navbar2(props) {
             <Link to="/home" className="text-decoration-none">
               <p className="dropdown-item text-decor text-black">Home</p>
             </Link>
-            {!status && (
+            {/* {!status && (
               <Link to="/" className="text-decoration-none">
                 <p className="dropdown-item text-decor text-black"><b>Login</b></p>
               </Link>
-            )}
+            )} */}
 
             {status && (
               <form action="/logout" method="post">
@@ -146,7 +146,7 @@ export default function Navbar2(props) {
               </form>
             )}
           </div>
-        </div>
+        </div>}
 
         <div className="ms-2" id="logout_icon">
           {!status && (
