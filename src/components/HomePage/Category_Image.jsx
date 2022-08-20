@@ -7,7 +7,7 @@ const Category_Image = (props) => {
             <Link to={"/products?item="+ props.category}>
                 <img className="img-fluid fill-image" src={props.image} alt="Image Loading" />
                 <span className="info">
-                    <h4 className="heading">{props.label}</h4>
+                    <h4 className="heading categoryHover" style={{padding:'1rem'}}>{props.label}</h4>
                 </span>
             </Link>
         </div>

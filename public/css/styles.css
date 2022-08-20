@@ -167,6 +167,13 @@ a:hover {
   }
 }
 
+.categoryHover{
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  border-radius: 2rem;
+
+}
+
 h1,
 h2,
 h3,
