@@ -25,7 +25,7 @@ const SignUp = (props) => {
     }
 
     function handlePass(event){
-        if(event.target.value<99999){
+        if(event.target.value.length<6){
             setPassAlert({text:'Password must be atleast 6 characters long!!',color:'red'})
         }else{
             setPassAlert({text:'Password',color:'green'})
